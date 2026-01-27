@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>안동 인트로 | 낙동강 위의 시간여행</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F4F1EA;
+      /* 한지색 (Hanji White from design.md) */
+      --panel: rgba(255, 255, 255, 0.7);
+      --accent: #8b5e3c;
+      /* 고가구 갈색 (Walnut) */
+      --accent-2: #2d4f40;
+      /* 송죽색 (Deep Jade from design.md) */
+      --accent-red: #8e2a2a;
+      /* 홍단색 (Stamp Red) */
+      --muted: #7f8c8d;
+      --text: #2c2c2c;
+      /* 수묵색 (Ink Black from design.md) */
+      --line: rgba(0, 0, 0, 0.08);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      --radius: 0px;
+      /* 정갈한 직각 혹은 아주 미세한 곡선 */
+      --bento-radius: 2px;
+      /* 벤토 그리드에서의 절제된 모서리 */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      background-image: url("https://www.transparenttextures.com/patterns/sandpaper.png");
+      /* Subtle Hanji texture */
+      color: var(--text);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--text);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .logo-stamp {
+      background-color: var(--accent-red);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+      padding: 2px;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      background: transparent;
+      text-decoration: underline;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 32px auto 0;
+      padding: 36px 24px 24px;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-family: 'DM Serif Display', 'Times New Roman', serif;
+      font-size: clamp(36px, 5vw, 52px);
+      margin: 0 0 14px;
+      letter-spacing: 0.2px;
+    }
+
+    .hero-copy h1 span {
+      color: #fff;
+      /* Changed from var(--accent) for legibility */
+      text-decoration: underline;
+      text-decoration-color: var(--accent-red);
+      text-underline-offset: 8px;
+      text-decoration-thickness: 2px;
+    }
+
+    .hero-copy p {
+      margin: 0 0 20px;
+      color: #2f4a63;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent-2);
+      background: rgba(42, 143, 216, 0.1);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 2px;
+      padding: 14px 28px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-card {
+      background: #fff;
+      border: 0.5px solid var(--line);
+      border-radius: var(--bento-radius);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at top right, rgba(139, 94, 60, 0.05), transparent);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--accent-2);
+      letter-spacing: 0.3px;
+    }
+
+    .hero-card p {
+      margin: 0 0 12px;
+      color: #1f3550;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(15, 111, 182, 0.1);
+      color: #0f2235;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: 120px auto;
+      /* Increased for "Beauty of Whitespace" */
+      padding: 0 24px;
+    }
+
+    .section h2 {
+      font-family: 'DM Serif Display', 'Times New Roman', serif;
+      margin: 0 0 24px;
+      font-size: 36px;
+      letter-spacing: -0.5px;
+    }
+
+    .section p.lead {
+      margin-top: 0;
+      color: #2f4a63;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    /* Bento Grid Styles - Rice Paper-morphism */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(200px, auto);
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    .bento-card {
+      background: rgba(255, 255, 255, 0.6);
+      border: 0.5px solid var(--line);
+      border-radius: var(--bento-radius);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(12px) contrast(1.1);
+      /* Rice Paper Effect */
+    }
+
+    .bento-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-red);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+    }
+
+    .bento-card.large {
+      grid-column: span 2;
+      grid-row: span 2;
+      min-height: 480px;
+    }
+
+    .bento-card.wide {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .bento-card.tall {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    .bento-card .bg-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      transition: transform 1.5s ease;
+      filter: sepia(0.2) contrast(0.9);
+    }
+
+    .bento-card:hover .bg-img {
+      transform: scale(1.03);
+    }
+
+    .bento-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
+      z-index: 1;
+      opacity: 0.8;
+    }
+
+    .bento-card-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .bento-card h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      color: white;
+      font-family: 'DM Serif Display', serif;
+      letter-spacing: -0.5px;
+    }
+
+    .bento-card p {
+      margin: 0;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .bento-card small {
+      display: block;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      opacity: 0.85;
+      color: #fff;
+    }
+
+    .bento-card-link-hint {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      z-index: 3;
+      color: white;
+      font-size: 12px;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.4s ease;
+    }
+
+    .bento-card:hover .bento-card-link-hint {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 1024px) {
+      .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bento-card.large,
+      .bento-card.wide,
+      .bento-card.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 300px;
+      }
+    }
+
+    .card {
+      background: #fff;
+      border: 0.5px solid var(--line);
+      border-radius: var(--bento-radius);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .card small {
+      color: var(--accent);
+      letter-spacing: 2px;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin: 12px 0 10px;
+      font-size: 22px;
+      color: var(--text);
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: #555;
+      font-size: 14.5px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: #41627a;
+      font-size: 14px;
+    }
+
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .tile {
+      border: 0.5px solid var(--line);
+      border-radius: var(--bento-radius);
+      padding: 20px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .tile:hover {
+      border-color: var(--accent-2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .timeline-item {
+      border-left: 2px solid var(--accent);
+      padding: 20px;
+      background: #fff;
+      border-radius: var(--bento-radius);
+      border: 0.5px solid var(--line);
+      border-left: 3px solid var(--accent);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 111, 182, 0.08);
+      border: 1px solid var(--line);
+      color: #1f3550;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 12px;
+    }
+
+    .stat-band {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .stat {
+      padding: 20px;
+      border-radius: var(--bento-radius);
+      background: #fff;
+      color: var(--text);
+      border: 0.5px solid var(--line);
+      min-width: 160px;
+      flex: 1;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      color: var(--accent-2);
+      margin-bottom: 4px;
+    }
+
+    .foot {
+      max-width: 1180px;
+      margin: 40px auto;
+      padding: 20px 24px 36px;
+      border-top: 1px solid var(--line);
+      color: #3a5670;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .section:target {
+      scroll-margin-top: 80px;
+    }
+
+    .photo-panel {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, rgba(79, 186, 255, 0.16), rgba(15, 111, 182, 0.08));
+    }
+
+    .photo-panel .img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(180deg, rgba(15, 34, 53, 0.1), rgba(15, 34, 53, 0.35)),
+        url('assets/wolyeonggyo.png') center/cover no-repeat;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .photo-panel:hover .img {
+      transform: scale(1.05);
+    }
+
+    .photo-panel figcaption {
+      padding: 12px 14px 14px;
+      background: rgba(255, 255, 255, 0.82);
+      color: #0f2235;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(6px);
+    }
+
+    .photo-panel figcaption small {
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .map-box {
+      margin-top: 14px;
+      border-radius: 14px;
+      border: 1px dashed rgba(42, 143, 216, 0.3);
+      padding: 14px;
+      background: linear-gradient(135deg, rgba(79, 186, 255, 0.12), rgba(255, 255, 255, 0.8));
+    }
+
+    .map-box p {
+      margin: 0;
+      color: #1f3550;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateX(-15px);
+      /* Changed to horizontal for brushstroke feel */
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      background-size: cover;
+      background-position: center;
+      border-radius: calc(var(--radius) - 6px);
+      margin-bottom: 16px;
+    }
+
+    .hero-bg-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-slider {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      background-attachment: fixed;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-slide {
+        background-attachment: scroll;
+      }
+    }
+
+    .hero-bg-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-copy {
+      position: relative;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(48px, 8vw, 84px);
+      line-height: 1.1;
+      font-family: 'DM Serif Display', serif;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .hero-vertical-title {
+      writing-mode: vertical-rl;
+      font-size: 16px;
+      letter-spacing: 0.5em;
+      color: rgba(255, 255, 255, 0.85);
+      /* Increased opacity */
+      font-family: 'Noto Sans KR', serif;
+      font-weight: 300;
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
+      padding-left: 12px;
+      margin-top: 10px;
+    }
+
+    .hero-bg-wrapper .hero-copy p {
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 500px;
+      font-size: 18px;
+      margin-top: 32px;
+    }
+
+    .hero-bg-wrapper .tagline {
+      background: transparent;
+      border: none;
+      border-left: 3px solid var(--accent-red);
+      border-radius: 0;
+      color: white;
+      padding-left: 20px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding: 12px 16px;
+      }
+
+      .nav-links {
+        gap: 8px;
+      }
+
+      .section {
+        margin: 80px auto;
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <span class="logo-stamp"><span>안</span><span>동</span></span>
+        ANDONG
+      </div>
+      <nav class="nav-links">
+        <a href="#highlights">장면</a>
+        <a href="#spots">명소</a>
+        <a href="#yekki">예끼마을</a>
+        <a href="#food">음식</a>
+        <a href="#festival">축제</a>
+        <a href="#plan">여정</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-bg-wrapper">
+      <div class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('assets/hero_hahoe.png');"></div>
+        <div class="hero-slide" style="background-image: url('assets/wolyeonggyo.png');"></div>
+        <div class="hero-slide" style="background-image: url('assets/seowon.png');"></div>
+      </div>
+      <section class="hero hero-container">
+        <div class="hero-copy reveal show">
+          <div class="tagline">낙동강을 품은 한국 정신문화의 수도</div>
+          <h1>시간이 머무는 도시,<br><span>안동</span> <span class="hero-vertical-title">安東(안동)</span></h1>
+          <p>세계유산 하회마을과 서원, 여름이면 새파란 하늘과 낙동강 바람이 어우러진 풍경, 깊은 맛의 찜닭과 소주, 가을 탈춤의 열기까지. 하루가 다른 결이 되어 기억되는 여행을 시작해 보세요.</p>
+          <div class="cta">
+            <button class="btn btn-primary"
+              onclick="document.querySelector('#plan').scrollIntoView({behavior:'smooth'})">여행 계획하기</button>
+            <button class="btn btn-secondary"
+              style="background: rgba(255,255,255,0.2); color:white; border-color: rgba(255,255,255,0.4);"
+              onclick="document.querySelector('#festival').scrollIntoView({behavior:'smooth'})">축제 바로보기</button>
+          </div>
+        </div>
+        <div class="hero-card reveal show">
+          <small style="color: var(--accent); letter-spacing: 2px;">TODAY'S MOOD</small>
+          <h3 style="color: var(--text); font-family: 'DM Serif Display', serif; font-size: 28px; margin: 10px 0;">오늘의
+            안동</h3>
+          <p style="color: #666; font-size: 15px;">맑은 날의 푸른 물빛과 하얀 구름, 오후엔 월영교 아래로 반짝이는 햇살이 이어지는 정갈한 하루입니다.</p>
+          <div class="pill-row" style="margin-top: 24px;">
+            <span class="pill"
+              style="border-radius: 2px; background: #fdfaf5; color: var(--accent); border-color: var(--line);">하회마을
+              산책</span>
+            <span class="pill"
+              style="border-radius: 2px; background: #fdfaf5; color: var(--accent); border-color: var(--line);">월영교
+              야경</span>
+            <span class="pill"
+              style="border-radius: 2px; background: #fdfaf5; color: var(--accent); border-color: var(--line);">전통주
+              체험</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section">
+      <h2>월영교 한여름 포토</h2>
+      <p class="lead">푸른 낙동강 위로 뻗은 나무다리, 분수 안개와 새하얀 구름이 겹치는 여름 낮의 월영교.</p>
+      <figure class="photo-panel reveal" aria-label="월영교 전경 사진">
+        <div class="img"></div>
+        <figcaption>
+          <div class="badge">Wolyeonggyo</div>
+          <div>
+            <strong>월영교 & 분수</strong><br>
+            <small>낙동강·벚꽃길·분수 야경이 이어지는 안동의 대표 포토 스팟</small>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="highlights">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: 42px; margin-bottom: 12px;">정취(情趣): 안동의 장면</h2>
+        <p class="lead" style="max-width: 600px; margin: 0 auto;">세계유산의 고요함과 살아있는 전통이 만들어내는 조화.</p>
+      </div>
+      <div class="bento-grid">
+        <article class="bento-card large reveal">
+          <div class="bg-img" style="background-image: url('assets/hero_hahoe.png');"></div>
+          <div class="bento-card-content">
+            <small style="color: var(--accent); font-weight: 700;">UNESCO WORLD HERITAGE</small>
+            <h3>하회마을</h3>
+            <p>선비들이 숨쉬던 종가와 초가가 고스란히 남아있는 강마을. 부용대에서 내려다보는 S자 물길이 압권입니다.</p>
+          </div>
+        </article>
+
+        <article class="bento-card wide reveal">
+          <div class="bg-img" style="background-image: url('assets/wolyeonggyo.jpg');"></div>
+          <div class="bento-card-content">
+            <small style="color: #ffda79; font-weight: 700;">PHOTO SPOT</small>
+            <h3>월영교 · 낙강 물길</h3>
+            <p>낙동강을 가르는 나무다리 위 야경, 주변을 잇는 자전거길과 카페. 밤이면 수면에 켜지는 빛이 몽환적입니다.</p>
+          </div>
+        </article>
+
+        <article class="bento-card tall reveal">
+          <div class="bg-img" style="background-image: url('assets/seowon.png');"></div>
+          <div class="bento-card-content">
+            <small style="color: #55efc4; font-weight: 700;">CONFUCIAN ACADEMY</small>
+            <h3>도산·병산서원</h3>
+            <p>이황과 유림의 숨결을 느낄 수 있는 강변 서원. 대나무 숲길과 목재 건축의 고요함을 즐겨보세요.</p>
+          </div>
+        </article>
+
+        <article class="bento-card reveal" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+          <div class="bg-img"
+            style="background-image: url('assets/soju.png'), linear-gradient(135deg, #2c3e50, #34495e);"></div>
+          <div class="bento-card-content">
+            <small style="color: #fab1a0; font-weight: 700;">TRADITIONAL LIQUOR</small>
+            <h3>안동소주</h3>
+            <p>700년 역사를 이어온 증류식 소주. 깊은 향과 깔끔한 목넘김을 경험해 보세요.</p>
+          </div>
+        </article>
+
+        <article class="bento-card reveal" style="background: linear-gradient(135deg, #d35400, #e67e22);">
+          <div class="bg-img"
+            style="background-image: url('assets/jjimdak.png'), linear-gradient(135deg, #d35400, #e67e22);"></div>
+          <div class="bento-card-content">
+            <small style="color: white; font-weight: 700;">LOCAL DELICACY</small>
+            <h3>안동찜닭</h3>
+            <p>매콤달콤한 간장 양념과 푸짐한 당면의 조화. 구시장의 활기를 맛으로 느껴보세요.</p>
+          </div>
+        </article>
+
+        <article class="bento-card wide reveal" id="yekki" onclick="location.href='yekki.html'">
+          <div class="bento-card-link-hint">더 알아보기 →</div>
+          <div class="bg-img"
+            style="background-image: url('assets/yekki_village.jpg'); filter: brightness(0.7) sepia(0.3);"></div>
+          <div class="bento-card-content">
+            <small style="color: #ffda79; font-weight: 700;">ART & TRADITION</small>
+            <h3>예끼마을</h3>
+            <p>수몰된 역사를 예술로 승화시키다. 안동호의 물길을 걷는 선성수상길과 예술 창작촌의 조화.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="spots">
+      <div class="columns">
+        <div>
+          <h2>가볼 만한 곳</h2>
+          <p class="lead">하루면 아쉽고, 이틀이면 깊어지는 동선. 전통과 자연을 엮어 이동 시간을 줄인 추천 코스입니다.</p>
+          <div class="tiles">
+            <div class="tile">
+              <div class="badge">전통</div>
+              <strong>하회마을 → 병산서원 → 부용대</strong>
+              <p>강변 드라이브로 연결되는 유네스코 라인. 오후엔 부용대에서 노을.</p>
+            </div>
+            <div class="tile">
+              <div class="badge">야경</div>
+              <strong>월영교 → 낙동강 음악분수</strong>
+              <p>저녁 산책 코스. 다리 아래 반영을 꼭 카메라에 담아보세요.</p>
+            </div>
+            <div class="tile">
+              <div class="badge">예술</div>
+              <strong>선성수상길 → 예끼마을 → 도산서원</strong>
+              <p>물 위를 걷는 부교와 벽화 거리. 도산서원과 4km 거리로 연계 관광 추천.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 12px;">
+          <small>TIP</small>
+          <h3>안동 이동 꿀팁</h3>
+          <ul style="padding-left: 18px; margin: 8px 0 12px; color: #2f4a63;">
+            <li>안동역(중앙선)·안동버스터미널이 도심 중심. 시내버스 노선이 하회·서원까지 연결.</li>
+            <li>렌터카 이용 시 하회마을 주차장 → 셔틀버스 환승 필수.</li>
+            <li>주요 관광지는 17~30km 이내, 1시간 안팎 드라이브로 이어집니다.</li>
+          </ul>
+          <div class="map-box">
+            <p>도심 ↔ 하회: 약 25km / 35분 · 도심 ↔ 월영교: 약 3km / 10분</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="food">
+      <h2>안동의 맛</h2>
+      <p class="lead">깊게 우린 간장과 통닭을 찜으로 끓여낸 찜닭, 세 번 증류한 소주, 강에서 건너온 민물매운탕까지.</p>
+      <div class="grid">
+        <article class="card reveal">
+          <div class="card-img" style="background-image: url('assets/jjimdak.png');"></div>
+          <small>시장</small>
+          <h3>안동찜닭</h3>
+          <p>구시장 골목마다 다른 비율의 간장 양념과 매운맛 커스터마이즈. 볶음밥까지가 공식입니다.</p>
+          <div class="chips">
+            <span class="chip">구시장</span>
+            <span class="chip">저염 간장맛</span>
+            <span class="chip">중간 매운맛 추천</span>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-img" style="background-image: url('assets/soju.png');"></div>
+          <small>주류</small>
+          <h3>안동소주</h3>
+          <p>증류식 소주 체험장과 갤러리에서 숙성 과정 견학 가능. 전통주 바에서 페어링 메뉴도 즐길 수 있어요.</p>
+          <div class="chips">
+            <span class="chip">40도 전통 레시피</span>
+            <span class="chip">칵테일 바</span>
+            <span class="chip">주류 박물관</span>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-img" style="background-image: url('assets/heotjesabap.png');">
+          </div>
+          <small>강·산</small>
+          <h3>국시·헛제사밥</h3>
+          <p>제사상을 재현한 헛제사밥과 유기농 밀가루로 뽑은 안동국시. 깔끔한 국물과 채소 토핑이 특징입니다.</p>
+          <div class="chips">
+            <span class="chip">근대골목</span>
+            <span class="chip">채식 곁들이기 쉬움</span>
+          </div>
+        </article>
+      </div>
+      <div class="stat-band">
+        <div class="stat">
+          <strong>찜닭 골목 50+</strong>
+          <span>가게마다 매운맛·당도 조절 가능</span>
+        </div>
+        <div class="stat">
+          <strong>전통주 10+</strong>
+          <span>양조장 투어, 소주·막걸리 테이스팅</span>
+        </div>
+        <div class="stat">
+          <strong>야시장</strong>
+          <span>주말 플리마켓과 먹거리 부스</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="festival">
+      <h2>축제 & 이벤트</h2>
+      <p class="lead">가을 탈춤, 봄 벚꽃, 여름 물놀이까지 계절마다 다른 무드를 선택해 보세요.</p>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="card-img" style="background-image: url('assets/mask_dance.png'); height: 160px;"></div>
+          <strong>안동국제탈춤페스티벌</strong><br>
+          2025년 9월 말 ~ 10월 초 (예정)<br>
+          <small>도심·하회마을 일대</small>
+          <p>국내외 탈춤 공연, 거리 퍼레이드, 야간 불꽃, 체험부스.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="card-img" style="background-image: url('assets/andong-moonlight-dzrsh.png'); height: 160px;">
+          </div>
+          <strong>월영야행</strong><br>
+          7~8월 주말<br>
+          <small>월영교 주변</small>
+          <p>야간 조명, 낙동강 버스킹, 전통등 전시.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="card-img" style="background-image: url('assets/cherry_blossom.png'); height: 160px;"></div>
+          <strong>서원 연꽃·벚꽃 시즌</strong><br>
+          3~4월<br>
+          <small>병산·도산서원</small>
+          <p>강변 벚꽃길, 새벽 물안개 포토 스팟.</p>
+        </div>
+      </div>
+      <div class="chips" style="margin-top: 14px;">
+        <span class="chip">축제 일정은 매년 업데이트</span>
+        <span class="chip">사전 예매 여부 확인</span>
+        <span class="chip">주차·셔틀 버스 정보 체크</span>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <hr
+        style="border: none; height: 1px; background: linear-gradient(to right, transparent, var(--line), transparent); margin-bottom: 80px;">
+      <div class="columns">
+        <div style="grid-column: span 2;">
+          <h2>여행 플래너</h2>
+          <p class="lead">안동역·터미널 기준으로 이동 시간을 최적화한 제안입니다.</p>
+          <div class="grid">
+            <div class="card reveal"
+              style="background: rgba(42, 143, 216, 0.05); border-left: 4px solid var(--accent);">
+              <small>Day Trip</small>
+              <h3 style="color: var(--accent-2);">하루 코스</h3>
+              <ul style="padding-left: 18px; margin: 8px 0; color: #2f4a63;">
+                <li>오전: 하회마을 투어 & 부용대 뷰</li>
+                <li>점심: 하회·도산 인근 향토식당</li>
+                <li>오후: 병산서원 산책 후 도심 이동</li>
+                <li>저녁: 찜닭 골목 → 월영교 야경</li>
+              </ul>
+            </div>
+            <div class="card reveal"
+              style="background: rgba(15, 111, 182, 0.05); border-left: 4px solid var(--accent-2);">
+              <small>Weekend</small>
+              <h3 style="color: var(--accent-2);">1박 2일</h3>
+              <ul style="padding-left: 18px; margin: 8px 0; color: #2f4a63;">
+                <li>1일차: 하회·서원 라인, 도심 시장 탐방</li>
+                <li>숙박: 한옥 스테이 또는 강변 호텔</li>
+                <li>2일차: 월영교 아침 산책, 전통주 체험, 공예 쇼핑</li>
+              </ul>
+            </div>
+            <div class="card reveal" style="background: rgba(95, 195, 170, 0.05); border-left: 4px solid #2ecc71;">
+              <small>Slow</small>
+              <h3 style="color: var(--accent-2);">로컬 머무르기</h3>
+              <ul style="padding-left: 18px; margin: 8px 0; color: #2f4a63;">
+                <li>전통마을 스테이 & 서원 서점 탐방</li>
+                <li>낙동강 자전거길 · 강변 카페</li>
+                <li>주말 플리마켓, 공방 클래스</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card reveal" style="background: var(--text); color: white; border: none; padding: 32px;">
+          <small style="color: var(--accent);">실용 정보</small>
+          <h3 style="color: white; font-size: 24px;">찾아오기 · 돌아가기</h3>
+          <ul style="padding-left: 18px; margin: 16px 0 20px; color: rgba(255,255,255,0.8);">
+            <li style="margin-bottom: 8px;">철도: 중앙선(무궁화·ITX) 이용, 안동역 하차.</li>
+            <li style="margin-bottom: 8px;">버스: 서울(동서울·남부터미널), 대구, 부산 등 직행 운영.</li>
+            <li style="margin-bottom: 8px;">급행 3번: 안동역(KTX) ↔ 예끼마을·도산서원 (약 45분 소요).</li>
+            <li style="margin-bottom: 8px;">시내버스: 하회마을·서원·찜닭골목 정류장 다수.</li>
+            <li>택시/렌터카: 도심 렌터카 지점 활용, 주차장·셔틀 확인.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip"
+              style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">관광안내소: 안동역
+              앞</span>
+            <span class="chip"
+              style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">1330
+              관광안내</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="footer-links">
+      <span>참고: 안동시청, 투어안동, 고향사랑기부제, 나무위키</span>
+      <a href="https://www.andong.go.kr/main.do" target="_blank" rel="noreferrer">안동시청</a>
+      <a href="https://www.tourandong.com/public/" target="_blank" rel="noreferrer">투어안동</a>
+      <a href="https://www.ilovegohyang.go.kr/goods/searchGoods-main.html?type=L&locgov=47170" target="_blank"
+        rel="noreferrer">고향사랑 기부</a>
+      <a href="https://namu.wiki/w/%EC%95%88%EB%8F%99%EC%8B%9C" target="_blank" rel="noreferrer">나무위키</a>
+    </div>
+    <p style="margin-top: 12px;">전통의 질감을 살린 감성으로, 여행자가 바로 활용할 수 있는 큐레이션을 담았습니다.</p>
+  </footer>
+
+  <script>
+    // Hero Slider Logic
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    if (slides.length > 1) {
+      setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    // Reveal sections on scroll for subtle motion.
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
