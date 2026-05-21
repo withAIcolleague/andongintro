@@ -1,6 +1,6 @@
 # 안동 안내 사이트 자료 출처 정리
 
-확인일: 2026-05-20
+확인일: 2026-05-21
 
 ## 운영 원칙
 
@@ -38,7 +38,7 @@
 
 - 일정: 2026.04.01(수) ~ 2026.04.05(일)
 - 장소: 탈춤공원 벚꽃길 일원
-- 상태: 2026-05-20 기준 종료
+- 상태: 2026-05-21 기준 종료
 - 근거: https://www.tourandong.com/public/sub5/sub3.cshtml?id=J3qRHIvUXsye6srtIKiY2Gp4phfPJYDRk9g6SNUBwUM&page=1&search=&searchCategory=&searchKey=1
 
 ## 확인 필요 항목
