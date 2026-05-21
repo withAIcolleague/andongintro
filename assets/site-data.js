@@ -446,54 +446,36 @@ window.AndongData = {
       tip: '권역 사이 거리가 있어 1박 2일 이상에 적합합니다.'
     }
   ],
-  themes: [
-    {
-      id: 'first',
-      title: '안동 처음이라면',
-      description: '하회마을만 알고 온 방문자가 놓치기 쉬운 대표 선택지입니다.',
-      items: ['place:hahoe', 'place:wolyeonggyo', 'food:jjimdak', 'event:maskdance', 'course:first-day', 'place:dosan']
-    },
+  fields: [
     {
       id: 'taste',
-      title: '맛으로 보는 안동',
-      description: '안동을 기억하게 만드는 음식과 시장 선택지를 먼저 보여줍니다.',
+      title: '안동의 맛',
+      description: '안동을 기억하게 만드는 음식과 시장 선택지를 모았습니다.',
       items: ['food:jjimdak', 'food:soju', 'food:heotjesabap', 'food:guksi', 'food:mackerel', 'food:octopus', 'food:jongga', 'food:market']
     },
     {
-      id: 'festival',
-      title: '축제로 보는 안동',
-      description: '일정이 바뀌는 정보는 상태와 확인일을 함께 표시합니다.',
-      items: ['event:maskdance', 'event:moonlight', 'event:cherry', 'event:waterfesta', 'event:ice', 'course:festival-course']
+      id: 'meot',
+      title: '안동의 멋',
+      description: '세계유산, 서원, 수변 마을, 도심 역사 장소를 겹치지 않게 배치했습니다.',
+      items: ['place:hahoe', 'place:dosan', 'place:byeongsan', 'place:bongjeongsa', 'place:yekki', 'place:susanggil', 'place:market-place', 'place:imcheonggak']
+    },
+    {
+      id: 'heung',
+      title: '안동의 흥',
+      description: '계절마다 달라지는 축제와 행사를 공식 출처 확인이 필요한 콘텐츠로 정리합니다.',
+      items: ['event:maskdance', 'event:cherry', 'event:waterfesta', 'event:ice']
     },
     {
       id: 'night',
-      title: '밤에 가기 좋은 곳',
-      description: '저녁 식사 후 짧게 움직이기 좋은 야경과 밤 산책 선택지입니다.',
-      items: ['place:wolyeonggyo', 'event:moonlight', 'course:night-course', 'food:market', 'food:soju', 'place:andongdam']
+      title: '안동의 밤',
+      description: '월영교, 안동댐, 야간 행사와 밤 산책 코스를 따로 묶었습니다.',
+      items: ['place:wolyeonggyo', 'place:andongdam', 'event:moonlight', 'course:night-course']
     },
     {
-      id: 'history',
-      title: '역사와 전통',
-      description: '안동의 정신문화와 건축, 마을 이야기를 묶었습니다.',
-      items: ['place:hahoe', 'place:dosan', 'place:byeongsan', 'place:bongjeongsa', 'place:imcheonggak', 'food:heotjesabap', 'food:jongga', 'course:history-course']
-    },
-    {
-      id: 'family',
-      title: '가족과 함께',
-      description: '설명하기 쉽고 이동 부담이 비교적 적은 선택지를 우선합니다.',
-      items: ['course:family-course', 'place:hahoe', 'place:wolyeonggyo', 'food:jjimdak', 'event:ice', 'food:guksi']
-    },
-    {
-      id: 'daytrip',
-      title: '당일치기',
-      description: '짧은 시간에 안동의 이미지를 만들 수 있는 선택지입니다.',
-      items: ['course:first-day', 'place:hahoe', 'place:byeongsan', 'place:market-place', 'food:jjimdak', 'place:wolyeonggyo']
-    },
-    {
-      id: 'weekend',
-      title: '1박 2일',
-      description: '하회권, 도심권, 도산권을 나눠 보는 여유 있는 구성입니다.',
-      items: ['course:car-course', 'place:hahoe', 'place:wolyeonggyo', 'place:yekki', 'place:susanggil', 'place:dosan', 'food:soju', 'event:maskdance']
+      id: 'route',
+      title: '안동의 길',
+      description: '처음 방문, 미식, 축제, 역사, 가족, 대중교통, 렌터카 코스를 모았습니다.',
+      items: ['course:first-day', 'course:food-course', 'course:festival-course', 'course:history-course', 'course:family-course', 'course:transit-course', 'course:car-course']
     }
   ]
 };
