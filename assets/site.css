@@ -279,9 +279,13 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.choice-grid {
+  grid-auto-flow: dense;
+}
+
 .choice-card,
 .summary-card {
-  min-height: 230px;
+  min-height: 180px;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -290,12 +294,25 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.choice-card:nth-child(6n + 1) {
+  grid-column: span 2;
+  min-height: 260px;
+}
+
+.choice-card:nth-child(6n + 4) {
+  min-height: 260px;
+}
+
+.summary-card {
+  min-height: 190px;
+}
+
 .choice-card::before,
 .summary-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.76));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.62));
   z-index: 1;
 }
 
@@ -317,7 +334,7 @@ a {
   z-index: 2;
   align-self: flex-end;
   width: 100%;
-  padding: 18px;
+  padding: 16px;
   color: #fff;
 }
 
@@ -347,14 +364,19 @@ a {
 
 .choice-card h4,
 .summary-card h4 {
-  margin: 0 0 6px;
-  font-size: 21px;
+  display: inline;
+  margin: 0;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.64);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  font-size: 22px;
   line-height: 1.25;
 }
 
 .choice-card p,
 .summary-card p {
-  margin: 0;
+  margin: 8px 0 0;
   color: rgba(255, 255, 255, 0.86);
   font-size: 14px;
   font-weight: 600;
@@ -548,6 +570,12 @@ a {
 
   .footer-links {
     justify-content: flex-start;
+  }
+
+  .choice-card:nth-child(6n + 1),
+  .choice-card:nth-child(6n + 4) {
+    grid-column: span 1;
+    min-height: 210px;
   }
 
   .fixed-home-link {

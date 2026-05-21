@@ -25,9 +25,7 @@
       <a class="${className}" href="${item.href}">
         <span class="card-image" style="background-image: url('${item.image}')"></span>
         <span class="card-body">
-          <span class="card-meta">${status(item)}${tags(item)}</span>
           <h4>${item.title}</h4>
-          <p>${item.summary}</p>
         </span>
       </a>
     `;
@@ -56,9 +54,7 @@
       <a class="summary-card" href="${item.href}">
         <span class="card-image" style="background-image: url('${item.image}')"></span>
         <span class="card-body">
-          <span class="card-meta">${status(item)}<span class="tag">확인 ${item.lastChecked}</span></span>
           <h4>${item.title}</h4>
-          <p>${item.period}</p>
         </span>
       </a>
     `).join('');
