@@ -137,12 +137,9 @@ function jsonLd(meta, file) {
   return `<script type="application/ld+json">${JSON.stringify(base).replace(/</g, '\\u003c')}</script>`;
 }
 
-for (const [file, meta] of pageMeta) {
-  if (!fs.existsSync(file)) continue;
-
-  let html = fs.readFileSync(file, 'utf8');
-  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(meta.title)}</title>`);
-  html = html
+function renderSeoHtml(html, meta, file) {
+  let next = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(meta.title)}</title>`);
+  next = next
     .replace(/<link\s+rel="canonical"[\s\S]*?>/gi, '')
     .replace(/<meta\s+name="description"[\s\S]*?>/gi, '')
     .replace(/<meta\s+property="og:[^"]+"[\s\S]*?>/gi, '')
@@ -150,13 +147,28 @@ for (const [file, meta] of pageMeta) {
     .replace(/<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
 
   const block = seoBlock(meta);
-  if (/<meta\s+name="viewport"[\s\S]*?>/i.test(html)) {
-    html = html.replace(/(<meta\s+name="viewport"[\s\S]*?>)/i, `$1${block}`);
+  if (/<meta\s+name="viewport"[\s\S]*?>/i.test(next)) {
+    next = next.replace(/(<meta\s+name="viewport"[\s\S]*?>)/i, `$1${block}`);
   } else {
-    html = html.replace(/<head>/i, `<head>${block}`);
+    next = next.replace(/<head>/i, `<head>${block}`);
   }
 
-  html = html.replace(/<\/head>/i, `${jsonLd(meta, file)}</head>`);
+  return next.replace(/<\/head>/i, `${jsonLd(meta, file)}</head>`);
+}
 
-  fs.writeFileSync(file, html);
+const checkOnly = process.argv.includes('--check');
+
+for (const [file, meta] of pageMeta) {
+  if (!fs.existsSync(file)) continue;
+
+  let html = fs.readFileSync(file, 'utf8');
+  const nextHtml = renderSeoHtml(html, meta, file);
+
+  if (checkOnly) {
+    if (html !== nextHtml) {
+      throw new Error(`${file} SEO metadata is out of date. Run node scripts/update-seo.mjs`);
+    }
+  } else {
+    fs.writeFileSync(file, nextHtml);
+  }
 }

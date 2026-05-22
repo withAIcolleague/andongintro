@@ -129,6 +129,7 @@ function validateHtml() {
   const htmlFiles = fs.readdirSync('.').filter((file) => file.endsWith('.html'));
   const itemsByPath = new Map(allItems().map(({ item }) => [itemPath(item), item]));
   if (htmlFiles.length !== 37) fail(`Expected 37 html files, found ${htmlFiles.length}`);
+  execSync('node scripts/update-seo.mjs --check', { stdio: 'pipe' });
 
   for (const file of htmlFiles) {
     const html = fs.readFileSync(file, 'utf8');
