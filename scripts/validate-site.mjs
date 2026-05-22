@@ -135,6 +135,30 @@ function validateLinks() {
   if (extra.length) fail(`Unexpected html files: ${extra.join(', ')}`);
 }
 
+function validateSources() {
+  const sourceDocs = ['docs/source-links.md', 'source.md'];
+  const sourceText = sourceDocs.map((path) => {
+    assertFile(path);
+    return fs.readFileSync(path, 'utf8');
+  }).join('\n');
+
+  for (const { group, item } of allItems()) {
+    const key = `${group}:${item.id}`;
+    if (!Array.isArray(item.sources) || item.sources.length === 0) {
+      fail(`${key} must have at least one source`);
+    }
+
+    for (const source of item.sources) {
+      if (!source.label || !source.url) fail(`${key} has incomplete source`);
+      if (!/^https?:\/\/[^\s]+$/i.test(source.url)) fail(`${key} has invalid source URL: ${source.url}`);
+      if (source.url.includes('example.com')) fail(`${key} still uses placeholder source URL`);
+      if (!sourceText.includes(source.url)) {
+        fail(`${key} source URL is not documented in ${sourceDocs.join(' or ')}: ${source.url}`);
+      }
+    }
+  }
+}
+
 function validateSitemap() {
   assertFile('sitemap.xml');
   assertFile('robots.txt');
@@ -188,6 +212,7 @@ validateData();
 validateImages();
 validateHtml();
 validateLinks();
+validateSources();
 validateSitemap();
 validateTrackedArtifacts();
 validateAuthoringGuide();
