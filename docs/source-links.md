@@ -15,7 +15,9 @@
 - 투어안동: https://www.tourandong.com/public/
 - 투어안동 월영교: https://www.tourandong.com/public/sub1/sub3_2.cshtml?idx=1&seq=1178
 - 투어안동 관광소식: https://www.tourandong.com/public/sub5/sub3.cshtml
+- 투어안동 세계유산: https://www.tourandong.com/public/sub2/sub8.cshtml
 - 안동 실시간 버스정보: https://bus.andong.go.kr/
+- 국가유산포털 도산서원 전교당: https://www.heritage.go.kr/heri/cul/culGuidePostDetail.do?ccbaCpno=1123702100000&ccgbGbtype=IND&ccgbGbtypeNo=1&pageNo=1_5_0_0
 - 한국정신문화재단: https://www.kfce.or.kr/
 - 안동국제탈춤페스티벌: https://www.maskdance.com/
 - 안동문화재야행/월영야행: https://adnighttrip.com/
@@ -61,6 +63,22 @@
   - 위치: 경상북도 안동시 상아동, 성곡동 일원
 - 참고:
   - 투어안동 월영교: https://www.tourandong.com/public/sub1/sub3_2.cshtml?idx=1&seq=1178
+
+### 도산서원 콘텐츠 보강
+
+- 2026-05-22 기준 도산서원 개별 페이지에 직접 작성한 `richSections` 4개를 추가했다.
+- 반영 주제: 퇴계 이황의 학문과 덕행, 1574년 건립과 1575년 사액, 간결하고 검소한 서원 건축, 전교당과 상덕사, 예끼마을·선성수상길 연계 도산권 동선.
+- 투어안동 확인 정보:
+  - 도산서원은 1574년 퇴계 이황의 학문과 덕행을 기리고 추모하기 위해 지어진 서원.
+  - 1575년 한석봉이 쓴 `도산서원` 편액을 하사받은 사액서원.
+  - 2019년 유네스코 세계유산 등재.
+- 국가유산포털 확인 정보:
+  - 전교당은 1574년에 세워진 도산서원의 강당.
+  - 전교당 현판은 1575년 선조가 내려주었고 한석봉이 쓴 글씨로 전해짐.
+  - 전교당 동쪽 뒤편 높은 곳에 사당인 상덕사가 있음.
+- 참고:
+  - 투어안동 세계유산: https://www.tourandong.com/public/sub2/sub8.cshtml
+  - 국가유산포털 도산서원 전교당: https://www.heritage.go.kr/heri/cul/culGuidePostDetail.do?ccbaCpno=1123702100000&ccgbGbtype=IND&ccgbGbtypeNo=1&pageNo=1_5_0_0
 
 ### 안동국제탈춤페스티벌 2026
 

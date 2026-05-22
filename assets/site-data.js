@@ -508,6 +508,7 @@ window.AndongData = {
       themeTags: ['서원', '역사', '고요함'],
       summary: '퇴계 이황의 학문과 안동 유교 문화를 이해하는 대표 서원입니다.',
       image: 'assets/seowon.png',
+      richImages: ['assets/seowon.png', 'assets/hanokmaul.jpg', 'assets/yekki_village.jpg', 'assets/susanggil.jpg'],
       href: 'places.html#dosan',
       status: '상시',
       lastChecked: '2026.05.22',
@@ -521,9 +522,48 @@ window.AndongData = {
       nearby: '예끼마을, 선성수상길, 이육사문학관 권역',
       tip: '예끼마을, 선성수상길과 함께 묶기 좋습니다.',
       visitNote: '문화재 관람은 운영시간과 휴무가 바뀔 수 있으니 방문 전 공식 안내를 확인하세요.',
+      richSections: [
+        {
+          eyebrow: 'CONFUCIAN ACADEMY',
+          title: '퇴계 이황의 학문을 따라 들어가는 서원',
+          image: 'assets/seowon.png',
+          paragraphs: [
+            '도산서원은 퇴계 이황의 학문과 덕행을 기리고 추모하기 위해 1574년에 지어진 서원입니다. 투어안동은 1575년에 선조가 한석봉이 쓴 도산서원 편액을 내리면서 사액서원이 되었고, 영남유학의 총본산으로 자리 잡았다고 소개합니다.',
+            '이곳은 화려한 장식보다 낮은 건물, 여백 있는 마당, 절제된 동선이 먼저 보입니다. 그래서 도산서원은 빠르게 둘러보기보다 건물 사이의 간격과 시선을 천천히 읽는 장소입니다.'
+          ]
+        },
+        {
+          eyebrow: 'ARCHITECTURE',
+          title: '간결하고 검소한 건축이 남긴 태도',
+          image: 'assets/hanokmaul.jpg',
+          paragraphs: [
+            '도산서원의 건축물은 전체적으로 간결하고 검소하게 꾸며져 있습니다. 투어안동은 이런 건축 태도가 퇴계의 품격과 학문을 공부하는 선비의 자세를 잘 반영한다고 설명합니다.',
+            '방문자는 큰 규모나 장식보다, 작게 나뉜 공간들이 어떤 질서를 이루는지 보는 편이 좋습니다. 서원의 매력은 눈에 띄는 장면보다 조용한 균형에 있습니다.'
+          ]
+        },
+        {
+          eyebrow: 'HERITAGE POINT',
+          title: '전교당과 상덕사로 읽는 서원의 중심',
+          image: 'assets/seowon.png',
+          paragraphs: [
+            '국가유산포털 안내에 따르면 전교당은 도산서원의 강당으로 1574년에 세워졌고, 유생들이 경학을 공부하던 중심 건물입니다. 정면에 걸린 도산서원 현판은 1575년 선조가 내려주었으며 한석봉이 쓴 글씨로 전해집니다.',
+            '전교당 동쪽 뒤편 높은 곳에는 퇴계의 위패를 모신 사당인 상덕사가 있습니다. 강학 공간과 제향 공간이 이어지는 흐름을 보면 서원이 공부와 추모를 함께 품은 공간이라는 점이 분명해집니다.'
+          ]
+        },
+        {
+          eyebrow: 'DOSAN ROUTE',
+          title: '예끼마을과 선성수상길로 이어지는 도산권',
+          image: 'assets/susanggil.jpg',
+          paragraphs: [
+            '도산서원은 단독 방문도 좋지만, 도산권 전체를 이해하려면 예끼마을과 선성수상길을 함께 묶는 흐름이 좋습니다. 서원이 학문과 수양의 장소라면 예끼마을과 수상길은 안동호와 수몰지의 기억, 수변 산책의 감각을 이어줍니다.',
+            '차량 여행이라면 도산서원에서 예끼마을, 선성수상길로 이어가고, 대중교통 여행이라면 배차와 귀가 시간을 먼저 확인해야 합니다. 도산권은 풍경이 좋지만 이동 계획이 느슨하면 체감 시간이 길어집니다.'
+          ]
+        }
+      ],
       sources: [
-        { label: '안동시청', url: 'https://www.andong.go.kr/main.do' },
-        { label: '투어안동', url: 'https://www.tourandong.com/public/' }
+        { label: '투어안동 세계유산', url: 'https://www.tourandong.com/public/sub2/sub8.cshtml' },
+        { label: '국가유산포털 도산서원 전교당', url: 'https://www.heritage.go.kr/heri/cul/culGuidePostDetail.do?ccbaCpno=1123702100000&ccgbGbtype=IND&ccgbGbtypeNo=1&pageNo=1_5_0_0' },
+        { label: '안동시청', url: 'https://www.andong.go.kr/main.do' }
       ]
     },
     {
