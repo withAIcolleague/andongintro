@@ -72,3 +72,5 @@ https://withaicolleague.github.io/andongintro
 GitHub repository settings에서 Pages source를 `GitHub Actions`로 설정합니다. 공개 URL이 `404 Site not found`로 보이면 Pages가 아직 활성화되지 않았거나 첫 배포가 끝나지 않은 상태입니다.
 
 배포 주소가 바뀌면 `SITE_URL`로 `sitemap.xml`과 `robots.txt`를 다시 생성한 뒤 커밋합니다.
+
+배포 실패 시 세부 확인 절차는 `docs/deployment-checklist.md`를 따릅니다.

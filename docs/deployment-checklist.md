@@ -55,6 +55,22 @@ python -m http.server 8010
 - 사이트가 공개된 뒤 `sitemap.xml`과 `robots.txt`가 브라우저에서 직접 열리는지 확인한다.
 - 공개 URL에서 `404 Site not found`가 보이면 Pages 설정 또는 첫 배포 완료 여부를 먼저 확인한다.
 
+## 배포 실패 시 확인
+
+2026-05-22 확인 기준, 공개 URL `https://withaicolleague.github.io/andongintro/`는 아직 `404 Site not found` 상태였다.
+
+GitHub Actions의 `Deploy static site to GitHub Pages` workflow가 `Configure Pages` 단계에서 실패하면 repository의 Pages publishing source가 아직 `GitHub Actions`로 활성화되지 않은 상태일 가능성이 높다.
+
+확인 경로:
+
+1. GitHub repository `Settings`
+2. `Pages`
+3. `Build and deployment`
+4. `Source`를 `GitHub Actions`로 설정
+5. workflow를 다시 실행하거나 `main`에 새 커밋을 push
+
+`actions/configure-pages`의 Pages enablement 기능은 일반 `GITHUB_TOKEN`만으로는 사용할 수 없고 별도 권한이 있는 토큰이 필요하므로, 이 저장소에서는 UI 설정으로 활성화하는 방식을 기본 운영 절차로 둔다.
+
 ## 콘텐츠 추가 후 반복 작업
 
 콘텐츠를 추가하거나 `id`, `title`, `summary`, `image`, 개별 HTML 파일을 바꾼 뒤에는 반드시 아래 두 스크립트를 다시 실행한다.
