@@ -353,6 +353,7 @@
           <h3>${item.title}</h3>
           <p>${item.detail || item.summary}</p>
           <div class="facts">${facts}</div>
+          <a class="detail-link" href="${itemPath(item)}">자세히 보기</a>
         </div>
       </article>
     `;
