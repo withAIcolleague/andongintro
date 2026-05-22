@@ -214,6 +214,25 @@
   - 특정 점포 추천은 변동성이 높아 피하고, 시장 전체 이용 흐름과 방문 전 확인 포인트 중심으로 구성했다.
   - 전용 시장 이미지가 부족해 기존 음식/수변 이미지를 임시 사용했다. 실제 시장·찜닭골목 사진 확보 시 `image`, `richImages`를 교체하면 된다.
 
+## 음식 콘텐츠 보강
+
+### 안동소주
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 안동소주 설명, `richImages`, `richSections`, 출처 보강
+- 참고 출처:
+  - 안동소주박물관: http://www.andongsoju.net/
+  - 투어안동 안동소주박물관: https://www.tourandong.com/map/resource.cshtml?seq=51
+  - 안동시 농업기술센터 안동소주: https://www.andong.go.kr/agritec/contents.do?mId=0302070000
+  - 한국민족문화대백과사전 안동소주: https://encykorea.aks.ac.kr/Article/E0034630
+  - 안동소주협회: https://www.andongsoju.kr/
+  - 농림축산식품부 식품명인 보도자료: https://www.mafra.go.kr/bbs/mafra/68/245991/download.do
+- 메모:
+  - 국내산 쌀 기반 증류식 소주, 1987년 경상북도 무형문화재 지정, 조옥화·김연박 명인 계승, 박재서 명인 계열, 안동소주전통음식박물관의 전시·체험·시음 맥락을 반영했다.
+  - 운전 일정과 시음 안전, 체험 예약·운영일 변동성을 방문 전 확인하도록 안내했다.
+  - 전용 안동소주 이미지는 `assets/soju.png`를 사용하고, 보조 이미지는 기존 음식/수변 이미지를 임시 사용했다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.
