@@ -11,6 +11,7 @@
 ## 공식/준공식 우선 링크
 
 - 안동시청: https://www.andong.go.kr/main.do
+- 안동시 농업기술센터 안동찜닭: https://www.andong.go.kr/agritec/contents.do?mId=0302060000
 - 투어안동: https://www.tourandong.com/public/
 - 투어안동 관광소식: https://www.tourandong.com/public/sub5/sub3.cshtml
 - 안동 실시간 버스정보: https://bus.andong.go.kr/
@@ -40,6 +41,14 @@
   - 하회마을 공식 사이트: https://hahoe.or.kr
   - 하회별신굿탈놀이보존회: https://www.hahoemask.co.kr/
   - 투어안동 유네스코 안동 리플렛: https://www.tourandong.com/_cs_file_/pdfbook/82/%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%EC%95%88%EB%8F%99%EB%A6%AC%ED%94%8C%EB%A0%9B.pdf
+
+### 안동찜닭 콘텐츠 보강
+
+- 2026-05-22 기준 안동찜닭 개별 페이지에 직접 작성한 `richSections` 4개를 추가했다.
+- 반영 주제: 구시장 닭 골목과 여러 유래, 간장소스·건고추·당면·채소의 맛 구조, 찜닭골목 방문 흐름, 남은 양념에 밥을 비벼 먹는 식사 방식.
+- 참고:
+  - 안동시 농업기술센터 안동찜닭: https://www.andong.go.kr/agritec/contents.do?mId=0302060000
+  - 투어안동: https://www.tourandong.com/public/
 
 ### 안동국제탈춤페스티벌 2026
 

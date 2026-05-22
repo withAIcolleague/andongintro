@@ -7,6 +7,7 @@ window.AndongData = {
       themeTags: ['처음 방문', '시장', '대표 음식'],
       summary: '간장 양념, 당면, 닭고기가 어우러진 안동 대표 음식. 구시장 찜닭골목이 가장 익숙한 출발점입니다.',
       image: 'assets/jjimdak.png',
+      richImages: ['assets/jjimdak.png', 'assets/heotjesabap.png', 'assets/hanokmaul.jpg', 'assets/wolyeonggyo.jpg'],
       href: 'food.html#jjimdak',
       status: '상시',
       lastChecked: '2026.05.22',
@@ -20,7 +21,46 @@ window.AndongData = {
       nearby: '안동구시장, 원도심, 월영교 야경',
       tip: '맵기와 당도를 조절할 수 있는 곳이 많으니 어린이 동반이나 매운맛이 부담스러운 경우 주문 전에 확인하세요.',
       visitNote: '식사 시간대에는 대기할 수 있습니다. 주차는 구시장 주변 공영주차장과 도심 주차장을 함께 확인하는 편이 좋습니다.',
+      richSections: [
+        {
+          eyebrow: 'LOCAL TABLE',
+          title: '구시장 골목에서 완성된 대표 음식',
+          image: 'assets/jjimdak.png',
+          paragraphs: [
+            '안동찜닭은 집에서 먹는 닭찜의 기억과 안동구시장 닭 골목의 활기가 함께 담긴 음식입니다. 공식 설명에서도 안동의 안동네 닭찜에서 비롯되었다는 이야기, 구시장 닭 골목에서 손님의 요구에 맞춰 재료를 더하다 생겼다는 이야기 등 여러 유래가 전해집니다.',
+            '그래서 안동찜닭은 특정 조리법 하나만의 음식이라기보다 시장 골목에서 손님과 상인이 함께 만들어낸 대중적인 향토 음식으로 보는 편이 자연스럽습니다.'
+          ]
+        },
+        {
+          eyebrow: 'TASTE',
+          title: '달콤하고 매콤하고 짭짤한 한 냄비',
+          image: 'assets/jjimdak.png',
+          paragraphs: [
+            '안동찜닭의 맛은 간장소스의 짭짤함, 건고추의 매콤함, 양념의 달콤함, 닭고기의 담백함이 한 냄비 안에서 섞이는 데 있습니다. 여기에 당면과 감자, 채소가 양념을 머금으면서 식사의 리듬을 만듭니다.',
+            '처음 먹는 사람에게는 당면을 너무 늦게 먹지 말라고 안내해도 좋습니다. 양념을 흡수한 당면은 안동찜닭의 인상을 가장 빠르게 전달하는 요소입니다.'
+          ]
+        },
+        {
+          eyebrow: 'MARKET FLOW',
+          title: '처음 방문자는 골목 분위기까지 함께 보기',
+          image: 'assets/hanokmaul.jpg',
+          paragraphs: [
+            '안동찜닭은 어느 식당에서 먹느냐도 중요하지만, 처음 방문자라면 구시장 찜닭골목이라는 장소감이 더 중요합니다. 골목에 들어서는 순간 여러 식당의 간판과 냄새, 손님이 오가는 소리가 음식의 기대감을 먼저 만듭니다.',
+            '점심과 저녁 시간대에는 붐빌 수 있으므로 일정이 촘촘하다면 식사 시간을 조금 앞당기는 편이 좋습니다. 여러 명이 함께 간다면 한 마리를 나눠 먹고 부족하면 밥이나 사리를 더하는 방식이 무난합니다.'
+          ]
+        },
+        {
+          eyebrow: 'AFTER TASTE',
+          title: '마지막은 남은 양념과 밥으로 기억하기',
+          image: 'assets/heotjesabap.png',
+          paragraphs: [
+            '안동시 공식 음식 설명에서도 닭고기와 당면, 감자를 먼저 먹고 남은 야채와 국물에 밥을 비벼 먹는 방식을 안동찜닭의 즐거움으로 소개합니다. 이 마지막 한 숟갈이 안동찜닭을 단순한 닭요리보다 푸짐한 식사로 기억하게 만듭니다.',
+            '식사 뒤에는 바로 차를 타고 이동하기보다 원도심을 잠깐 걷거나 월영교 야경으로 이어가면 좋습니다. 시장의 활기와 강변의 밤이 이어지면서 안동의 첫날 저녁 동선이 자연스럽게 완성됩니다.'
+          ]
+        }
+      ],
       sources: [
+        { label: '안동시 농업기술센터 안동찜닭', url: 'https://www.andong.go.kr/agritec/contents.do?mId=0302060000' },
         { label: '투어안동', url: 'https://www.tourandong.com/public/' },
         { label: '안동시청', url: 'https://www.andong.go.kr/main.do' }
       ]
