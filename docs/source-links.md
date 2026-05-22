@@ -264,6 +264,23 @@
   - 식당마다 안동국시/안동국수/건진국수 표기와 조리법이 다를 수 있어 메뉴 설명과 영업시간 확인을 안내했다.
   - 전용 국수 이미지가 없어 기존 음식/한옥 이미지를 임시 사용했다. 실제 국시 사진 확보 시 `image`, `richImages`를 교체하면 된다.
 
+### 간고등어
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 간고등어 설명, `richImages`, `richSections`, 출처 보강
+- 참고 출처:
+  - 안동시청: https://www.andong.go.kr/main.do
+  - 투어안동: https://www.tourandong.com/public/
+  - 한국민족문화대백과사전 안동간고등어: https://encykorea.aks.ac.kr/Article/E0080004
+  - 투어안동 Tasty Andong PDF: https://www.tourandong.com/_cs_file_/pdfbook/97/%ED%85%8C%EC%9D%B4%EC%8A%A4%ED%8B%B0.pdf
+  - 이동삼 안동간고등어: https://www.godunga.co.kr/
+  - 한국은행 안동지역 문화관광산업 자료: https://file-cdn.bok.or.kr/ucms/20dba8914be2d6b4314ab6c256375366/1/tempFile.pdf
+- 메모:
+  - 내륙 도시의 저장 음식, 의례 음식, 출향인의 향수, 포장 특산품, 간잽이 기술을 중심으로 설명했다.
+  - 특정 업체 홍보처럼 보이지 않도록 브랜드 정보는 출처와 역사 설명에 제한적으로 사용했다.
+  - 선물용 제품은 보관 방식, 이동 시간, 택배 가능 여부를 확인하도록 안내했다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.
