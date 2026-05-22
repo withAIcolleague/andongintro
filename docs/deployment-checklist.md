@@ -50,9 +50,10 @@ python -m http.server 8010
 
 ## GitHub Pages 설정
 
-- Source: `main` branch
-- Folder: repository root
+- Source: `GitHub Actions`
+- Workflow: `.github/workflows/pages.yml`
 - 사이트가 공개된 뒤 `sitemap.xml`과 `robots.txt`가 브라우저에서 직접 열리는지 확인한다.
+- 공개 URL에서 `404 Site not found`가 보이면 Pages 설정 또는 첫 배포 완료 여부를 먼저 확인한다.
 
 ## 콘텐츠 추가 후 반복 작업
 

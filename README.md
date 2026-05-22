@@ -63,10 +63,12 @@ node --check scripts/update-sitemap.mjs
 
 ## 배포
 
-정적 HTML 사이트이므로 GitHub Pages에서 루트 디렉터리를 그대로 배포할 수 있습니다. 현재 기본 검색 수집 URL은 다음 경로를 기준으로 생성됩니다.
+정적 HTML 사이트이며, `main` 브랜치에 push되면 `.github/workflows/pages.yml`이 GitHub Pages 배포를 실행합니다. 현재 기본 검색 수집 URL은 다음 경로를 기준으로 생성됩니다.
 
 ```text
 https://withaicolleague.github.io/andongintro
 ```
+
+GitHub repository settings에서 Pages source를 `GitHub Actions`로 설정합니다. 공개 URL이 `404 Site not found`로 보이면 Pages가 아직 활성화되지 않았거나 첫 배포가 끝나지 않은 상태입니다.
 
 배포 주소가 바뀌면 `SITE_URL`로 `sitemap.xml`과 `robots.txt`를 다시 생성한 뒤 커밋합니다.
