@@ -231,6 +231,12 @@ HTML 파일명: `course-new-course-id.html`
 
 ## 8. 검증 체크리스트
 
+콘텐츠 데이터와 HTML 파일을 추가한 뒤 페이지별 검색/공유 메타데이터를 갱신한다.
+
+```bash
+node scripts/update-seo.mjs
+```
+
 변경 후 로컬 서버에서 확인한다.
 
 ```bash
@@ -241,6 +247,7 @@ python -m http.server 8010
 
 - `index.html`에서 새 카드가 적절한 분야에 보이는가
 - 카드 클릭 시 새 개별 페이지로 이동하는가
+- 개별 HTML의 `<title>`, `description`, `og:title`, `og:description`, `og:image`가 콘텐츠에 맞게 갱신되었는가
 - 개별 페이지의 히어로, 글/사진 섹션, 추가 감성 섹션, Traveler's Note가 보이는가
 - 모바일 폭에서 가로 스크롤이 생기지 않는가
 - 축제/행사라면 공식 출처 링크가 보이는가
