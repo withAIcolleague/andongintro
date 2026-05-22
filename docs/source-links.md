@@ -298,6 +298,22 @@
   - 구입 시 손질 가능 여부, 삶은 문어/생물 여부, 보관과 이동 시간, 포장 상태 확인을 안내했다.
   - 전용 문어 이미지가 없어 기존 음식/한옥 이미지를 임시 사용했다. 실제 시장·문어 사진 확보 시 `image`, `richImages`를 교체하면 된다.
 
+### 종가음식
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 종가음식 설명, `richImages`, `richSections`, 출처 보강
+- 참고 출처:
+  - 안동시 농업기술센터 안동지방음식의 특징: https://www.andong.go.kr/agritec/contents.do?mId=0300000000
+  - 안동종가문화원: https://adjongga.kr/
+  - 안동종가음식체험관 예미정: https://yemijeong.com/web/bbs/content.php?co_id=pa1_04
+  - 투어안동 Tasty Andong PDF: https://www.tourandong.com/_cs_file_/pdfbook/100/Tasty_andong.pdf
+  - 투어안동: https://www.tourandong.com/public/
+- 메모:
+  - 종가음식은 상시 식당 메뉴가 아니라 손님맞이, 불천위 제사 제수음식, 종가 내림음식, 가양주와 연결되는 예약형 문화 경험으로 설명했다.
+  - 운영처별 제공 음식, 인원, 가격, 예약 가능일이 달라질 수 있어 방문 전 확인을 강조했다.
+  - 전용 종가음식 사진이 없어 한옥·헛제사밥·서원·안동소주 이미지를 임시 사용했다. 실제 체험 사진 확보 시 `image`, `richImages`를 교체하면 된다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.
