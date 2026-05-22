@@ -100,7 +100,18 @@
 - 일정: 2026.04.01(수) ~ 2026.04.05(일)
 - 장소: 탈춤공원 벚꽃길 일원
 - 상태: 2026-05-21 기준 종료
-- 근거: https://www.tourandong.com/public/sub5/sub3.cshtml?id=J3qRHIvUXsye6srtIKiY2Gp4phfPJYDRk9g6SNUBwUM&page=1&search=&searchCategory=&searchKey=1
+- 반영 위치:
+  - `assets/site-data.js`: 안동벚꽃축제 설명, `richImages`, `richSections`, 출처 보강
+- 반영 주제: 낙동강변 벚꽃길 산책, 낮과 밤의 축제 분위기, 도심 식사·월영교 야경 연계, 다음 봄 시즌 갱신 포인트.
+- 근거:
+  - 투어안동 관광소식: https://www.tourandong.com/public/sub5/sub3.cshtml?id=J3qRHIvUXsye6srtIKiY2Gp4phfPJYDRk9g6SNUBwUM&page=1&search=&searchCategory=&searchKey=1
+  - 안동시청: https://www.andong.go.kr/main.do
+  - 한국정신문화재단: https://www.kfce.or.kr/
+  - 경북매일 2026 안동벚꽃축제: https://www.kbmaeil.com/article/20260331500450
+- 메모:
+  - 2026년 행사는 이미 종료되었으므로 랜딩과 상세 모두 `종료` 상태를 유지했다.
+  - 벚꽃 축제는 해마다 개화 상황과 일정이 달라지므로 다음 시즌에는 공식 관광소식과 현장 개화 정보를 함께 확인해야 한다.
+  - 전용 축제 현장 이미지가 부족해 벚꽃·야경·월영교·찜닭 이미지를 임시 사용했다. 실제 낙동강변 벚꽃길과 야간 조명 사진 확보 시 `image`, `richImages`를 교체하면 된다.
 
 ## 명소 콘텐츠 보강
 
