@@ -99,14 +99,14 @@
             <p>${storyFirstText(item)}</p>
           </div>
           <figure class="story-photo">
-            <span class="story-img" style="background-image: url('${item.image}')"></span>
+            <span class="story-img" style="background-image: url('${primaryStoryImage(item)}')"></span>
           </figure>
         </div>
       </section>
       <section class="story-section">
         <div class="story-grid reverse">
           <figure class="story-photo">
-            <span class="story-img" style="background-image: url('${supportImage(item)}')"></span>
+            <span class="story-img" style="background-image: url('${secondaryStoryImage(item)}')"></span>
           </figure>
           <div class="story-copy">
             <span class="eyebrow">${storyEyebrow(item.category, 1)}</span>
@@ -272,6 +272,23 @@
     if (item.id === 'wolyeonggyo' || item.id === 'andongdam') return 'assets/wolyeonggyo.png';
     if (item.id === 'susanggil' || item.id === 'yekki') return 'assets/susanggil.jpg';
     return 'assets/hanokmaul.jpg';
+  }
+
+  function storyImageCandidates(item) {
+    return [
+      ...(item.richImages || []),
+      supportImage(item),
+      ...((item.richSections || []).map((section) => section.image))
+    ].filter(Boolean);
+  }
+
+  function primaryStoryImage(item) {
+    return storyImageCandidates(item).find((image) => image !== item.image) || item.image;
+  }
+
+  function secondaryStoryImage(item) {
+    const primary = primaryStoryImage(item);
+    return storyImageCandidates(item).find((image) => image !== item.image && image !== primary) || supportImage(item);
   }
 
   function storySecondTitle(item) {
