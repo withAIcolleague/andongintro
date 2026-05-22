@@ -57,6 +57,18 @@ python -m http.server 8010
 - 사이트가 공개된 뒤 `sitemap.xml`과 `robots.txt`가 브라우저에서 직접 열리는지 확인한다.
 - 공개 URL에서 `404 Site not found`가 보이면 Pages 설정 또는 첫 배포 완료 여부를 먼저 확인한다.
 
+로컬에서 Pages API와 공개 URL 상태를 함께 확인한다.
+
+```bash
+node scripts/check-pages-status.mjs
+```
+
+배포 전 점검에서 공개 실패를 명확히 실패로 처리해야 한다면 `--strict`를 붙인다.
+
+```bash
+node scripts/check-pages-status.mjs --strict
+```
+
 ## 배포 실패 시 확인
 
 2026-05-22 확인 기준, 공개 URL `https://withaicolleague.github.io/andongintro/`는 아직 `404 Site not found` 상태였다.
@@ -80,4 +92,5 @@ GitHub Actions의 `Deploy static site to GitHub Pages` workflow는 먼저 GitHub
 ```bash
 node scripts/update-seo.mjs
 node scripts/update-sitemap.mjs
+node scripts/update-image-inventory.mjs
 ```

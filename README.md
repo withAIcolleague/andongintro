@@ -31,6 +31,7 @@ python -m http.server 8010
 ```bash
 node scripts/update-seo.mjs
 node scripts/update-sitemap.mjs
+node scripts/update-image-inventory.mjs
 ```
 
 배포 도메인이 기본값과 다르면 sitemap 생성 시 `SITE_URL`을 지정한다.
@@ -51,6 +52,8 @@ $env:SITE_URL="https://example.com"; node scripts/update-sitemap.mjs; Remove-Ite
 node --check assets/app.js
 node --check scripts/update-seo.mjs
 node --check scripts/update-sitemap.mjs
+node --check scripts/update-image-inventory.mjs
+node --check scripts/check-pages-status.mjs
 node --check scripts/validate-site.mjs
 node scripts/validate-site.mjs
 ```
@@ -72,6 +75,12 @@ https://withaicolleague.github.io/andongintro
 ```
 
 GitHub repository settings에서 Pages source를 `GitHub Actions`로 설정합니다. 공개 URL이 `404 Site not found`로 보이면 Pages가 아직 활성화되지 않았거나 첫 배포가 끝나지 않은 상태입니다.
+
+공개 상태는 다음 명령으로 확인합니다.
+
+```bash
+node scripts/check-pages-status.mjs
+```
 
 배포 주소가 바뀌면 `SITE_URL`로 `sitemap.xml`과 `robots.txt`를 다시 생성한 뒤 커밋합니다.
 

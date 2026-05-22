@@ -271,6 +271,23 @@ function validateImageInventory() {
   execSync('node scripts/update-image-inventory.mjs --check', { stdio: 'pipe' });
 }
 
+function validateDeploymentDocs() {
+  const docs = [
+    ['README.md', fs.readFileSync('README.md', 'utf8')],
+    ['docs/deployment-checklist.md', fs.readFileSync('docs/deployment-checklist.md', 'utf8')]
+  ];
+  const requiredSnippets = [
+    'node scripts/check-pages-status.mjs',
+    'node scripts/update-image-inventory.mjs'
+  ];
+
+  for (const [path, text] of docs) {
+    for (const snippet of requiredSnippets) {
+      if (!text.includes(snippet)) fail(`${path} missing deployment workflow snippet: ${snippet}`);
+    }
+  }
+}
+
 function validateSourceUi() {
   const app = fs.readFileSync('assets/app.js', 'utf8');
   const css = fs.readFileSync('assets/site.css', 'utf8');
@@ -329,6 +346,7 @@ validateSources();
 validateSitemap();
 validateTrackedArtifacts();
 validateImageInventory();
+validateDeploymentDocs();
 validateSourceUi();
 validateAuthoringGuide();
 

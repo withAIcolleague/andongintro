@@ -28,6 +28,7 @@ jobs:
           node --check scripts/update-seo.mjs
           node --check scripts/update-sitemap.mjs
           node --check scripts/update-image-inventory.mjs
+          node --check scripts/check-pages-status.mjs
           node --check scripts/validate-site.mjs
 
       - name: Validate generated site files
