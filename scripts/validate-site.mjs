@@ -239,6 +239,7 @@ function validateSources() {
 function validateSitemap() {
   assertFile('sitemap.xml');
   assertFile('robots.txt');
+  execSync('node scripts/update-sitemap.mjs --check', { stdio: 'pipe' });
 
   const sitemap = fs.readFileSync('sitemap.xml', 'utf8');
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);

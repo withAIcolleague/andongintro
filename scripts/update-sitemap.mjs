@@ -66,5 +66,20 @@ Allow: /
 Sitemap: ${baseUrl}/sitemap.xml
 `;
 
-fs.writeFileSync('sitemap.xml', sitemap);
-fs.writeFileSync('robots.txt', robots);
+function assertCurrent(path, expected) {
+  if (!fs.existsSync(path)) {
+    throw new Error(`${path} does not exist. Run node scripts/update-sitemap.mjs`);
+  }
+  const current = fs.readFileSync(path, 'utf8');
+  if (current !== expected) {
+    throw new Error(`${path} is out of date. Run node scripts/update-sitemap.mjs`);
+  }
+}
+
+if (process.argv.includes('--check')) {
+  assertCurrent('sitemap.xml', sitemap);
+  assertCurrent('robots.txt', robots);
+} else {
+  fs.writeFileSync('sitemap.xml', sitemap);
+  fs.writeFileSync('robots.txt', robots);
+}
