@@ -327,6 +327,7 @@ a {
   inset: 0;
   background-position: center;
   background-size: cover;
+  background-color: #d8d0c3;
   transition: transform 0.55s ease;
 }
 
@@ -470,6 +471,7 @@ a {
   width: 100%;
   background-position: center;
   background-size: cover;
+  background-color: #d8d0c3;
   filter: saturate(0.88) contrast(1.02);
 }
 
@@ -487,6 +489,7 @@ a {
   min-height: 210px;
   background-position: center;
   background-size: cover;
+  background-color: #d8d0c3;
 }
 
 .detail-content {

@@ -35,10 +35,14 @@
       .replace(/>/g, '&gt;');
   }
 
+  function lazyBackgroundAttrs(image) {
+    return `data-bg="${escapeAttr(image)}"`;
+  }
+
   function card(item, className = 'choice-card') {
     return `
       <a class="${className}" href="${itemPath(item)}" aria-label="${escapeAttr(item.title)} 상세 페이지로 이동">
-        <span class="card-image" style="background-image: url('${item.image}')" aria-hidden="true"></span>
+        <span class="card-image js-lazy-bg" ${lazyBackgroundAttrs(item.image)} aria-hidden="true"></span>
         <span class="card-body">
           <h4>${item.title}</h4>
         </span>
@@ -67,7 +71,7 @@
   function renderEventSummary(root) {
     root.innerHTML = data.events.slice(0, 5).map((item) => `
       <a class="summary-card" href="${itemPath(item)}" aria-label="${escapeAttr(item.title)} 상세 페이지로 이동">
-        <span class="card-image" style="background-image: url('${item.image}')" aria-hidden="true"></span>
+        <span class="card-image js-lazy-bg" ${lazyBackgroundAttrs(item.image)} aria-hidden="true"></span>
         <span class="card-body">
           <h4>${item.title}</h4>
         </span>
@@ -107,14 +111,14 @@
             <p>${storyFirstText(item)}</p>
           </div>
           <figure class="story-photo" role="img" aria-label="${escapeAttr(item.title)}의 분위기를 보여주는 사진">
-            <span class="story-img" style="background-image: url('${primaryStoryImage(item)}')" aria-hidden="true"></span>
+            <span class="story-img js-lazy-bg" ${lazyBackgroundAttrs(primaryStoryImage(item))} aria-hidden="true"></span>
           </figure>
         </div>
       </section>
       <section class="story-section">
         <div class="story-grid reverse">
           <figure class="story-photo" role="img" aria-label="${escapeAttr(item.title)}와 함께 볼 장면 사진">
-            <span class="story-img" style="background-image: url('${secondaryStoryImage(item)}')" aria-hidden="true"></span>
+            <span class="story-img js-lazy-bg" ${lazyBackgroundAttrs(secondaryStoryImage(item))} aria-hidden="true"></span>
           </figure>
           <div class="story-copy">
             <span class="eyebrow">${storyEyebrow(item.category, 1)}</span>
@@ -161,7 +165,7 @@
   function richSectionPhoto(section) {
     return `
       <figure class="story-photo story-photo-wide" role="img" aria-label="${escapeAttr(section.title)} 사진">
-        <span class="story-img" style="background-image: url('${section.image}')" aria-hidden="true"></span>
+        <span class="story-img js-lazy-bg" ${lazyBackgroundAttrs(section.image)} aria-hidden="true"></span>
       </figure>
     `;
   }
@@ -372,7 +376,7 @@
     const facts = detailFacts(item, type);
     return `
       <article class="detail-card" id="${item.id}">
-        <div class="detail-image" style="background-image: url('${item.image}')" role="img" aria-label="${escapeAttr(item.title)} 대표 사진"></div>
+        <div class="detail-image js-lazy-bg" ${lazyBackgroundAttrs(item.image)} role="img" aria-label="${escapeAttr(item.title)} 대표 사진"></div>
         <div class="detail-content">
           <span class="card-meta">${status(item)}${tags(item)}</span>
           <h3>${item.title}</h3>
@@ -438,12 +442,38 @@
     `).join('');
   }
 
+  function initLazyBackgrounds() {
+    const targets = Array.from(document.querySelectorAll('[data-bg]'));
+    const load = (element) => {
+      const image = element.getAttribute('data-bg');
+      if (!image) return;
+      element.style.backgroundImage = `url("${image.replace(/"/g, '\\"')}")`;
+      element.removeAttribute('data-bg');
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(load);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        load(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '240px 0px' });
+
+    targets.forEach((target) => observer.observe(target));
+  }
+
   function init() {
     document.querySelectorAll('[data-render="field-board"]').forEach(renderFieldBoard);
     document.querySelectorAll('[data-render="event-summary"]').forEach(renderEventSummary);
     document.querySelectorAll('[data-page]').forEach((root) => renderDetailPage(root, root.dataset.page));
     document.querySelectorAll('[data-item]').forEach(renderItemPage);
     document.querySelectorAll('[data-render="event-sources"]').forEach(renderSources);
+    initLazyBackgrounds();
   }
 
   document.addEventListener('DOMContentLoaded', init);
