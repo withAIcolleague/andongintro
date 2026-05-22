@@ -19,6 +19,7 @@
 - 안동문화재야행/월영야행: https://adnighttrip.com/
 - 안동시티투어: https://www.gbtour.kr/coding/sub2/sub2_2.asp
 - 하회마을: https://hahoe.or.kr
+- 하회별신굿탈놀이보존회: https://www.hahoemask.co.kr/
 - 도산서원: https://www.andong.go.kr
 - 병산서원: https://www.byeongsan.net
 - 봉정사: https://www.bongjeongsa.org
@@ -30,6 +31,15 @@
 - 2026-05-22 기준 `assets/site-data.js`의 음식, 장소, 축제, 코스 전 항목에 상세 문단, 추천 대상, 함께 볼 곳, 방문 전 메모, 공식/준공식 출처를 추가했다.
 - 음식·장소·코스의 운영시간, 요금, 예약 여부는 항목별 변동성이 커서 상세 본문에는 고정값으로 단정하지 않고 공식 출처 확인을 유도한다.
 - 축제는 일정이 확인된 항목과 확인 필요 항목을 구분해 표시한다.
+
+### 하회마을 콘텐츠 보강
+
+- 2026-05-22 기준 하회마을 개별 페이지에 직접 작성한 `richSections` 4개를 추가했다.
+- 반영 주제: 부용대 조망, 마을 골목 산책, 하회별신굿탈놀이, 병산서원 연계 동선.
+- 참고:
+  - 하회마을 공식 사이트: https://hahoe.or.kr
+  - 하회별신굿탈놀이보존회: https://www.hahoemask.co.kr/
+  - 투어안동 유네스코 안동 리플렛: https://www.tourandong.com/_cs_file_/pdfbook/82/%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%EC%95%88%EB%8F%99%EB%A6%AC%ED%94%8C%EB%A0%9B.pdf
 
 ### 안동국제탈춤페스티벌 2026
 
