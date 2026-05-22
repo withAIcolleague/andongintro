@@ -27,10 +27,18 @@
     return `${item.category}-${item.id}.html`;
   }
 
+  function escapeAttr(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
   function card(item, className = 'choice-card') {
     return `
-      <a class="${className}" href="${itemPath(item)}">
-        <span class="card-image" style="background-image: url('${item.image}')"></span>
+      <a class="${className}" href="${itemPath(item)}" aria-label="${escapeAttr(item.title)} 상세 페이지로 이동">
+        <span class="card-image" style="background-image: url('${item.image}')" aria-hidden="true"></span>
         <span class="card-body">
           <h4>${item.title}</h4>
         </span>
@@ -58,8 +66,8 @@
 
   function renderEventSummary(root) {
     root.innerHTML = data.events.slice(0, 5).map((item) => `
-      <a class="summary-card" href="${itemPath(item)}">
-        <span class="card-image" style="background-image: url('${item.image}')"></span>
+      <a class="summary-card" href="${itemPath(item)}" aria-label="${escapeAttr(item.title)} 상세 페이지로 이동">
+        <span class="card-image" style="background-image: url('${item.image}')" aria-hidden="true"></span>
         <span class="card-body">
           <h4>${item.title}</h4>
         </span>
@@ -83,7 +91,7 @@
 
     document.title = `${item.title} | 안동 안내`;
     root.innerHTML = `
-      <section class="page-hero" style="--page-image: url('../${item.image}')">
+      <section class="page-hero" style="--page-image: url('../${item.image}')" aria-label="${escapeAttr(item.title)} 대표 이미지와 소개">
         <div class="page-hero-inner">
           <span class="eyebrow">${typeLabel(item.category)}</span>
           <h1>${item.title}</h1>
@@ -98,15 +106,15 @@
             <p>${item.detail || item.summary}</p>
             <p>${storyFirstText(item)}</p>
           </div>
-          <figure class="story-photo">
-            <span class="story-img" style="background-image: url('${primaryStoryImage(item)}')"></span>
+          <figure class="story-photo" role="img" aria-label="${escapeAttr(item.title)}의 분위기를 보여주는 사진">
+            <span class="story-img" style="background-image: url('${primaryStoryImage(item)}')" aria-hidden="true"></span>
           </figure>
         </div>
       </section>
       <section class="story-section">
         <div class="story-grid reverse">
-          <figure class="story-photo">
-            <span class="story-img" style="background-image: url('${secondaryStoryImage(item)}')"></span>
+          <figure class="story-photo" role="img" aria-label="${escapeAttr(item.title)}와 함께 볼 장면 사진">
+            <span class="story-img" style="background-image: url('${secondaryStoryImage(item)}')" aria-hidden="true"></span>
           </figure>
           <div class="story-copy">
             <span class="eyebrow">${storyEyebrow(item.category, 1)}</span>
@@ -152,8 +160,8 @@
 
   function richSectionPhoto(section) {
     return `
-      <figure class="story-photo story-photo-wide">
-        <span class="story-img" style="background-image: url('${section.image}')"></span>
+      <figure class="story-photo story-photo-wide" role="img" aria-label="${escapeAttr(section.title)} 사진">
+        <span class="story-img" style="background-image: url('${section.image}')" aria-hidden="true"></span>
       </figure>
     `;
   }
@@ -364,13 +372,13 @@
     const facts = detailFacts(item, type);
     return `
       <article class="detail-card" id="${item.id}">
-        <div class="detail-image" style="background-image: url('${item.image}')"></div>
+        <div class="detail-image" style="background-image: url('${item.image}')" role="img" aria-label="${escapeAttr(item.title)} 대표 사진"></div>
         <div class="detail-content">
           <span class="card-meta">${status(item)}${tags(item)}</span>
           <h3>${item.title}</h3>
           <p>${item.detail || item.summary}</p>
           <div class="facts">${facts}</div>
-          <a class="detail-link" href="${itemPath(item)}">자세히 보기</a>
+          <a class="detail-link" href="${itemPath(item)}" aria-label="${escapeAttr(item.title)} 상세 페이지로 이동">자세히 보기</a>
         </div>
       </article>
     `;
