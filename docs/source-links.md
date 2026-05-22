@@ -198,6 +198,22 @@
   - 영산암은 봉정사의 부속 암자이자 정원 감상이 중요한 지점으로 설명했다.
   - 전용 봉정사 이미지가 없어 기존 한옥/서원/수변 이미지를 임시 사용했다. 실제 봉정사·영산암 사진 자산 확보 시 `image`, `richImages`를 교체하면 된다.
 
+### 안동구시장
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 안동구시장 설명, `richImages`, `richSections`, 출처 보강
+- 참고 출처:
+  - 투어안동: https://www.tourandong.com/public/
+  - 안동시 공식 블로그 안내: https://blog.naver.com/andongcity00/223327471610
+  - K전통시장페어 디렉토리북: https://www.xn--3e0bz5qrvd4vh91a71ocybuvaz82h.com/thema/aThema024a/download/K%EC%A0%84%ED%86%B5%EC%8B%9C%EC%9E%A5%ED%8E%98%EC%96%B4_%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%B6%81_%EC%A0%84%EC%8B%9C%ED%8C%90%EB%A7%A4%EC%A1%B4.pdf
+  - 안동시장 찜닭골목 관광 안내: https://www.mytripkorea.com/travel/2611137?local=ko
+  - 안동구시장 고객지원센터 보도: https://www.ajunews.com/view/20141217155540744
+- 메모:
+  - 찜닭골목, 전통시장 생활감, 고객지원센터/쉼터, 원도심 미식 동선, 주차·대기·점포별 영업시간 변동성을 반영했다.
+  - 특정 점포 추천은 변동성이 높아 피하고, 시장 전체 이용 흐름과 방문 전 확인 포인트 중심으로 구성했다.
+  - 전용 시장 이미지가 부족해 기존 음식/수변 이미지를 임시 사용했다. 실제 시장·찜닭골목 사진 확보 시 `image`, `richImages`를 교체하면 된다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.
