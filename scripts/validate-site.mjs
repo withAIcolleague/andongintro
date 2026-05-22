@@ -29,6 +29,7 @@ const allowedStatuses = {
   place: ['상시'],
   course: ['추천', '일정 확인', '노선 확인']
 };
+const expectedNavLinks = '<div class="nav-links"><a href="index.html#taste" aria-label="안동의 맛">맛</a><a href="index.html#meot" aria-label="안동의 멋">멋</a><a href="index.html#heung" aria-label="안동의 흥">흥</a><a href="index.html#night" aria-label="안동의 밤">밤</a><a href="index.html#route" aria-label="안동의 길">길</a></div>';
 
 function fail(message) {
   throw new Error(message);
@@ -138,6 +139,7 @@ function validateHtml() {
     }
     if (html.includes('20260521-rich')) fail(`${file} still uses old asset version`);
     if (!html.includes('class="skip-link"')) fail(`${file} missing skip link`);
+    validateNavigation(file, html);
     if (file !== '404.html') {
       validateSeoEnhancements(file, html, itemsByPath.get(file) || null);
     }
@@ -160,6 +162,14 @@ function validateHtml() {
       fail(`${file} data-item does not match ${item.category}:${item.id}`);
     }
   }
+}
+
+function validateNavigation(file, html) {
+  const nav = html.match(/<div class="nav-links">[\s\S]*?<\/div>/);
+  if (!nav) fail(`${file} missing nav links`);
+  const normalized = nav[0].replace(/\s+/g, '');
+  const expected = expectedNavLinks.replace(/\s+/g, '');
+  if (normalized !== expected) fail(`${file} nav links do not match the shared template`);
 }
 
 function validateSeoEnhancements(file, html, item = null) {
@@ -317,6 +327,7 @@ function validateAuthoringGuide() {
   const guide = fs.readFileSync(path, 'utf8');
   const requiredSnippets = [
     '<a class="skip-link" href="#content">본문으로 건너뛰기</a>',
+    expectedNavLinks,
     '<main id="content" tabindex="-1" data-item="food:new-food-id"></main>',
     '<main id="content" tabindex="-1" data-item="place:new-place-id"></main>',
     '<main id="content" tabindex="-1" data-item="event:new-event-id"></main>',
