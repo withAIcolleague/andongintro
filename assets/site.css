@@ -420,6 +420,10 @@ a {
   background: #e8e8e8;
 }
 
+.story-warm {
+  background: #f6f0e6;
+}
+
 .story-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -455,6 +459,10 @@ a {
   background: #d6d6d6;
 }
 
+.story-photo-wide {
+  min-height: 390px;
+}
+
 .story-img {
   display: block;
   min-height: 420px;
@@ -462,6 +470,10 @@ a {
   background-position: center;
   background-size: cover;
   filter: saturate(0.88) contrast(1.02);
+}
+
+.story-photo-wide .story-img {
+  min-height: 390px;
 }
 
 .detail-card,
@@ -630,6 +642,11 @@ a {
   .story-photo,
   .story-img {
     min-height: 280px;
+  }
+
+  .story-photo-wide,
+  .story-photo-wide .story-img {
+    min-height: 260px;
   }
 
   .footer-links {

@@ -116,6 +116,7 @@
           </div>
         </div>
       </section>
+      ${renderRichSections(item)}
       <section class="section compact-section">
         <div class="section-head">
           <span class="eyebrow">TRAVELER'S NOTE</span>
@@ -127,6 +128,116 @@
         </div>
       </section>
     `;
+  }
+
+  function renderRichSections(item) {
+    return richSections(item).map((section, index) => `
+      <section class="story-section ${index % 2 === 0 ? 'story-warm' : 'story-muted'}">
+        <div class="story-grid ${index % 2 === 0 ? '' : 'reverse'}">
+          ${index % 2 === 0 ? richSectionCopy(section) + richSectionPhoto(section) : richSectionPhoto(section) + richSectionCopy(section)}
+        </div>
+      </section>
+    `).join('');
+  }
+
+  function richSectionCopy(section) {
+    return `
+      <div class="story-copy">
+        <span class="eyebrow">${section.eyebrow}</span>
+        <h2>${section.title}</h2>
+        ${section.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join('')}
+      </div>
+    `;
+  }
+
+  function richSectionPhoto(section) {
+    return `
+      <figure class="story-photo story-photo-wide">
+        <span class="story-img" style="background-image: url('${section.image}')"></span>
+      </figure>
+    `;
+  }
+
+  function richSections(item) {
+    if (item.richSections && item.richSections.length) return item.richSections;
+
+    return [
+      {
+        eyebrow: richEyebrow(item.category, 0),
+        title: richFirstTitle(item),
+        image: richImage(item, 0),
+        paragraphs: [
+          richFirstParagraph(item),
+          richSecondParagraph(item)
+        ]
+      },
+      {
+        eyebrow: richEyebrow(item.category, 1),
+        title: richSecondTitle(item),
+        image: richImage(item, 1),
+        paragraphs: [
+          richThirdParagraph(item),
+          item.visitNote || noteText(item)
+        ]
+      }
+    ];
+  }
+
+  function richEyebrow(type, index) {
+    const labels = {
+      food: ['LOCAL TABLE', 'TASTE NOTE'],
+      place: ['SCENE', 'WALK NOTE'],
+      event: ['LIVE MOMENT', 'CHECK POINT'],
+      course: ['DAY FLOW', 'ROUTE NOTE']
+    };
+    return (labels[type] || ['ANDONG', 'NOTE'])[index];
+  }
+
+  function richFirstTitle(item) {
+    if (item.category === 'food') return `${item.title}을 맛보는 순간`;
+    if (item.category === 'event') return `${item.title}이 열리는 날의 분위기`;
+    if (item.category === 'course') return `${item.title}의 하루 흐름`;
+    return `${item.title}을 천천히 보는 법`;
+  }
+
+  function richSecondTitle(item) {
+    if (item.category === 'food') return '상차림 너머의 이야기';
+    if (item.category === 'event') return '방문 전에 확인할 장면';
+    if (item.category === 'course') return '길 위에서 놓치지 않을 것';
+    return '사진보다 오래 남는 장면';
+  }
+
+  function richFirstParagraph(item) {
+    if (item.category === 'food') return `${item.where || '안동 곳곳'}에서 만나는 ${item.title}은 여행 중간에 잠깐 먹는 메뉴가 아니라, 안동의 생활 방식과 손님맞이 문화를 함께 느끼게 하는 경험입니다.`;
+    if (item.category === 'event') return `${item.title}은 일정과 장소가 맞아야 온전히 즐길 수 있는 콘텐츠입니다. 공연, 체험, 이동 동선을 미리 맞춰두면 현장에서 보내는 시간이 훨씬 부드러워집니다.`;
+    if (item.category === 'course') return `${item.route || item.title}의 흐름은 대표 장면을 무리 없이 잇는 데 초점을 둡니다. 이동보다 머무는 시간을 확보하면 코스의 만족도가 높아집니다.`;
+    return `${item.area || '안동'}의 흐름 안에서 ${item.title}을 보면 단일 명소보다 더 넓은 장면이 보입니다. 주변 장소와 함께 읽을 때 이 콘텐츠의 결이 살아납니다.`;
+  }
+
+  function richSecondParagraph(item) {
+    if (item.bestFor) return `${item.bestFor}에게 특히 잘 맞고, ${item.nearby || '주변 콘텐츠'}와 함께 묶으면 일정의 흐름이 자연스럽습니다.`;
+    return storyLead(item);
+  }
+
+  function richThirdParagraph(item) {
+    if (item.category === 'food') return `${item.title}은 맛의 강도보다 어떤 장소에서, 누구와, 어느 일정 사이에 먹는지가 중요합니다. 처음 방문자는 대표 메뉴로 접근하고, 두 번째 방문부터는 시장과 전통 상차림의 차이를 비교해보면 좋습니다.`;
+    if (item.category === 'event') return `축제와 행사는 같은 이름이어도 해마다 프로그램과 운영 방식이 달라질 수 있습니다. 그래서 이 페이지는 분위기와 동선은 풍성하게 보여주되, 일정과 장소는 공식 출처 확인을 기준으로 남겨둡니다.`;
+    if (item.category === 'course') return `코스는 정답이 아니라 기준선입니다. 계절, 동행자, 교통수단에 따라 한두 지점을 빼거나 더해도 좋고, 마지막에는 식사나 산책처럼 여운이 남는 장면을 배치하는 편이 좋습니다.`;
+    return `${item.title}에서 좋은 장면은 한 번에 보이지 않을 때가 많습니다. 입구에서 전체를 훑고, 중간에는 세부를 보고, 마지막에는 주변 풍경과 다시 연결해보면 장소의 인상이 오래 남습니다.`;
+  }
+
+  function richImage(item, index) {
+    if (item.richImages && item.richImages[index]) return item.richImages[index];
+
+    const images = {
+      food: ['assets/jjimdak.png', 'assets/heotjesabap.png', 'assets/soju.png'],
+      place: ['assets/hanokmaul.jpg', 'assets/hero_hahoe.png', 'assets/susanggil.jpg'],
+      event: ['assets/mask_dance.png', 'assets/wolyeonggyo.jpg', 'assets/cherry_blossom.png'],
+      course: ['assets/hero_hahoe.png', 'assets/wolyeonggyo.jpg', 'assets/yekki_village.jpg']
+    };
+
+    const candidates = [item.image, supportImage(item), ...(images[item.category] || [])];
+    return candidates[index + 1] || candidates[0] || 'assets/hero_hahoe.png';
   }
 
   function storyEyebrow(type, index) {

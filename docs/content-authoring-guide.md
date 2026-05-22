@@ -30,10 +30,51 @@ items: ['food:jjimdak', 'place:hahoe', 'event:maskdance', 'course:first-day']
 - `id`는 영문 소문자, 숫자, 하이픈만 사용한다.
 - `id`는 같은 category 안에서 중복되면 안 된다.
 - `image`는 `assets/...` 경로를 사용한다.
+- `richImages`는 개별 페이지의 추가 감성 섹션에 사용할 사진 후보 배열이다.
 - `summary`는 랜딩/히어로용 한 문장으로 짧게 쓴다.
 - `detail`은 개별 페이지 첫 번째 본문에 들어가므로 감성적인 설명을 1~2문장으로 쓴다.
+- `richSections`를 넣으면 개별 페이지에 사진+글 섹션을 원하는 만큼 직접 추가할 수 있다.
 - 실시간성이 있는 정보는 반드시 `status`, `lastChecked`, 가능하면 `sources`를 넣는다.
 - 사실 확인이 안 된 일정, 운영시간, 요금은 추정하지 말고 `확인 필요`로 둔다.
+
+## 2-1. 사진+글 감성 섹션 양식
+
+`richSections`는 선택 필드다. 입력하지 않아도 사이트가 기본 섹션을 자동 생성하지만, 콘텐츠별로 더 풍성하게 만들려면 아래처럼 직접 넣는다.
+
+```js
+richImages: [
+  'assets/example-scene-1.jpg',
+  'assets/example-scene-2.jpg'
+],
+richSections: [
+  {
+    eyebrow: 'SCENE',
+    title: '큰 제목',
+    image: 'assets/example-scene-1.jpg',
+    paragraphs: [
+      '첫 번째 문단. 사진 옆에 들어가는 감성 설명을 쓴다.',
+      '두 번째 문단. 방문자가 어떤 장면을 보면 좋은지 구체적으로 쓴다.'
+    ]
+  },
+  {
+    eyebrow: 'WALK NOTE',
+    title: '두 번째 큰 제목',
+    image: 'assets/example-scene-2.jpg',
+    paragraphs: [
+      '동선, 시간대, 함께 보면 좋은 장소를 설명한다.',
+      '운영시간이나 요금처럼 바뀌는 정보는 단정하지 않고 공식 확인을 유도한다.'
+    ]
+  }
+]
+```
+
+작성 기준:
+
+- 섹션 하나는 `eyebrow`, `title`, `image`, `paragraphs`를 모두 가진다.
+- `paragraphs`는 1~3개가 적당하다.
+- 사진은 실제 콘텐츠와 직접 관련된 이미지를 우선한다.
+- 같은 이미지를 반복 사용해야 한다면 `richImages`에는 후보 이미지를 넣고, `richSections`는 생략해도 된다.
+- 예끼마을처럼 별도 심층 페이지가 있는 콘텐츠는 `richSections`보다 개별 HTML을 직접 확장해도 된다.
 
 ## 3. 음식 템플릿
 
@@ -47,11 +88,18 @@ items: ['food:jjimdak', 'place:hahoe', 'event:maskdance', 'course:first-day']
   themeTags: ['대표 태그', '추천 상황', '권역'],
   summary: '랜딩과 히어로에 들어갈 짧은 소개 문장.',
   image: 'assets/example-food.jpg',
+  richImages: ['assets/example-food-1.jpg', 'assets/example-food-2.jpg'],
   href: 'food.html#new-food-id',
   status: '상시',
   lastChecked: '2026.05.21',
   detail: '개별 페이지의 첫 본문에 들어갈 감성적인 설명.',
+  storyTitle: '첫 번째 스토리 제목',
+  story: '첫 번째 스토리 보조 문단.',
+  contextTitle: '두 번째 스토리 제목',
+  context: '두 번째 스토리 보조 문단.',
   where: '어디서 접하면 좋은지',
+  bestFor: '추천 대상',
+  nearby: '함께 보면 좋은 곳',
   tip: '방문자에게 줄 실용 팁'
 }
 ```
@@ -193,7 +241,7 @@ python -m http.server 8010
 
 - `index.html`에서 새 카드가 적절한 분야에 보이는가
 - 카드 클릭 시 새 개별 페이지로 이동하는가
-- 개별 페이지의 히어로, 글/사진 섹션 2개, Traveler's Note가 보이는가
+- 개별 페이지의 히어로, 글/사진 섹션, 추가 감성 섹션, Traveler's Note가 보이는가
 - 모바일 폭에서 가로 스크롤이 생기지 않는가
 - 축제/행사라면 공식 출처 링크가 보이는가
 - 콘솔 오류가 없는가
