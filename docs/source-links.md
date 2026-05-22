@@ -13,6 +13,7 @@
 - 안동시청: https://www.andong.go.kr/main.do
 - 안동시 농업기술센터 안동찜닭: https://www.andong.go.kr/agritec/contents.do?mId=0302060000
 - 투어안동: https://www.tourandong.com/public/
+- 투어안동 월영교: https://www.tourandong.com/public/sub1/sub3_2.cshtml?idx=1&seq=1178
 - 투어안동 관광소식: https://www.tourandong.com/public/sub5/sub3.cshtml
 - 안동 실시간 버스정보: https://bus.andong.go.kr/
 - 한국정신문화재단: https://www.kfce.or.kr/
@@ -49,6 +50,17 @@
 - 참고:
   - 안동시 농업기술센터 안동찜닭: https://www.andong.go.kr/agritec/contents.do?mId=0302060000
   - 투어안동: https://www.tourandong.com/public/
+
+### 월영교 콘텐츠 보강
+
+- 2026-05-22 기준 월영교 개별 페이지에 직접 작성한 `richSections` 4개를 추가했다.
+- 반영 주제: 월영교 명칭의 배경, 이응태 부부와 미투리 이야기, 임청각-월영교-개목나루-안동시립박물관-낙강물길공원 낭만코스, 해 질 무렵부터 야간까지의 방문 흐름.
+- 투어안동 확인 정보:
+  - 주소: 안동시 상아동 569
+  - 규모: 길이 387m, 폭 3.6m
+  - 위치: 경상북도 안동시 상아동, 성곡동 일원
+- 참고:
+  - 투어안동 월영교: https://www.tourandong.com/public/sub1/sub3_2.cshtml?idx=1&seq=1178
 
 ### 안동국제탈춤페스티벌 2026
 

@@ -444,6 +444,7 @@ window.AndongData = {
       themeTags: ['야경', '산책', '사진'],
       summary: '낙동강 위 목교와 야경으로 유명한 도심 가까운 산책지입니다.',
       image: 'assets/wolyeonggyo.jpg',
+      richImages: ['assets/wolyeonggyo.jpg', 'assets/wolyeonggyo.png', 'assets/andong-moonlight-dzrsh.png', 'assets/hanokmaul.jpg'],
       href: 'places.html#wolyeonggyo',
       status: '상시',
       lastChecked: '2026.05.22',
@@ -457,8 +458,46 @@ window.AndongData = {
       nearby: '안동댐, 원도심 식당가, 월영야행',
       tip: '해 질 무렵부터 야간까지 머물면 분위기 변화가 큽니다.',
       visitNote: '야간에는 강변 바람이 차게 느껴질 수 있습니다. 우천·강풍 시 산책 시간을 줄이는 편이 좋습니다.',
+      richSections: [
+        {
+          eyebrow: 'NIGHT SCENE',
+          title: '강물 위에 달빛을 올려놓은 다리',
+          image: 'assets/wolyeonggyo.jpg',
+          paragraphs: [
+            '월영교는 안동 여행의 밤을 가장 쉽게 열어주는 장소입니다. 투어안동은 월영교의 이름이 댐 건설로 수몰된 월영대와 월곡면, 음달골 지명을 참고해 정해졌다고 설명합니다.',
+            '낮에는 낙동강과 안동댐 아래의 넓은 물빛이 보이고, 밤에는 조명과 다리의 실루엣이 물 위에 겹칩니다. 그래서 월영교는 사진을 찍는 곳이면서 동시에 천천히 걷는 산책지입니다.'
+          ]
+        },
+        {
+          eyebrow: 'LOVE STORY',
+          title: '원이엄마의 미투리에서 이어진 사랑 이야기',
+          image: 'assets/wolyeonggyo.png',
+          paragraphs: [
+            '월영교는 이 지역에 살았던 이응태 부부의 애틋한 사랑 이야기를 기념하는 다리로도 알려져 있습니다. 먼저 세상을 떠난 남편을 위해 아내가 자신의 머리카락과 삼줄기로 삼은 미투리의 이미지를 다리의 형상에 담았다는 설명이 전해집니다.',
+            '이 이야기를 알고 건너면 월영교는 단순한 야경 명소가 아니라 안동의 오래된 정서와 기억을 담은 장소로 읽힙니다.'
+          ]
+        },
+        {
+          eyebrow: 'WALK ROUTE',
+          title: '임청각에서 낙강물길공원까지 이어지는 낭만 코스',
+          image: 'assets/hanokmaul.jpg',
+          paragraphs: [
+            '투어안동의 월영교 낭만코스는 임청각에서 월영교, 개목나루, 안동시립박물관, 낙강물길공원으로 이어집니다. 근현대 역사, 강변 산책, 박물관, 숲길을 한 흐름으로 묶을 수 있어 짧은 체류에도 밀도가 높습니다.',
+            '시간이 넉넉하지 않다면 월영교만 왕복해도 좋고, 여유가 있다면 개목나루나 낙강물길공원까지 확장하면 안동의 밤과 물길을 더 넓게 느낄 수 있습니다.'
+          ]
+        },
+        {
+          eyebrow: 'PRACTICAL NOTE',
+          title: '해 질 무렵부터 머물면 좋은 이유',
+          image: 'assets/andong-moonlight-dzrsh.png',
+          paragraphs: [
+            '월영교는 한 시점보다 시간의 변화가 좋은 장소입니다. 해가 완전히 지기 전 도착하면 주변 산세와 물빛이 남아 있고, 조명이 켜진 뒤에는 다리의 윤곽과 강물의 반사가 또 다른 장면을 만듭니다.',
+            '투어안동 기준 월영교는 안동시 상아동 569 일원에 있으며, 길이 387m와 폭 3.6m의 목책 인도교로 소개됩니다. 야간 방문 때는 강변 바람과 귀가 동선을 함께 고려하세요.'
+          ]
+        }
+      ],
       sources: [
-        { label: '투어안동', url: 'https://www.tourandong.com/public/' },
+        { label: '투어안동 월영교', url: 'https://www.tourandong.com/public/sub1/sub3_2.cshtml?idx=1&seq=1178' },
         { label: '안동시청', url: 'https://www.andong.go.kr/main.do' }
       ]
     },
