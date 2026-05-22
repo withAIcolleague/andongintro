@@ -233,6 +233,22 @@
   - 운전 일정과 시음 안전, 체험 예약·운영일 변동성을 방문 전 확인하도록 안내했다.
   - 전용 안동소주 이미지는 `assets/soju.png`를 사용하고, 보조 이미지는 기존 음식/수변 이미지를 임시 사용했다.
 
+### 헛제사밥
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 헛제사밥 설명, `richImages`, `richSections`, 출처 보강
+- 참고 출처:
+  - 투어안동: https://www.tourandong.com/public/
+  - 안동시 농업기술센터 안동지방음식의 특징: https://www.andong.go.kr/agritec/contents.do?mId=0300000000
+  - 헬스조선 음식 소개: https://m.health.chosun.com/svc/news_view.html?contid=2010022501581
+  - 한국은행 안동지역 문화관광산업 자료: https://file-cdn.bok.or.kr/ucms/20dba8914be2d6b4314ab6c256375366/1/tempFile.pdf
+  - 안동시청: https://www.andong.go.kr/main.do
+- 메모:
+  - 제례 행사가 많은 안동의 특성, 제수 음식의 일상화, 간장·참기름 중심의 담백한 비빔, 서원·종가 방문 뒤 어울리는 식사 흐름을 반영했다.
+  - 유래는 여러 설이 있어 단정하지 않고, 안동시 농업기술센터의 음식문화 설명을 중심으로 작성했다.
+  - 식당별 상차림 구성이 달라 간고등어, 탕국, 안동식혜, 예약 여부 확인을 안내했다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.
