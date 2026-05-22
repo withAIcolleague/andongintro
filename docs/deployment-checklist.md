@@ -61,7 +61,7 @@ python -m http.server 8010
 
 2026-05-22 확인 기준, 공개 URL `https://withaicolleague.github.io/andongintro/`는 아직 `404 Site not found` 상태였다.
 
-GitHub Actions의 `Deploy static site to GitHub Pages` workflow가 `Configure Pages` 단계에서 실패하면 repository의 Pages publishing source가 아직 `GitHub Actions`로 활성화되지 않은 상태일 가능성이 높다.
+GitHub Actions의 `Deploy static site to GitHub Pages` workflow는 먼저 GitHub Pages 활성화 여부를 확인한다. Pages가 아직 활성화되지 않았으면 deploy job은 스킵되고 workflow에는 설정 안내 notice만 남는다.
 
 확인 경로:
 
