@@ -148,6 +148,22 @@
   - 안동댐은 단독 명소보다 월영교, 낙강물길공원, 예끼마을, 선성수상길을 이해하는 수변 배경으로 설명했다.
   - 댐 정상길과 주변 시설 운영 시간은 계절·관리 상황에 따라 변동 가능성이 있어 방문 전 확인하도록 안내했다.
 
+### 임청각
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 임청각 설명, `richImages`, `richSections`, 출처 보강
+- 참고 출처:
+  - 국가유산청 나만의 문화유산 해설사: https://m.cha.go.kr/korea/heritage/search/Culresult_Db_View.jsp?VdkVgwKey=12%2C01820000%2C37
+  - 국가유산청 보도자료: https://www.cha.go.kr/newsBbz/selectNewsBbzView.do?mn=NS_01_02&newsItemId=155699393&sectionId=b_sec_1
+  - 투어안동 임청각: https://www.tourandong.com/public/sub1/sub1_5.cshtml?seq=695
+  - 투어안동 월영교 낭만코스: https://www.tourandong.com/public/sub1/sub3_2.cshtml
+  - 안동시 현충시설: https://www.andong.go.kr/portal/contents.do?mId=0303080000
+- 메모:
+  - 1515년 건립, 보물 지정일 1963.01.21, 이상룡 생가, 중앙선 철도 부설 당시 훼손, 현충시설 지정 정보를 반영했다.
+  - 임청각은 조선 중기 고택, 독립운동 명가, 훼손과 복원, 월영교 낭만코스 출발점이라는 네 축으로 설명했다.
+  - 전용 임청각 이미지가 없어 기존 한옥/수변 이미지를 임시 사용했다. 실제 사진 자산 확보 시 `image`, `richImages`를 교체하면 된다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.
