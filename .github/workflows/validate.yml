@@ -1,0 +1,33 @@
+name: Validate static site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/app.js
+          node --check scripts/update-seo.mjs
+          node --check scripts/update-sitemap.mjs
+          node --check scripts/validate-site.mjs
+
+      - name: Validate generated site files
+        run: node scripts/validate-site.mjs

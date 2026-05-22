@@ -51,6 +51,8 @@ $env:SITE_URL="https://example.com"; node scripts/update-sitemap.mjs; Remove-Ite
 node --check assets/app.js
 node --check scripts/update-seo.mjs
 node --check scripts/update-sitemap.mjs
+node --check scripts/validate-site.mjs
+node scripts/validate-site.mjs
 ```
 
 확인할 항목:

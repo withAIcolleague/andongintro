@@ -26,6 +26,8 @@ $env:SITE_URL="https://example.com"; node scripts/update-sitemap.mjs; Remove-Ite
 - `node --check assets/app.js`가 통과하는가
 - `node --check scripts/update-seo.mjs`가 통과하는가
 - `node --check scripts/update-sitemap.mjs`가 통과하는가
+- `node --check scripts/validate-site.mjs`가 통과하는가
+- `node scripts/validate-site.mjs`가 통과하는가
 - `node scripts/update-seo.mjs` 실행 후 HTML 메타데이터가 최신인가
 - `node scripts/update-sitemap.mjs` 실행 후 `sitemap.xml`, `robots.txt`가 최신인가
 - `sitemap.xml`의 URL 수가 현재 HTML 페이지 수와 일치하는가
