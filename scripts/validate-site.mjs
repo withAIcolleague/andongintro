@@ -186,6 +186,29 @@ function validateTrackedArtifacts() {
   if (bad.length) fail(`Unexpected tracked artifact: ${bad.join(', ')}`);
 }
 
+function validateSourceUi() {
+  const app = fs.readFileSync('assets/app.js', 'utf8');
+  const css = fs.readFileSync('assets/site.css', 'utf8');
+  const requiredAppSnippets = [
+    'SOURCE CHECK',
+    '방문 전 확인 기준',
+    '마지막 확인',
+    '새 창으로 열기',
+    'rel="noreferrer noopener"'
+  ];
+  const requiredCssSnippets = [
+    '.source-card-primary',
+    '.source-check-list'
+  ];
+
+  for (const snippet of requiredAppSnippets) {
+    if (!app.includes(snippet)) fail(`assets/app.js missing source UI snippet: ${snippet}`);
+  }
+  for (const snippet of requiredCssSnippets) {
+    if (!css.includes(snippet)) fail(`assets/site.css missing source UI style: ${snippet}`);
+  }
+}
+
 function validateAuthoringGuide() {
   const path = 'docs/content-authoring-guide.md';
   assertFile(path);
@@ -215,6 +238,7 @@ validateLinks();
 validateSources();
 validateSitemap();
 validateTrackedArtifacts();
+validateSourceUi();
 validateAuthoringGuide();
 
 console.log('Site validation passed');

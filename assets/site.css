@@ -582,8 +582,48 @@ main:focus {
   padding: 18px;
 }
 
+.source-card-primary {
+  border-color: rgba(136, 43, 32, 0.24);
+  background: #fffaf3;
+}
+
 .source-card h3 {
   margin: 0 0 10px;
+}
+
+.source-card-primary h3 {
+  font-size: 22px;
+}
+
+.source-card p {
+  margin: 0 0 12px;
+  color: #3e4d4a;
+  font-weight: 600;
+}
+
+.source-check-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 14px;
+}
+
+.source-check-list div {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.source-check-list dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.source-check-list dd {
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 900;
 }
 
 .source-card ul {

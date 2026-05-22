@@ -345,8 +345,6 @@
     if (item.bestFor) cards.push(['추천 대상', item.bestFor]);
     if (item.nearby) cards.push(['함께 보기', item.nearby]);
     if (item.tip) cards.push(['추천 팁', item.tip]);
-    cards.push(['상태', item.status || '확인 필요']);
-    cards.push(['확인일', item.lastChecked || '미확인']);
 
     const info = cards.map(([title, text]) => `
       <article class="source-card">
@@ -356,10 +354,22 @@
     `).join('');
 
     const sources = item.sources ? `
-      <article class="source-card">
-        <h3>공식 출처</h3>
+      <article class="source-card source-card-primary">
+        <span class="eyebrow">SOURCE CHECK</span>
+        <h3>방문 전 확인 기준</h3>
+        <dl class="source-check-list">
+          <div>
+            <dt>상태</dt>
+            <dd>${item.status || '확인 필요'}</dd>
+          </div>
+          <div>
+            <dt>마지막 확인</dt>
+            <dd>${item.lastChecked || '미확인'}</dd>
+          </div>
+        </dl>
+        <p>일정, 운영시간, 요금, 셔틀, 예약 여부는 방문 시점에 바뀔 수 있습니다. 아래 공식/준공식 출처를 먼저 확인하세요.</p>
         <ul>
-          ${item.sources.map((source) => `<li><a href="${source.url}" target="_blank" rel="noreferrer">${source.label}</a></li>`).join('')}
+          ${item.sources.map((source) => `<li><a href="${source.url}" target="_blank" rel="noreferrer noopener" aria-label="${escapeAttr(source.label)} 새 창으로 열기">${source.label}</a></li>`).join('')}
         </ul>
       </article>
     ` : '';
