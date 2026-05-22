@@ -181,6 +181,23 @@
   - 병산서원은 건축 감상뿐 아니라 문화유산 관람 예절을 함께 안내해야 한다.
   - 전용 병산서원 이미지가 없어 기존 서원/하회권 이미지를 임시 사용했다. 실제 만대루 사진 자산 확보 시 `image`, `richImages`를 교체하면 된다.
 
+### 봉정사
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 봉정사 설명, `richImages`, `richSections`, 출처 보강
+- 참고 출처:
+  - 봉정사 공식: https://www.bongjeongsa.org
+  - 투어안동: https://www.tourandong.com/public/
+  - 국가유산청 전통산사문화재: https://www.heritage.go.kr/sansa/html/view_21.html
+  - 국가유산포털 봉정사 극락전: https://www.heritage.go.kr/heri/cul/culSelectDetail.do?VdkVgwKey=11%2C00150000%2C37&pageNo=1_1_2_0
+  - 국가유산청 봉정사 대웅전: https://m.khs.go.kr/public/commentary/culSelectDetail.do?VdkVgwKey=11%2C03110000%2C37&pageNo=77010000
+  - K-TRIP TIPS 봉정사영산암: https://www.ktriptips.com/kor/tourspot/3038753
+- 메모:
+  - 2018년 유네스코 세계유산 "산사, 한국의 산지승원", 극락전, 대웅전, 화엄강당, 고금당, 영산암 맥락을 반영했다.
+  - 영산암은 봉정사의 부속 암자이자 정원 감상이 중요한 지점으로 설명했다.
+  - 전용 봉정사 이미지가 없어 기존 한옥/서원/수변 이미지를 임시 사용했다. 실제 봉정사·영산암 사진 자산 확보 시 `image`, `richImages`를 교체하면 된다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.
