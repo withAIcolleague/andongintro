@@ -247,6 +247,7 @@ window.AndongData = {
       themeTags: ['가을', '대표 축제', '공식 확인'],
       summary: '국내외 탈춤 공연과 퍼레이드가 열리는 안동 대표 축제입니다.',
       image: 'assets/mask_dance.png',
+      richImages: ['assets/mask_dance.png', 'assets/hero_hahoe.png', 'assets/andong-moonlight-dzrsh.png', 'assets/jjimdak.png'],
       href: 'events.html#maskdance',
       status: '예정',
       lastChecked: '2026.05.22',
@@ -261,6 +262,44 @@ window.AndongData = {
       nearby: '탈춤공원, 원도심, 하회마을, 월영교',
       tip: '축제 기간에는 주차와 셔틀 공지를 먼저 확인하세요.',
       visitNote: '2026년 일정은 공식·준공식 출처에서 확인한 값입니다. 세부 공연표와 교통 안내는 개최 전 다시 확인해야 합니다.',
+      richSections: [
+        {
+          eyebrow: 'FESTIVAL SCENE',
+          title: '가면의 기억, 모두의 춤',
+          image: 'assets/mask_dance.png',
+          paragraphs: [
+            '한국정신문화재단은 2026년 안동국제탈춤페스티벌의 방향을 “가면의 기억, 모두의 춤”으로 소개합니다. 탈과 탈춤을 기반으로 지역민과 방문객, 국내외 공연단이 한 공간에서 어울리는 축제입니다.',
+            '안동의 가을은 서원과 고택의 고요함만으로 기억되지 않습니다. 축제 기간에는 탈춤공원과 원도심, 하회마을이 공연과 퍼레이드, 체험으로 이어지며 도시의 속도가 달라집니다.'
+          ]
+        },
+        {
+          eyebrow: 'PROGRAM',
+          title: '한국의 탈춤과 세계의 탈춤을 한 자리에서',
+          image: 'assets/hero_hahoe.png',
+          paragraphs: [
+            '대한민국 구석구석은 유네스코 인류무형문화유산으로 등재된 한국의 탈춤과 세계 여러 나라의 탈춤을 축제장에서 경험할 수 있다고 안내합니다. 국내외 탈춤공연, 마당극과 창작극, 탈놀이단 공연이 축제의 큰 축을 이룹니다.',
+            '처음 방문자는 한 공연만 정해 보기보다 공연장, 거리, 체험장을 오가며 축제장의 리듬을 느끼는 편이 좋습니다. 탈은 무대 위에만 있는 것이 아니라 거리와 관객 사이에서도 살아납니다.'
+          ]
+        },
+        {
+          eyebrow: 'PARTICIPATION',
+          title: '퍼레이드와 대동난장으로 들어가는 축제',
+          image: 'assets/andong-moonlight-dzrsh.png',
+          paragraphs: [
+            '안동국제탈춤페스티벌은 관람형 공연만의 축제가 아닙니다. 세계탈놀이경연대회, 세계창작탈공모전, 탈춤그리기대회 같은 경연과 공모, 거리 퍼레이드, 대동난장처럼 관객이 몸으로 참여하는 프로그램이 함께 놓입니다.',
+            '특히 야간 이벤트인 탈놀이 대동난장은 안동의 밤을 축제장 안으로 끌어들이는 장면입니다. 월영교 야경이나 원도심 식사와 함께 묶으면 하루 일정의 마지막이 더 선명해집니다.'
+          ]
+        },
+        {
+          eyebrow: 'CHECK POINT',
+          title: '일정은 확정, 세부 운영은 직전 확인',
+          image: 'assets/mask_dance.png',
+          paragraphs: [
+            '2026년 축제 기간은 2026년 9월 24일부터 10월 4일까지 11일간으로 확인됩니다. 한국정신문화재단은 장소를 탈춤공원, 중앙선 1942 안동역, 하회마을, 원도심 일원으로 안내합니다.',
+            '대한민국 구석구석은 축제 정보가 운영기관 제출 자료를 바탕으로 제공되며 현장 상황에 따라 진행 내용이 변동될 수 있다고 안내합니다. 공연표, 교통, 예매, 먹거리 정보는 방문 직전에 공식 홈페이지와 문의처를 다시 확인하세요.'
+          ]
+        }
+      ],
       sources: [
         { label: '대한민국 구석구석', url: 'https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=644495a7-65e3-42ef-8993-e18e2e71a8bd' },
         { label: '한국정신문화재단', url: 'https://www.kfce.or.kr/home/sub2/sub2_3.asp' },
