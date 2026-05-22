@@ -162,11 +162,34 @@ function validateTrackedArtifacts() {
   if (bad.length) fail(`Unexpected tracked artifact: ${bad.join(', ')}`);
 }
 
+function validateAuthoringGuide() {
+  const path = 'docs/content-authoring-guide.md';
+  assertFile(path);
+  const guide = fs.readFileSync(path, 'utf8');
+  const requiredSnippets = [
+    '<a class="skip-link" href="#content">본문으로 건너뛰기</a>',
+    '<main id="content" tabindex="-1" data-item="food:new-food-id"></main>',
+    '<main id="content" tabindex="-1" data-item="place:new-place-id"></main>',
+    '<main id="content" tabindex="-1" data-item="event:new-event-id"></main>',
+    '<main id="content" tabindex="-1" data-item="course:new-course-id"></main>',
+    '정확히 4개'
+  ];
+
+  for (const snippet of requiredSnippets) {
+    if (!guide.includes(snippet)) fail(`${path} missing current authoring rule: ${snippet}`);
+  }
+
+  if (guide.includes('<main data-item="')) {
+    fail(`${path} still contains obsolete non-focusable main template`);
+  }
+}
+
 validateData();
 validateImages();
 validateHtml();
 validateLinks();
 validateSitemap();
 validateTrackedArtifacts();
+validateAuthoringGuide();
 
 console.log('Site validation passed');

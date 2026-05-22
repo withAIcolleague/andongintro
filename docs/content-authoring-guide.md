@@ -33,13 +33,13 @@ items: ['food:jjimdak', 'place:hahoe', 'event:maskdance', 'course:first-day']
 - `richImages`는 개별 페이지의 추가 감성 섹션에 사용할 사진 후보 배열이다.
 - `summary`는 랜딩/히어로용 한 문장으로 짧게 쓴다.
 - `detail`은 개별 페이지 첫 번째 본문에 들어가므로 감성적인 설명을 1~2문장으로 쓴다.
-- `richSections`를 넣으면 개별 페이지에 사진+글 섹션을 원하는 만큼 직접 추가할 수 있다.
+- `richSections`는 개별 페이지의 사진+글 감성 섹션이다. 현재 사이트 검증 기준은 콘텐츠마다 정확히 4개를 요구한다.
 - 실시간성이 있는 정보는 반드시 `status`, `lastChecked`, 가능하면 `sources`를 넣는다.
 - 사실 확인이 안 된 일정, 운영시간, 요금은 추정하지 말고 `확인 필요`로 둔다.
 
 ## 2-1. 사진+글 감성 섹션 양식
 
-`richSections`는 선택 필드다. 입력하지 않아도 사이트가 기본 섹션을 자동 생성하지만, 콘텐츠별로 더 풍성하게 만들려면 아래처럼 직접 넣는다.
+`richSections`는 현재 운영 데이터에서 필수 필드로 관리한다. 콘텐츠별로 사진과 글을 풍성하게 보여주기 위해 아래 형식으로 정확히 4개를 작성한다.
 
 ```js
 richImages: [
@@ -64,6 +64,22 @@ richSections: [
       '동선, 시간대, 함께 보면 좋은 장소를 설명한다.',
       '운영시간이나 요금처럼 바뀌는 정보는 단정하지 않고 공식 확인을 유도한다.'
     ]
+  },
+  {
+    eyebrow: 'DETAIL',
+    title: '세 번째 큰 제목',
+    image: 'assets/example-scene-3.jpg',
+    paragraphs: [
+      '콘텐츠의 역사, 배경, 지역 맥락을 설명한다.'
+    ]
+  },
+  {
+    eyebrow: 'VISIT NOTE',
+    title: '네 번째 큰 제목',
+    image: 'assets/example-scene-4.jpg',
+    paragraphs: [
+      '처음 방문자가 실제로 보면 좋은 순서와 주의할 점을 쓴다.'
+    ]
   }
 ]
 ```
@@ -71,9 +87,10 @@ richSections: [
 작성 기준:
 
 - 섹션 하나는 `eyebrow`, `title`, `image`, `paragraphs`를 모두 가진다.
+- 현재 자동 검증은 콘텐츠마다 `richSections` 4개를 요구한다.
 - `paragraphs`는 1~3개가 적당하다.
 - 사진은 실제 콘텐츠와 직접 관련된 이미지를 우선한다.
-- 같은 이미지를 반복 사용해야 한다면 `richImages`에는 후보 이미지를 넣고, `richSections`는 생략해도 된다.
+- 같은 이미지를 반복 사용해야 한다면 `richImages`에도 후보 이미지를 넣고, `richSections` 4개 안에서 가능한 한 다른 장면을 배치한다.
 - 예끼마을처럼 별도 심층 페이지가 있는 콘텐츠는 `richSections`보다 개별 HTML을 직접 확장해도 된다.
 
 ## 3. 음식 템플릿
@@ -109,7 +126,7 @@ HTML 파일도 추가한다.
 파일명: `food-new-food-id.html`
 
 ```html
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>안동 음식 | 안동 안내</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/site.css?v=20260522-perf"></head><body><header class="site-header"><nav class="nav"><a class="logo" href="index.html"><span class="logo-stamp">안<br>동</span><span>ANDONG</span></a><div class="nav-links"><a href="index.html#taste">맛</a><a href="index.html#meot">멋</a><a href="index.html#heung">흥</a><a href="index.html#night">밤</a><a href="index.html#route">길</a></div></nav></header><main data-item="food:new-food-id"></main><a class="fixed-home-link" href="index.html" aria-label="랜딩 페이지로 돌아가기">홈</a><script src="assets/site-data.js"></script><script src="assets/app.js?v=20260522-perf"></script></body></html>
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>안동 음식 | 안동 안내</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/site.css?v=20260522-perf"></head><body><a class="skip-link" href="#content">본문으로 건너뛰기</a><header class="site-header"><nav class="nav"><a class="logo" href="index.html"><span class="logo-stamp">안<br>동</span><span>ANDONG</span></a><div class="nav-links"><a href="index.html#taste">맛</a><a href="index.html#meot">멋</a><a href="index.html#heung">흥</a><a href="index.html#night">밤</a><a href="index.html#route">길</a></div></nav></header><main id="content" tabindex="-1" data-item="food:new-food-id"></main><a class="fixed-home-link" href="index.html" aria-label="랜딩 페이지로 돌아가기">홈</a><script src="assets/site-data.js"></script><script src="assets/app.js?v=20260522-perf"></script></body></html>
 ```
 
 ## 4. 장소 템플릿
@@ -135,10 +152,10 @@ HTML 파일도 추가한다.
 
 HTML 파일명: `place-new-place-id.html`
 
-`main`만 다음처럼 바꾼 얇은 HTML 파일을 만든다.
+공통 HTML 뼈대는 음식 템플릿과 동일하게 쓰고, `main`의 `data-item`만 다음처럼 바꾼다. `skip-link`, `id="content"`, `tabindex="-1"`은 접근성 검증 대상이므로 빼지 않는다.
 
 ```html
-<main data-item="place:new-place-id"></main>
+<main id="content" tabindex="-1" data-item="place:new-place-id"></main>
 ```
 
 ## 5. 축제/행사 템플릿
@@ -174,7 +191,7 @@ HTML 파일명: `place-new-place-id.html`
 HTML 파일명: `event-new-event-id.html`
 
 ```html
-<main data-item="event:new-event-id"></main>
+<main id="content" tabindex="-1" data-item="event:new-event-id"></main>
 ```
 
 ## 6. 코스 템플릿
@@ -200,7 +217,7 @@ HTML 파일명: `event-new-event-id.html`
 HTML 파일명: `course-new-course-id.html`
 
 ```html
-<main data-item="course:new-course-id"></main>
+<main id="content" tabindex="-1" data-item="course:new-course-id"></main>
 ```
 
 ## 7. 랜딩에 노출하기
