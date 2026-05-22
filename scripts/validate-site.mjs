@@ -7,6 +7,7 @@ vm.createContext(context);
 vm.runInContext(fs.readFileSync('assets/site-data.js', 'utf8'), context);
 
 const data = context.window.AndongData;
+const siteUrl = 'https://withaicolleague.github.io/andongintro';
 const groups = ['foods', 'events', 'places', 'courses'];
 const requiredMeta = [
   '<title>',
@@ -38,6 +39,16 @@ function allItems() {
 
 function assertFile(path) {
   if (!fs.existsSync(path)) fail(`Missing file: ${path}`);
+}
+
+function expectedSchemaType(item) {
+  if (!item) return 'WebPage';
+  return {
+    food: 'Article',
+    event: 'Event',
+    place: 'TouristAttraction',
+    course: 'Article'
+  }[item.category] || 'WebPage';
 }
 
 function validateData() {
@@ -77,6 +88,7 @@ function validateImages() {
 
 function validateHtml() {
   const htmlFiles = fs.readdirSync('.').filter((file) => file.endsWith('.html'));
+  const itemsByPath = new Map(allItems().map(({ item }) => [itemPath(item), item]));
   if (htmlFiles.length !== 37) fail(`Expected 37 html files, found ${htmlFiles.length}`);
 
   for (const file of htmlFiles) {
@@ -86,6 +98,9 @@ function validateHtml() {
     }
     if (html.includes('20260521-rich')) fail(`${file} still uses old asset version`);
     if (!html.includes('class="skip-link"')) fail(`${file} missing skip link`);
+    if (file !== '404.html') {
+      validateSeoEnhancements(file, html, itemsByPath.get(file) || null);
+    }
     if (file === 'yekki.html') {
       if (!html.includes('href="#hero"') || !html.includes('id="hero" tabindex="-1"')) {
         fail('yekki.html skip target is not focusable');
@@ -105,6 +120,29 @@ function validateHtml() {
       fail(`${file} data-item does not match ${item.category}:${item.id}`);
     }
   }
+}
+
+function validateSeoEnhancements(file, html, item = null) {
+  const canonicalMatches = [...html.matchAll(/<link\s+rel="canonical"\s+href="([^"]+)">/g)];
+  if (canonicalMatches.length !== 1) fail(`${file} must have exactly one canonical link`);
+  const canonical = canonicalMatches[0][1];
+  if (canonical !== `${siteUrl}/${file}`) fail(`${file} canonical mismatch: ${canonical}`);
+
+  const jsonLdMatches = [...html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  if (jsonLdMatches.length !== 1) fail(`${file} must have exactly one JSON-LD block`);
+
+  let schema;
+  try {
+    schema = JSON.parse(jsonLdMatches[0][1]);
+  } catch (error) {
+    fail(`${file} has invalid JSON-LD: ${error.message}`);
+  }
+
+  if (schema['@context'] !== 'https://schema.org') fail(`${file} JSON-LD context mismatch`);
+  if (schema.url !== `${siteUrl}/${file}`) fail(`${file} JSON-LD url mismatch`);
+  if (schema.inLanguage !== 'ko-KR') fail(`${file} JSON-LD language mismatch`);
+  if (!schema.name || !schema.description || !schema.image) fail(`${file} JSON-LD missing required page fields`);
+  if (schema['@type'] !== expectedSchemaType(item)) fail(`${file} JSON-LD type mismatch: ${schema['@type']}`);
 }
 
 function validateLinks() {
