@@ -16,6 +16,12 @@ const requiredMeta = [
   'property="og:image"',
   'name="twitter:card"'
 ];
+const listingPages = {
+  food: 'food.html',
+  event: 'events.html',
+  place: 'places.html',
+  course: 'courses.html'
+};
 
 function fail(message) {
   throw new Error(message);
@@ -87,7 +93,37 @@ function validateHtml() {
     const html = fs.readFileSync(file, 'utf8');
     if (!html.includes(`<title>${item.title} | 안동 안내</title>`)) fail(`${file} title does not match data`);
     if (!html.includes(`property="og:image" content="${item.image}"`)) fail(`${file} og:image does not match data`);
+    if (!html.includes(`data-item="${item.category}:${item.id}"`) && item.id !== 'yekki') {
+      fail(`${file} data-item does not match ${item.category}:${item.id}`);
+    }
   }
+}
+
+function validateLinks() {
+  const itemRefs = new Set(allItems().map(({ item }) => `${item.category}:${item.id}`));
+
+  for (const { group, item } of allItems()) {
+    const key = `${group}:${item.id}`;
+    const listingPage = listingPages[item.category];
+    const expectedHref = item.id === 'yekki' ? 'yekki.html' : `${listingPage}#${item.id}`;
+    if (item.href !== expectedHref) fail(`${key} href should be ${expectedHref}, got ${item.href}`);
+  }
+
+  for (const field of data.fields || []) {
+    if (!field.id || !field.title || !Array.isArray(field.items)) fail(`Invalid field definition: ${field.id || 'unknown'}`);
+    for (const ref of field.items) {
+      if (!itemRefs.has(ref)) fail(`Field ${field.id} references missing item ${ref}`);
+    }
+  }
+
+  const expectedHtml = new Set([
+    'index.html',
+    ...Object.values(listingPages),
+    ...allItems().map(({ item }) => itemPath(item))
+  ]);
+  const htmlFiles = fs.readdirSync('.').filter((file) => file.endsWith('.html'));
+  const extra = htmlFiles.filter((file) => !expectedHtml.has(file));
+  if (extra.length) fail(`Unexpected html files: ${extra.join(', ')}`);
 }
 
 function validateSitemap() {
@@ -120,6 +156,7 @@ function validateTrackedArtifacts() {
 validateData();
 validateImages();
 validateHtml();
+validateLinks();
 validateSitemap();
 validateTrackedArtifacts();
 
