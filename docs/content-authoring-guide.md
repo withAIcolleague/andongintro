@@ -263,6 +263,7 @@ HTML 파일명: `course-new-course-id.html`
 ```bash
 node scripts/update-seo.mjs
 node scripts/update-sitemap.mjs
+node scripts/update-image-inventory.mjs
 ```
 
 변경 후 로컬 서버에서 확인한다.
@@ -277,6 +278,7 @@ python -m http.server 8010
 - 카드 클릭 시 새 개별 페이지로 이동하는가
 - 개별 HTML의 `<title>`, `description`, `og:title`, `og:description`, `og:image`가 콘텐츠에 맞게 갱신되었는가
 - `sitemap.xml`에 새 개별 페이지 URL이 포함되었는가
+- `docs/image-inventory.md`에 새 이미지 사용 현황이 반영되었는가
 - `robots.txt`의 `Sitemap` URL이 실제 배포 주소와 맞는가
 - 개별 페이지의 히어로, 글/사진 섹션, 추가 감성 섹션, Traveler's Note가 보이는가
 - 모바일 폭에서 가로 스크롤이 생기지 않는가
@@ -288,5 +290,5 @@ python -m http.server 8010
 - `assets/app.js`의 렌더링 구조를 임의로 바꾸지 않는다.
 - `id`를 바꾸면 HTML 파일명, `data-item`, `fields` 참조도 함께 바꿔야 한다.
 - 새 이미지는 가능하면 실제 장소/음식/축제와 직접 관련 있는 이미지를 사용한다.
-- 임시 이미지 사용 시 나중에 교체할 수 있도록 커밋 메시지나 작업 메모에 남긴다.
+- 임시 이미지 사용 시 `docs/source-links.md`에 교체 메모를 남기고 `node scripts/update-image-inventory.mjs`를 실행한다.
 - 출처가 불확실한 최신 일정은 본문에 확정처럼 쓰지 않는다.

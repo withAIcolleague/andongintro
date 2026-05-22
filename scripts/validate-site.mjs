@@ -263,6 +263,12 @@ function validateTrackedArtifacts() {
   if (bad.length) fail(`Unexpected tracked artifact: ${bad.join(', ')}`);
 }
 
+function validateImageInventory() {
+  assertFile('docs/image-inventory.md');
+  assertFile('scripts/update-image-inventory.mjs');
+  execSync('node scripts/update-image-inventory.mjs --check', { stdio: 'pipe' });
+}
+
 function validateSourceUi() {
   const app = fs.readFileSync('assets/app.js', 'utf8');
   const css = fs.readFileSync('assets/site.css', 'utf8');
@@ -300,7 +306,8 @@ function validateAuthoringGuide() {
     'YYYY.MM.DD',
     '음식: `상시`, `예약 확인`',
     '축제/행사: `예정`, `진행 중`, `종료`, `확인 필요`',
-    '코스: `추천`, `일정 확인`, `노선 확인`'
+    '코스: `추천`, `일정 확인`, `노선 확인`',
+    'node scripts/update-image-inventory.mjs'
   ];
 
   for (const snippet of requiredSnippets) {
@@ -319,6 +326,7 @@ validateLinks();
 validateSources();
 validateSitemap();
 validateTrackedArtifacts();
+validateImageInventory();
 validateSourceUi();
 validateAuthoringGuide();
 
