@@ -675,6 +675,47 @@ window.AndongData = {
       nearby: '도산서원, 선성수상길, 안동호',
       tip: '도산서원과 가까워 반나절 코스로 묶기 좋습니다.',
       visitNote: '개별 심층 페이지가 있으므로 랜딩에서는 대표 카드로 연결하고, 상세 감성 콘텐츠는 예끼마을 페이지에서 확장합니다.',
+      richImages: ['assets/sunsungmemory.jpg', 'assets/susanggil.jpg', 'assets/gunmindang.jpg', 'assets/artwall.jpg'],
+      richSections: [
+        {
+          eyebrow: 'HISTORY',
+          title: '물 아래 고향을 품은 서부리 이주마을',
+          image: 'assets/sunsungmemory.jpg',
+          body: [
+            '예끼마을을 볼 때는 먼저 안동댐 이후의 기억을 알아두는 것이 좋습니다. 이곳은 수몰로 삶터를 옮긴 사람들이 새로 자리 잡은 마을 위에 예술과 골목 풍경이 더해진 장소입니다.',
+            '그래서 예끼마을의 벽화와 갤러리는 단순한 장식보다 오래된 마을의 상실감, 다시 살아가는 사람들의 시간, 안동호를 바라보는 시선과 함께 읽힙니다.'
+          ]
+        },
+        {
+          eyebrow: 'WATERFRONT',
+          title: '선성수상길로 이어지는 물 위의 산책',
+          image: 'assets/susanggil.jpg',
+          flip: true,
+          body: [
+            '마을에서 선성수상길로 나가면 안동호 위를 걷는 부교 산책이 이어집니다. 짧은 산책이지만 발아래 물과 주변 산세가 함께 열려 도산권 여행의 분위기가 크게 달라집니다.',
+            '경북나드리는 도산서원과 예끼마을, 선성수상길을 한 권역 코스로 안내합니다. 예끼마을만 보고 돌아가기보다 도산서원, 선성수상길, 이육사문학관까지 묶으면 하루 동선이 선명해집니다.'
+          ]
+        },
+        {
+          eyebrow: 'CREATIVITY',
+          title: '근민당 갤러리와 골목의 작은 장면들',
+          image: 'assets/gunmindang.jpg',
+          body: [
+            '예끼마을의 현재성은 갤러리와 벽화 골목에서 잘 드러납니다. 오래된 지명과 수몰의 기억 위에 전시 공간, 공방, 사진을 찍기 좋은 골목 장면이 겹쳐집니다.',
+            '방문자는 빠르게 인증 사진만 남기기보다 골목을 천천히 돌며 벽면의 그림, 낮은 집의 윤곽, 안동호 쪽으로 열리는 시선을 함께 보는 것이 좋습니다.'
+          ]
+        },
+        {
+          eyebrow: 'ROUTE',
+          title: '도산서원과 함께 보면 완성되는 도산권',
+          image: 'assets/hanokmaul.jpg',
+          flip: true,
+          body: [
+            '도산서원이 퇴계 이황과 서원의 고요함을 보여준다면, 예끼마을은 안동호 이후의 생활사와 예술적 재생을 보여줍니다. 두 장소를 함께 보면 안동의 전통이 과거에만 머물지 않는다는 점이 더 분명해집니다.',
+            '대중교통 여행자는 급행 3번 등 버스 시간표를 먼저 확인하고, 차량 여행자는 선성현문화단지 주차와 도산서원 이동 시간을 넉넉하게 잡는 편이 안정적입니다.'
+          ]
+        }
+      ],
       sources: [
         { label: '예끼마을', url: 'http://www.yeggistory.com/htm/main.htm' },
         { label: '경북나드리', url: 'https://www.gbtour.kr/coding/sub2/sub2_2.asp' }

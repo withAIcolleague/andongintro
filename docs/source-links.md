@@ -102,6 +102,22 @@
 - 상태: 2026-05-21 기준 종료
 - 근거: https://www.tourandong.com/public/sub5/sub3.cshtml?id=J3qRHIvUXsye6srtIKiY2Gp4phfPJYDRk9g6SNUBwUM&page=1&search=&searchCategory=&searchKey=1
 
+## 명소 콘텐츠 보강
+
+### 예끼마을
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 예끼마을 `richImages`, `richSections` 추가
+  - `yekki.html`: 실용 정보, 연계 코스, 공식/준공식 출처, 모바일 레이아웃 보강
+- 참고 출처:
+  - 예끼마을 공식 안내: http://www.yeggistory.com/htm/main.htm
+  - 경북나드리 도산서원 & 예끼마을(선성수상길) 권역: https://www.gbtour.kr/coding/sub2/sub2_2.asp
+- 메모:
+  - 경북나드리는 예끼마을 및 선성수상길을 도산서원 권역 코스로 함께 안내한다.
+  - 대중교통과 주변 식당/카페 운영은 변동 가능성이 있어 방문 전 재확인하도록 안내했다.
+  - 예끼마을은 별도 심층 페이지(`yekki.html`)를 유지하므로, 공통 데이터 보강과 실제 페이지 보강을 함께 진행했다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.

@@ -23,6 +23,12 @@
             --bento-radius: 2px;
         }
 
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: 'Noto Sans KR', sans-serif;
@@ -170,8 +176,8 @@
 
         .memory-section {
             background: #e8e8e8;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
+            width: 100%;
+            margin-left: 0;
             padding: 160px 0;
         }
 
@@ -240,6 +246,36 @@
             margin: 0;
         }
 
+        .note-card {
+            background: white;
+            padding: 40px;
+            border: 0.5px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .note-block {
+            margin-top: 30px;
+            border-top: 1px solid var(--line);
+            padding-top: 20px;
+        }
+
+        .note-block strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .note-block p,
+        .note-block li {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .note-block a {
+            color: var(--accent-red);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
         /* Animation */
         .reveal {
             opacity: 0;
@@ -306,6 +342,78 @@
                 border-radius: 50%;
                 padding: 0;
                 writing-mode: horizontal-tb;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .nav {
+                padding: 16px 20px;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+
+            .nav-links a {
+                margin-left: 0;
+            }
+
+            .indicator {
+                display: none;
+            }
+
+            .hero h1 {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .hero-content {
+                padding: 0 24px;
+            }
+
+            .vertical-label {
+                writing-mode: horizontal-tb;
+                letter-spacing: 0.24em;
+                border-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.4);
+                padding-left: 0;
+                padding-top: 12px;
+            }
+
+            .memory-section {
+                padding: 90px 0;
+            }
+
+            .memory-content {
+                padding: 0 24px;
+            }
+
+            .memory-img {
+                height: 320px;
+            }
+
+            .yekki-grid,
+            #info > div {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+
+            .art-card {
+                grid-column: 1 / -1 !important;
+            }
+
+            .art-card .img,
+            .art-card .img[style] {
+                height: 280px !important;
+            }
+
+            .note-card {
+                padding: 28px;
             }
         }
     </style>
@@ -431,28 +539,42 @@
             <div>
                 <h2>Traveler's Note</h2>
                 <p>예끼마을 여정을 위한 실용 정보</p>
-                <div style="margin-top: 40px; border-top: 1px solid var(--line); padding-top: 20px;">
-                    <strong style="display: block; margin-bottom: 10px;">찾아오기</strong>
-                    <p style="font-size: 14px; color: #666;">안동역(KTX)에서 급행 3번 버스 이용 시 약 45분 소요. 주차 공간은 마을 입구와 문화단지 내에
-                        넉넉히 마련되어 있습니다.</p>
+                <div class="note-block">
+                    <strong>찾아오기</strong>
+                    <p>안동역(KTX)에서 급행 3번 버스 이용 시 약 45분 소요로 안내되어 왔지만, 배차는 변동될 수 있습니다. 대중교통 여행자는 출발 전
+                        안동 버스 노선과 귀가 시간을 먼저 확인하세요.</p>
                 </div>
-                <div style="margin-top: 30px; border-top: 1px solid var(--line); padding-top: 20px;">
-                    <strong style="display: block; margin-bottom: 10px;">먹거리</strong>
-                    <p style="font-size: 14px; color: #666;">마을 내 '예끼식당', '선성현 식당' 등에서 정갈한 한식과 향토 음식을 즐길 수 있습니다.</p>
+                <div class="note-block">
+                    <strong>머무는 방식</strong>
+                    <p>예끼마을은 빠르게 지나가는 관광지보다 골목, 갤러리, 선성수상길을 천천히 엮어 보는 장소입니다. 바람이 강한 날에는 수상길 체감
+                        온도가 낮을 수 있으니 겉옷을 준비하는 편이 좋습니다.</p>
+                </div>
+                <div class="note-block">
+                    <strong>먹거리와 휴식</strong>
+                    <p>마을과 선성현문화단지 주변에서 한식, 카페, 간단한 휴식을 함께 계획할 수 있습니다. 영업일과 휴무는 계절과 운영자 사정에 따라
+                        달라질 수 있으므로 방문 직전 확인이 필요합니다.</p>
                 </div>
             </div>
             <div>
-                <div
-                    style="background: white; padding: 40px; border: 0.5px solid var(--line); box-shadow: var(--shadow);">
+                <div class="note-card">
                     <h3 style="margin-top: 0;">추천 연계 코스</h3>
-                    <p style="font-size: 14px; color: #666; margin-bottom: 30px;">예끼마을은 도산서원과 4km 거리에 위치해 있어 함께 둘러보기에
-                        최적입니다.</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 30px;">경북나드리의 도산서원 & 예끼마을 권역 안내처럼, 예끼마을은
+                        선성수상길과 도산서원을 함께 묶을 때 장면의 흐름이 가장 좋습니다.</p>
                     <ul style="padding-left: 20px; font-size: 14px; line-height: 2;">
                         <li>예끼마을 도착 & 선성수상길 산책</li>
                         <li>마을 내 갤러리 및 벽화 탐방</li>
                         <li>도산서원 이동 & 유교 문화 체험</li>
                         <li>한국국학진흥원 유교문화박물관</li>
                     </ul>
+                    <div class="note-block">
+                        <strong>공식/준공식 출처</strong>
+                        <ul style="padding-left: 20px; margin-bottom: 0;">
+                            <li><a href="http://www.yeggistory.com/htm/main.htm" target="_blank"
+                                    rel="noopener">예끼마을 공식 안내</a></li>
+                            <li><a href="https://www.gbtour.kr/coding/sub2/sub2_2.asp" target="_blank"
+                                    rel="noopener">경북나드리 도산서원 & 예끼마을 권역</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
