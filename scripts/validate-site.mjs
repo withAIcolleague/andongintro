@@ -77,7 +77,7 @@ function validateImages() {
 
 function validateHtml() {
   const htmlFiles = fs.readdirSync('.').filter((file) => file.endsWith('.html'));
-  if (htmlFiles.length !== 36) fail(`Expected 36 html files, found ${htmlFiles.length}`);
+  if (htmlFiles.length !== 37) fail(`Expected 37 html files, found ${htmlFiles.length}`);
 
   for (const file of htmlFiles) {
     const html = fs.readFileSync(file, 'utf8');
@@ -117,6 +117,7 @@ function validateLinks() {
   }
 
   const expectedHtml = new Set([
+    '404.html',
     'index.html',
     ...Object.values(listingPages),
     ...allItems().map(({ item }) => itemPath(item))
