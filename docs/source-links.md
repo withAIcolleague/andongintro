@@ -164,6 +164,23 @@
   - 임청각은 조선 중기 고택, 독립운동 명가, 훼손과 복원, 월영교 낭만코스 출발점이라는 네 축으로 설명했다.
   - 전용 임청각 이미지가 없어 기존 한옥/수변 이미지를 임시 사용했다. 실제 사진 자산 확보 시 `image`, `richImages`를 교체하면 된다.
 
+### 병산서원
+
+- 반영일: 2026-05-22
+- 반영 위치:
+  - `assets/site-data.js`: 병산서원 설명, `richImages`, `richSections`, 출처 보강
+- 참고 출처:
+  - 병산서원 공식: https://www.byeongsan.net
+  - 투어안동 세계유산: https://www.tourandong.com/public/sub2/sub8.cshtml
+  - 국가유산포털 병산서원 만대루: https://www.heritage.go.kr/heri/cul/culGuidePostDetail.do?ccbaCpno=1123721040000&ccgbGbtype=IND&ccgbGbtypeNo=1&pageNo=1_5_0_0
+  - 한국민족문화대백과사전 병산서원: https://encykorea.aks.ac.kr/Article/E0023102
+  - 하회마을 병산서원 안내: https://www.hahoe.or.kr/coding/sub2/sub1.asp
+  - K-TRIP TIPS 병산서원: https://www.ktriptips.com/kor/tourspot/126227
+- 메모:
+  - 만대루의 건축과 조망, 1575년 풍악서당 이전, 류성룡 사후 제향 공간 형성, 하회마을 연계 세계유산 맥락을 반영했다.
+  - 병산서원은 건축 감상뿐 아니라 문화유산 관람 예절을 함께 안내해야 한다.
+  - 전용 병산서원 이미지가 없어 기존 서원/하회권 이미지를 임시 사용했다. 실제 만대루 사진 자산 확보 시 `image`, `richImages`를 교체하면 된다.
+
 ## 확인 필요 항목
 
 - 월영야행 2026 세부 일정: 공식 월영야행 사이트 또는 투어안동 관광소식에서 재확인 필요.
