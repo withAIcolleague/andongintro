@@ -30,10 +30,11 @@ items: ['food:jjimdak', 'place:hahoe', 'event:maskdance', 'course:first-day']
 - `id`는 영문 소문자, 숫자, 하이픈만 사용한다.
 - `id`는 같은 category 안에서 중복되면 안 된다.
 - `image`는 `assets/...` 경로를 사용한다.
-- `richImages`는 개별 페이지의 추가 감성 섹션에 사용할 사진 후보 배열이다.
+- `richImages`는 개별 페이지의 추가 감성 섹션에 사용할 사진 후보 배열이다. 최소 2개 이상 넣는다.
 - `summary`는 랜딩/히어로용 한 문장으로 짧게 쓴다.
 - `detail`은 개별 페이지 첫 번째 본문에 들어가므로 감성적인 설명을 1~2문장으로 쓴다.
 - `richSections`는 개별 페이지의 사진+글 감성 섹션이다. 현재 사이트 검증 기준은 콘텐츠마다 정확히 4개를 요구한다.
+- 각 `richSections` 항목은 문단을 최소 2개 이상 가져야 하며, 너무 짧은 메모형 문장은 피한다.
 - 실시간성이 있는 정보는 반드시 `status`, `lastChecked`, 가능하면 `sources`를 넣는다.
 - `lastChecked`는 반드시 `YYYY.MM.DD` 형식으로 쓴다. 예: `2026.05.22`
 - 사실 확인이 안 된 일정, 운영시간, 요금은 추정하지 말고 `확인 필요`로 둔다.
@@ -96,9 +97,9 @@ richSections: [
 
 - 섹션 하나는 `eyebrow`, `title`, `image`, `paragraphs`를 모두 가진다.
 - 현재 자동 검증은 콘텐츠마다 `richSections` 4개를 요구한다.
-- `paragraphs`는 1~3개가 적당하다.
+- `paragraphs`는 2~3개가 적당하다. 각 문단은 한두 줄 메모가 아니라 방문자가 장면을 상상할 수 있을 만큼 구체적으로 쓴다.
 - 사진은 실제 콘텐츠와 직접 관련된 이미지를 우선한다.
-- 같은 이미지를 반복 사용해야 한다면 `richImages`에도 후보 이미지를 넣고, `richSections` 4개 안에서 가능한 한 다른 장면을 배치한다.
+- 같은 이미지를 반복 사용해야 한다면 `richImages`에도 후보 이미지를 넣고, `richSections` 4개 안에서 최소 3개 이상의 서로 다른 이미지를 배치한다.
 - 예끼마을처럼 별도 심층 페이지가 있는 콘텐츠는 `richSections`보다 개별 HTML을 직접 확장해도 된다.
 
 ## 3. 음식 템플릿

@@ -68,15 +68,36 @@ function validateData() {
       if (!item[field]) fail(`${key} missing ${field}`);
     }
     validateFreshnessFields(key, item);
-    if (!Array.isArray(item.richSections) || item.richSections.length !== 4) {
-      fail(`${key} must have exactly 4 richSections`);
+    validateRichContent(key, item);
+  }
+}
+
+function validateRichContent(key, item) {
+  if (!Array.isArray(item.richImages) || item.richImages.length < 2) {
+    fail(`${key} must have at least 2 richImages`);
+  }
+
+  if (!Array.isArray(item.richSections) || item.richSections.length !== 4) {
+    fail(`${key} must have exactly 4 richSections`);
+  }
+
+  const sectionImages = new Set();
+  for (const [index, section] of item.richSections.entries()) {
+    const sectionKey = `${key} richSections[${index}]`;
+    if (!section.eyebrow || !section.title || !section.image) fail(`${sectionKey} is incomplete`);
+    sectionImages.add(section.image);
+
+    if (!Array.isArray(section.paragraphs) || section.paragraphs.length < 2) {
+      fail(`${sectionKey} must have at least 2 paragraphs`);
     }
-    for (const section of item.richSections) {
-      if (!section.eyebrow || !section.title || !section.image) fail(`${key} has incomplete richSection`);
-      if (!Array.isArray(section.paragraphs) || section.paragraphs.length === 0) {
-        fail(`${key} has richSection without paragraphs`);
-      }
+
+    for (const paragraph of section.paragraphs) {
+      if (paragraph.length < 40) fail(`${sectionKey} has a paragraph that is too short`);
     }
+  }
+
+  if (sectionImages.size < 3) {
+    fail(`${key} richSections must use at least 3 distinct images`);
   }
 }
 
@@ -333,6 +354,9 @@ function validateAuthoringGuide() {
     '<main id="content" tabindex="-1" data-item="event:new-event-id"></main>',
     '<main id="content" tabindex="-1" data-item="course:new-course-id"></main>',
     '정확히 4개',
+    '최소 2개 이상 넣는다',
+    '문단을 최소 2개 이상',
+    '최소 3개 이상의 서로 다른 이미지',
     'YYYY.MM.DD',
     '음식: `상시`, `예약 확인`',
     '축제/행사: `예정`, `진행 중`, `종료`, `확인 필요`',
