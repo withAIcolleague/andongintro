@@ -35,7 +35,15 @@ items: ['food:jjimdak', 'place:hahoe', 'event:maskdance', 'course:first-day']
 - `detail`은 개별 페이지 첫 번째 본문에 들어가므로 감성적인 설명을 1~2문장으로 쓴다.
 - `richSections`는 개별 페이지의 사진+글 감성 섹션이다. 현재 사이트 검증 기준은 콘텐츠마다 정확히 4개를 요구한다.
 - 실시간성이 있는 정보는 반드시 `status`, `lastChecked`, 가능하면 `sources`를 넣는다.
+- `lastChecked`는 반드시 `YYYY.MM.DD` 형식으로 쓴다. 예: `2026.05.22`
 - 사실 확인이 안 된 일정, 운영시간, 요금은 추정하지 말고 `확인 필요`로 둔다.
+
+상태 값은 카테고리별로 아래 값만 사용한다.
+
+- 음식: `상시`, `예약 확인`
+- 축제/행사: `예정`, `진행 중`, `종료`, `확인 필요`
+- 장소: `상시`
+- 코스: `추천`, `일정 확인`, `노선 확인`
 
 ## 2-1. 사진+글 감성 섹션 양식
 
@@ -187,6 +195,8 @@ HTML 파일명: `place-new-place-id.html`
 - `진행 중`
 - `종료`
 - `확인 필요`
+
+`예정`, `진행 중`, `종료`처럼 일정이 확인된 축제는 `period`를 `YYYY.MM.DD ~ YYYY.MM.DD` 형식으로 쓴다. 아직 확정되지 않은 축제는 `status: '확인 필요'`를 쓰고, `period`, `location`, `visitNote` 중 어디를 확인해야 하는지 분명히 남긴다.
 
 HTML 파일명: `event-new-event-id.html`
 

@@ -23,6 +23,12 @@ const listingPages = {
   place: 'places.html',
   course: 'courses.html'
 };
+const allowedStatuses = {
+  food: ['상시', '예약 확인'],
+  event: ['예정', '진행 중', '종료', '확인 필요'],
+  place: ['상시'],
+  course: ['추천', '일정 확인', '노선 확인']
+};
 
 function fail(message) {
   throw new Error(message);
@@ -60,6 +66,7 @@ function validateData() {
     for (const field of ['id', 'title', 'category', 'summary', 'image', 'status', 'lastChecked']) {
       if (!item[field]) fail(`${key} missing ${field}`);
     }
+    validateFreshnessFields(key, item);
     if (!Array.isArray(item.richSections) || item.richSections.length !== 4) {
       fail(`${key} must have exactly 4 richSections`);
     }
@@ -68,6 +75,38 @@ function validateData() {
       if (!Array.isArray(section.paragraphs) || section.paragraphs.length === 0) {
         fail(`${key} has richSection without paragraphs`);
       }
+    }
+  }
+}
+
+function validateFreshnessFields(key, item) {
+  if (!/^\d{4}\.\d{2}\.\d{2}$/.test(item.lastChecked)) {
+    fail(`${key} lastChecked must use YYYY.MM.DD format`);
+  }
+
+  const [year, month, day] = item.lastChecked.split('.').map(Number);
+  const checkedDate = new Date(Date.UTC(year, month - 1, day));
+  if (
+    checkedDate.getUTCFullYear() !== year ||
+    checkedDate.getUTCMonth() !== month - 1 ||
+    checkedDate.getUTCDate() !== day
+  ) {
+    fail(`${key} lastChecked is not a valid calendar date`);
+  }
+
+  const statuses = allowedStatuses[item.category] || [];
+  if (!statuses.includes(item.status)) {
+    fail(`${key} has unsupported status "${item.status}" for category ${item.category}`);
+  }
+
+  if (item.category === 'event') {
+    if (!item.period) fail(`${key} event missing period`);
+    if (!item.location) fail(`${key} event missing location`);
+    if (item.status === '확인 필요') {
+      const freshnessText = [item.period, item.location, item.visitNote, item.summary].filter(Boolean).join(' ');
+      if (!freshnessText.includes('확인 필요')) fail(`${key} confirmation-needed event must explain what needs checking`);
+    } else if (!/^\d{4}\.\d{2}\.\d{2}\s*~\s*\d{4}\.\d{2}\.\d{2}$/.test(item.period)) {
+      fail(`${key} confirmed event period must use YYYY.MM.DD ~ YYYY.MM.DD format`);
     }
   }
 }
@@ -257,7 +296,11 @@ function validateAuthoringGuide() {
     '<main id="content" tabindex="-1" data-item="place:new-place-id"></main>',
     '<main id="content" tabindex="-1" data-item="event:new-event-id"></main>',
     '<main id="content" tabindex="-1" data-item="course:new-course-id"></main>',
-    '정확히 4개'
+    '정확히 4개',
+    'YYYY.MM.DD',
+    '음식: `상시`, `예약 확인`',
+    '축제/행사: `예정`, `진행 중`, `종료`, `확인 필요`',
+    '코스: `추천`, `일정 확인`, `노선 확인`'
   ];
 
   for (const snippet of requiredSnippets) {
