@@ -85,6 +85,14 @@ function validateHtml() {
       if (!html.includes(token)) fail(`${file} missing ${token}`);
     }
     if (html.includes('20260521-rich')) fail(`${file} still uses old asset version`);
+    if (!html.includes('class="skip-link"')) fail(`${file} missing skip link`);
+    if (file === 'yekki.html') {
+      if (!html.includes('href="#hero"') || !html.includes('id="hero" tabindex="-1"')) {
+        fail('yekki.html skip target is not focusable');
+      }
+    } else if (!html.includes('<main id="content" tabindex="-1"')) {
+      fail(`${file} main content target is not focusable`);
+    }
   }
 
   for (const { item } of allItems()) {
