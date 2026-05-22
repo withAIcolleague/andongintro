@@ -94,9 +94,9 @@
         <div class="story-grid">
           <div class="story-copy">
             <span class="eyebrow">${storyEyebrow(item.category, 0)}</span>
-            <h2>${item.title}의 첫인상</h2>
+            <h2>${storyFirstTitle(item)}</h2>
             <p>${item.detail || item.summary}</p>
-            <p>${storyLead(item)}</p>
+            <p>${storyFirstText(item)}</p>
           </div>
           <figure class="story-photo">
             <span class="story-img" style="background-image: url('${item.image}')"></span>
@@ -146,6 +146,14 @@
     return '안동은 권역 사이 거리가 있어 동선을 먼저 잡으면 여행의 피로가 줄고, 각 장소의 이야기에 더 오래 머물 수 있습니다.';
   }
 
+  function storyFirstTitle(item) {
+    return item.storyTitle || `${item.title}의 첫인상`;
+  }
+
+  function storyFirstText(item) {
+    return item.story || storyLead(item);
+  }
+
   function supportImage(item) {
     if (item.category === 'food') return item.id === 'soju' ? 'assets/hanokmaul.jpg' : 'assets/heotjesabap.png';
     if (item.category === 'event') return item.id === 'moonlight' ? 'assets/wolyeonggyo.jpg' : 'assets/hero_hahoe.png';
@@ -156,6 +164,7 @@
   }
 
   function storySecondTitle(item) {
+    if (item.contextTitle) return item.contextTitle;
     if (item.category === 'food') return '상 위에 남는 안동의 결';
     if (item.category === 'place') return '풍경 안에 겹친 시간';
     if (item.category === 'event') return '계절이 만드는 도시의 표정';
@@ -163,6 +172,7 @@
   }
 
   function storySecondText(item) {
+    if (item.context) return item.context;
     if (item.category === 'food') return `${item.where || '안동 곳곳'}에서 만나는 ${item.title}은 여행 중간의 식사가 아니라 안동의 생활 문화를 감각적으로 만나는 방식입니다.`;
     if (item.category === 'place') return `${item.area || '안동'}의 흐름 안에서 ${item.title}을 보면, 단일 명소가 아니라 주변 장소와 이어지는 장면으로 읽힙니다.`;
     if (item.category === 'event') return `${item.period || '일정 확인 필요'}에 맞춰 열리는 ${item.title}은 방문 시점에 따라 경험이 크게 달라지는 콘텐츠입니다.`;
@@ -170,6 +180,7 @@
   }
 
   function noteText(item) {
+    if (item.visitNote) return item.visitNote;
     if (item.category === 'event') return '축제와 행사는 일정, 장소, 셔틀, 예매 여부가 바뀔 수 있으니 공식 출처를 우선 확인하세요.';
     if (item.category === 'course') return '이동 방식에 따라 체감 시간이 달라집니다. 대중교통과 차량 이동을 분리해 판단하는 것이 좋습니다.';
     return '운영시간, 예약, 교통, 주차 정보는 방문 시점에 달라질 수 있으니 마지막 확인일과 공식 안내를 함께 확인하세요.';
@@ -191,6 +202,8 @@
     if (item.period) cards.push(['일정', item.period]);
     if (item.location) cards.push(['장소', item.location]);
     if (item.route) cards.push(['동선', item.route]);
+    if (item.bestFor) cards.push(['추천 대상', item.bestFor]);
+    if (item.nearby) cards.push(['함께 보기', item.nearby]);
     if (item.tip) cards.push(['추천 팁', item.tip]);
     cards.push(['상태', item.status || '확인 필요']);
     cards.push(['확인일', item.lastChecked || '미확인']);
