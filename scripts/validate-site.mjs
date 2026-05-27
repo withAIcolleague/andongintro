@@ -87,8 +87,8 @@ function validateRichContent(key, item) {
     if (!section.eyebrow || !section.title || !section.image) fail(`${sectionKey} is incomplete`);
     sectionImages.add(section.image);
 
-    if (!Array.isArray(section.paragraphs) || section.paragraphs.length < 2) {
-      fail(`${sectionKey} must have at least 2 paragraphs`);
+    if (!Array.isArray(section.paragraphs) || section.paragraphs.length < 3) {
+      fail(`${sectionKey} must have at least 3 paragraphs`);
     }
 
     for (const paragraph of section.paragraphs) {
@@ -355,7 +355,7 @@ function validateAuthoringGuide() {
     '<main id="content" tabindex="-1" data-item="course:new-course-id"></main>',
     '정확히 4개',
     '최소 2개 이상 넣는다',
-    '문단을 최소 2개 이상',
+    '문단을 최소 3개 이상',
     '최소 3개 이상의 서로 다른 이미지',
     'YYYY.MM.DD',
     '음식: `상시`, `예약 확인`',

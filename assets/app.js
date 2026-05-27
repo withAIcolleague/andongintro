@@ -242,8 +242,8 @@
     if (item.richImages && item.richImages[index]) return item.richImages[index];
 
     const images = {
-      food: ['assets/jjimdak.png', 'assets/heotjesabap.png', 'assets/soju.png'],
-      place: ['assets/hanokmaul.jpg', 'assets/hero_hahoe.png', 'assets/susanggil.jpg'],
+      food: ['assets/heotjesabap.png', 'assets/jjimdak.png', 'assets/hanokmaul.jpg'],
+      place: ['assets/hero_hahoe.png', 'assets/hanokmaul.jpg', 'assets/seowon.png'],
       event: ['assets/mask_dance.png', 'assets/wolyeonggyo.jpg', 'assets/cherry_blossom.png'],
       course: ['assets/hero_hahoe.png', 'assets/wolyeonggyo.jpg', 'assets/yekki_village.jpg']
     };
@@ -278,7 +278,19 @@
   }
 
   function supportImage(item) {
-    if (item.category === 'food') return item.id === 'soju' ? 'assets/hanokmaul.jpg' : 'assets/heotjesabap.png';
+    if (item.category === 'food') {
+      const foodFallbacks = {
+        soju: 'assets/hanokmaul.jpg',
+        jjimdak: 'assets/andong_market.png',
+        heotjesabap: 'assets/seowon.png',
+        guksi: 'assets/andong_guksi.png',
+        mackerel: 'assets/andong_mackerel.png',
+        octopus: 'assets/andong_octopus.png',
+        jongga: 'assets/andong_jongga.png',
+        market: 'assets/andong_market.png'
+      };
+      return foodFallbacks[item.id] || 'assets/heotjesabap.png';
+    }
     if (item.category === 'event') return item.id === 'moonlight' ? 'assets/wolyeonggyo.jpg' : 'assets/hero_hahoe.png';
     if (item.category === 'course') return item.id.includes('night') ? 'assets/wolyeonggyo.jpg' : 'assets/yekki_village.jpg';
     if (item.id === 'wolyeonggyo' || item.id === 'andongdam') return 'assets/wolyeonggyo.png';
