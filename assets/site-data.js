@@ -1427,7 +1427,7 @@ window.AndongData = {
       category: 'place',
       themeTags: ['도심', '음식', '시장'],
       summary: '찜닭골목과 시장 먹거리를 함께 볼 수 있는 도심권 핵심 지점입니다.',
-      image: 'assets/jjimdak.png',
+      image: 'assets/andong_gusijang_arcade.png',
       href: 'places.html#market-place',
       status: '상시',
       lastChecked: '2026.05.22',
@@ -1441,12 +1441,12 @@ window.AndongData = {
       nearby: '찜닭골목, 원도심, 문화의 거리, 월영교',
       tip: '처음 방문이라면 찜닭골목에서 식사하고, 시장 안 간식이나 문화의 거리 산책을 더한 뒤 월영교 야경으로 이어가면 동선이 쉽습니다.',
       visitNote: '시장과 식당 영업시간, 휴무, 대기 여부는 점포별로 다릅니다. 주말과 식사 시간대에는 혼잡할 수 있으니 주차와 대기 시간을 여유 있게 잡으세요.',
-      richImages: ['assets/jjimdak.png', 'assets/soju.png', 'assets/heotjesabap.png', 'assets/wolyeonggyo.jpg'],
+      richImages: ['assets/andong_gusijang_arcade.png', 'assets/andong_gusijang_walkway.png', 'assets/andong_market_food_alley.png', 'assets/andong_market.png'],
       richSections: [
         {
           eyebrow: 'MARKET TABLE',
           title: '찜닭골목에서 만나는 대표 음식의 현장감',
-          image: 'assets/jjimdak.png',
+          image: 'assets/andong_market_food_alley.png',
           paragraphs: [
             '안동구시장을 여행 콘텐츠로 설명할 때 가장 먼저 잡아야 할 장면은 찜닭골목입니다. 골목 안 식당들이 큰 냄비에 닭고기, 당면, 감자, 채소를 넣고 간장 양념으로 끓이는 장면은 안동찜닭을 메뉴가 아니라 장소의 경험으로 바꿔줍니다.',
             '전통시장 자료와 여러 관광 안내는 안동구시장 안에 찜닭골목이 자리해 내외국인이 찾는 경북 대표 관광특화시장으로 알려졌다고 설명합니다. 그래서 이곳은 음식점 한 곳을 고르는 문제보다, 골목 전체의 분위기를 먼저 경험하는 장소로 안내하는 편이 좋습니다.',
@@ -1456,7 +1456,7 @@ window.AndongData = {
         {
           eyebrow: 'LOCAL LIFE',
           title: '관광지이면서 생활 시장인 곳',
-          image: 'assets/heotjesabap.png',
+          image: 'assets/andong_gusijang_walkway.png',
           paragraphs: [
             '구시장은 여행자에게는 사진과 식사의 목적지지만, 지역민에게는 장보기와 식사, 만남이 이어지는 생활 공간입니다. 시장 안을 걷다 보면 찜닭뿐 아니라 분식, 반찬, 제수 음식, 간식처럼 안동의 일상적인 식탁과 연결되는 장면을 만날 수 있습니다.',
             '안동시 공식 블로그성 안내는 찜닭골목 주변의 고객지원센터와 여행객 쉼터를 소개합니다. 공식 행정 공지는 아니지만, 시장을 단순 식당가가 아니라 방문자가 잠시 쉬고 정보를 정리할 수 있는 원도심 거점으로 이해하는 데 도움이 됩니다.',
@@ -1466,7 +1466,7 @@ window.AndongData = {
         {
           eyebrow: 'TASTE ROUTE',
           title: '찜닭만 먹고 끝내지 않는 도심 미식 동선',
-          image: 'assets/soju.png',
+          image: 'assets/andong_market.png',
           paragraphs: [
             '안동구시장 일정은 찜닭 한 끼로 끝내기보다 안동소주, 간고등어, 문어, 시장 간식 같은 다른 음식 콘텐츠와 함께 연결할 때 더 풍성합니다. 사이트 안에서는 음식 상세 페이지와 시장 장소 페이지가 서로 이어지도록 설명하는 것이 좋습니다.',
             '처음 방문자는 찜닭골목에서 식사하고, 시장 안 간식이나 문화의 거리 쪽 카페·빵집을 더한 뒤 월영교로 이동하면 부담이 적습니다. 가족 여행자에게도 선택지가 많아 세대별 취향을 맞추기 쉽습니다.',
@@ -1476,7 +1476,7 @@ window.AndongData = {
         {
           eyebrow: 'CHECK POINT',
           title: '주차와 대기, 점포별 차이를 먼저 보기',
-          image: 'assets/wolyeonggyo.jpg',
+          image: 'assets/andong_gusijang_arcade.png',
           paragraphs: [
             '시장 방문에서 가장 흔한 변수는 주차, 대기, 점포별 영업시간입니다. 특히 주말과 식사 시간대에는 찜닭골목이 붐빌 수 있으므로 도착 시간과 이동 시간을 넉넉하게 잡는 편이 좋습니다.',
             '개별 점포의 영업시간과 휴무, 포장 가능 여부는 계속 바뀔 수 있습니다. 이 페이지에서는 특정 점포를 단정 추천하기보다 시장 전체의 이용 흐름과 확인 포인트를 알려주는 방식이 더 안전합니다.',
