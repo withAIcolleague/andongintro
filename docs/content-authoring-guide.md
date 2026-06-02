@@ -286,6 +286,7 @@ node scripts/check-local-pages.mjs
 - 개별 HTML의 `<title>`, `description`, `og:title`, `og:description`, `og:image`가 콘텐츠에 맞게 갱신되었는가
 - `sitemap.xml`에 새 개별 페이지 URL이 포함되었는가
 - `docs/image-inventory.md`에 새 이미지 사용 현황이 반영되었는가
+- 개별 페이지 하단의 `함께 보면 좋은 선택지`가 같은 분야 보드 또는 같은 카테고리의 콘텐츠로 자연스럽게 이어지는가
 - `robots.txt`의 `Sitemap` URL이 실제 배포 주소와 맞는가
 - 개별 페이지의 히어로, 글/사진 섹션, 추가 감성 섹션, Traveler's Note가 보이는가
 - 모바일 폭에서 가로 스크롤이 생기지 않는가
@@ -298,4 +299,5 @@ node scripts/check-local-pages.mjs
 - `id`를 바꾸면 HTML 파일명, `data-item`, `fields` 참조도 함께 바꿔야 한다.
 - 새 이미지는 가능하면 실제 장소/음식/축제와 직접 관련 있는 이미지를 사용한다.
 - 임시 이미지 사용 시 `docs/source-links.md`에 교체 메모를 남기고 `node scripts/update-image-inventory.mjs`를 실행한다.
+- 관련 콘텐츠 추천은 `assets/site-data.js`의 `fields` 배열을 우선 사용한다. 새 콘텐츠를 추가하면 랜딩 분야 보드에 적절히 배치해 개별 페이지 하단 추천도 함께 살아나도록 한다.
 - 출처가 불확실한 최신 일정은 본문에 확정처럼 쓰지 않는다.

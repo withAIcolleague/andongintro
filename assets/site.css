@@ -250,6 +250,10 @@ main:focus {
   margin-top: 48px;
 }
 
+.related-section {
+  margin-top: 64px;
+}
+
 .section-head {
   display: flex;
   flex-direction: column;
@@ -334,6 +338,20 @@ main:focus {
 
 .summary-card {
   min-height: 190px;
+}
+
+.related-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.related-card {
+  min-height: 220px;
+}
+
+.related-card:nth-child(6n + 1),
+.related-card:nth-child(6n + 4) {
+  grid-column: span 1;
+  min-height: 220px;
 }
 
 .choice-card::before,
@@ -758,7 +776,10 @@ main:focus {
   }
 
   .choice-card:nth-child(6n + 1),
-  .choice-card:nth-child(6n + 4) {
+  .choice-card:nth-child(6n + 4),
+  .related-card,
+  .related-card:nth-child(6n + 1),
+  .related-card:nth-child(6n + 4) {
     grid-column: span 1;
     min-height: 210px;
   }
@@ -815,6 +836,7 @@ main:focus {
   .choice-grid,
   .detail-grid,
   .summary-grid,
+  .related-grid,
   .source-grid {
     grid-template-columns: 1fr;
   }

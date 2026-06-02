@@ -325,14 +325,19 @@ function validateSourceUi() {
   const css = fs.readFileSync('assets/site.css', 'utf8');
   const requiredAppSnippets = [
     'SOURCE CHECK',
+    'NEXT CHOICE',
+    'relatedItems',
     '방문 전 확인 기준',
+    '함께 보면 좋은 선택지',
     '마지막 확인',
     '새 창으로 열기',
     'rel="noreferrer noopener"'
   ];
   const requiredCssSnippets = [
     '.source-card-primary',
-    '.source-check-list'
+    '.source-check-list',
+    '.related-grid',
+    '.related-card'
   ];
 
   for (const snippet of requiredAppSnippets) {

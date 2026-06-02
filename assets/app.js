@@ -139,6 +139,25 @@
           ${itemInfoCards(item)}
         </div>
       </section>
+      ${renderRelatedSection(item)}
+    `;
+  }
+
+  function renderRelatedSection(item) {
+    const related = relatedItems(item);
+    if (!related.length) return '';
+
+    return `
+      <section class="section compact-section related-section">
+        <div class="section-head">
+          <span class="eyebrow">NEXT CHOICE</span>
+          <h2>함께 보면 좋은 선택지</h2>
+          <p>${item.title}에서 이어가기 좋은 음식, 장소, 축제, 코스를 묶었습니다.</p>
+        </div>
+        <div class="choice-grid related-grid">
+          ${related.map((relatedItem) => card(relatedItem, 'choice-card related-card')).join('')}
+        </div>
+      </section>
     `;
   }
 
@@ -168,6 +187,33 @@
         <span class="story-img js-lazy-bg" ${lazyBackgroundAttrs(section.image)} aria-hidden="true"></span>
       </figure>
     `;
+  }
+
+  function itemRef(item) {
+    return `${item.category}:${item.id}`;
+  }
+
+  function uniqueItems(items) {
+    const seen = new Set();
+    return items.filter((candidate) => {
+      if (!candidate) return false;
+      const ref = itemRef(candidate);
+      if (seen.has(ref)) return false;
+      seen.add(ref);
+      return true;
+    });
+  }
+
+  function relatedItems(item) {
+    const ref = itemRef(item);
+    const fieldNeighbors = data.fields
+      .filter((field) => field.items.includes(ref))
+      .flatMap((field) => field.items)
+      .filter((candidateRef) => candidateRef !== ref)
+      .map(byRef);
+
+    const sameCategory = (collections[item.category] || []).filter((candidate) => candidate.id !== item.id);
+    return uniqueItems([...fieldNeighbors, ...sameCategory]).slice(0, 3);
   }
 
   function richSections(item) {

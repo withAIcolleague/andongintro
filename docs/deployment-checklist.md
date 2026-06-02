@@ -58,6 +58,8 @@ node scripts/check-local-pages.mjs --base-url=http://127.0.0.1:8010
 - `http://127.0.0.1:8010/sitemap.xml`
 - `http://127.0.0.1:8010/robots.txt`
 
+개별 콘텐츠 페이지에서는 하단의 `함께 보면 좋은 선택지`가 표시되고 카드가 다음 상세 페이지로 이동하는지도 확인한다.
+
 ## GitHub Pages 설정
 
 - Source: `GitHub Actions`
