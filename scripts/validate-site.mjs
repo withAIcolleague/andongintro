@@ -326,6 +326,16 @@ function validateImageInventory() {
   assertFile('docs/image-inventory.md');
   assertFile('scripts/update-image-inventory.mjs');
   execSync('node scripts/update-image-inventory.mjs --check', { stdio: 'pipe' });
+
+  const inventory = fs.readFileSync('docs/image-inventory.md', 'utf8');
+  const requiredSnippets = [
+    '## 과다 재사용 이미지 대체 후보',
+    '## 과다 재사용 이미지',
+    '전용 사진 확보 후 대표/섹션 이미지 교체'
+  ];
+  for (const snippet of requiredSnippets) {
+    if (!inventory.includes(snippet)) fail(`docs/image-inventory.md missing image replacement snippet: ${snippet}`);
+  }
 }
 
 function validateDeploymentDocs() {

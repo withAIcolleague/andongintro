@@ -6,6 +6,7 @@
 - 콘텐츠 수: 31
 - 사용 중인 고유 이미지: 27
 - 임시 이미지 교체 메모가 있는 콘텐츠: 13
+- 5개 초과 콘텐츠에서 재사용되는 이미지: 9
 
 ## 임시 이미지 교체 우선순위
 
@@ -24,6 +25,38 @@
 | `place:bongjeongsa` | 봉정사 | `assets/andong_bongjeongsa.png` | 4 |
 | `place:market-place` | 안동구시장 | `assets/jjimdak.png` | 4 |
 | `place:imcheonggak` | 임청각 | `assets/andong_imcheonggak.png` | 5 |
+
+## 과다 재사용 이미지 대체 후보
+
+| 콘텐츠 | 제목 | 과다 재사용 이미지 | 다음 작업 |
+|---|---|---|---|
+| `event:cherry` | 안동벚꽃축제 | `assets/andong-moonlight-dzrsh.png`, `assets/wolyeonggyo.jpg`, `assets/jjimdak.png`, `assets/hero_hahoe.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `event:moonlight` | 월영야행 | `assets/andong-moonlight-dzrsh.png`, `assets/wolyeonggyo.jpg`, `assets/wolyeonggyo.png`, `assets/hanokmaul.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `food:guksi` | 안동국시 | `assets/hanokmaul.jpg`, `assets/seowon.png`, `assets/jjimdak.png`, `assets/heotjesabap.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `food:soju` | 안동소주 | `assets/heotjesabap.png`, `assets/jjimdak.png`, `assets/wolyeonggyo.jpg`, `assets/hanokmaul.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `place:byeongsan` | 병산서원 | `assets/seowon.png`, `assets/hero_hahoe.png`, `assets/wolyeonggyo.jpg`, `assets/hanokmaul.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `place:imcheonggak` | 임청각 | `assets/seowon.png`, `assets/wolyeonggyo.jpg`, `assets/hanokmaul.jpg`, `assets/wolyeonggyo.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `event:ice` | 암산얼음축제 | `assets/wolyeonggyo.jpg`, `assets/hanokmaul.jpg`, `assets/seowon.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `event:waterfesta` | 안동수페스타 | `assets/wolyeonggyo.png`, `assets/andong-moonlight-dzrsh.png`, `assets/wolyeonggyo.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `food:jongga` | 종가음식 | `assets/heotjesabap.png`, `assets/seowon.png`, `assets/hanokmaul.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `food:market` | 시장 먹거리 | `assets/jjimdak.png`, `assets/heotjesabap.png`, `assets/andong-moonlight-dzrsh.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `food:octopus` | 안동 문어 | `assets/heotjesabap.png`, `assets/hanokmaul.jpg`, `assets/jjimdak.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `place:market-place` | 안동구시장 | `assets/jjimdak.png`, `assets/heotjesabap.png`, `assets/wolyeonggyo.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `place:bongjeongsa` | 봉정사 | `assets/seowon.png`, `assets/wolyeonggyo.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+
+## 과다 재사용 이미지
+
+| 이미지 | 사용 콘텐츠 수 | 우선 판단 |
+|---|---:|---|
+| `assets/wolyeonggyo.jpg` | 19 | 전용 이미지 대체 우선 |
+| `assets/hanokmaul.jpg` | 17 | 전용 이미지 대체 우선 |
+| `assets/jjimdak.png` | 14 | 전용 이미지 대체 우선 |
+| `assets/seowon.png` | 11 | 전용 이미지 대체 우선 |
+| `assets/heotjesabap.png` | 10 | 보조 이미지 분산 검토 |
+| `assets/hero_hahoe.png` | 10 | 보조 이미지 분산 검토 |
+| `assets/andong-moonlight-dzrsh.png` | 8 | 보조 이미지 분산 검토 |
+| `assets/susanggil.jpg` | 6 | 보조 이미지 분산 검토 |
+| `assets/wolyeonggyo.png` | 6 | 보조 이미지 분산 검토 |
 
 ## 이미지 재사용 현황
 

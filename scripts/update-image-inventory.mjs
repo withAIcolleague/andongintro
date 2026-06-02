@@ -7,6 +7,7 @@ vm.runInContext(fs.readFileSync('assets/site-data.js', 'utf8'), context);
 
 const data = context.window.AndongData;
 const groups = ['foods', 'events', 'places', 'courses'];
+const highReuseThreshold = 5;
 const sourceNotes = [
   fs.existsSync('docs/source-links.md') ? fs.readFileSync('docs/source-links.md', 'utf8') : '',
   fs.existsSync('source.md') ? fs.readFileSync('source.md', 'utf8') : ''
@@ -60,8 +61,19 @@ const temporaryRows = rows
     ref: itemRef(item),
     title: item.title,
     primary: item.image,
-    imageCount: images.length
+    imageCount: images.length,
+    images
   }));
+
+const highReuseImages = sharedImages.filter(({ refs }) => refs.length > highReuseThreshold);
+const highReuseImageSet = new Set(highReuseImages.map(({ image }) => image));
+const replacementTargets = temporaryRows
+  .map((row) => ({
+    ...row,
+    highReuseImages: row.images.filter((image) => highReuseImageSet.has(image))
+  }))
+  .filter((row) => row.highReuseImages.length)
+  .sort((a, b) => b.highReuseImages.length - a.highReuseImages.length || a.ref.localeCompare(b.ref));
 
 const lines = [
   '# 안동 안내 이미지 인벤토리',
@@ -72,6 +84,7 @@ const lines = [
   `- 콘텐츠 수: ${rows.length}`,
   `- 사용 중인 고유 이미지: ${sharedImages.length}`,
   `- 임시 이미지 교체 메모가 있는 콘텐츠: ${temporaryRows.length}`,
+  `- ${highReuseThreshold}개 초과 콘텐츠에서 재사용되는 이미지: ${highReuseImages.length}`,
   '',
   '## 임시 이미지 교체 우선순위',
   '',
@@ -80,6 +93,22 @@ const lines = [
       .map((row) => `| \`${row.ref}\` | ${row.title} | \`${row.primary}\` | ${row.imageCount} |`)
       .join('\n')
     : '현재 문서화된 임시 이미지 교체 항목이 없다.',
+  '',
+  '## 과다 재사용 이미지 대체 후보',
+  '',
+  replacementTargets.length
+    ? '| 콘텐츠 | 제목 | 과다 재사용 이미지 | 다음 작업 |\n|---|---|---|---|\n' + replacementTargets
+      .map((row) => `| \`${row.ref}\` | ${row.title} | ${row.highReuseImages.map((image) => `\`${image}\``).join(', ')} | 전용 사진 확보 후 대표/섹션 이미지 교체 |`)
+      .join('\n')
+    : '현재 임시 이미지 교체 항목 중 과다 재사용 이미지가 섞인 콘텐츠가 없다.',
+  '',
+  '## 과다 재사용 이미지',
+  '',
+  highReuseImages.length
+    ? '| 이미지 | 사용 콘텐츠 수 | 우선 판단 |\n|---|---:|---|\n' + highReuseImages
+      .map(({ image, refs }) => `| \`${image}\` | ${refs.length} | ${refs.length > 10 ? '전용 이미지 대체 우선' : '보조 이미지 분산 검토'} |`)
+      .join('\n')
+    : `현재 ${highReuseThreshold}개 초과 콘텐츠에서 재사용되는 이미지가 없다.`,
   '',
   '## 이미지 재사용 현황',
   '',
