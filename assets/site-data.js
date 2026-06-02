@@ -10,7 +10,7 @@ window.AndongData = {
       richImages: ['assets/jjimdak.png', 'assets/andong_market.png', 'assets/wolyeonggyo.jpg', 'assets/heotjesabap.png'],
       href: 'food.html#jjimdak',
       status: '상시',
-      lastChecked: '2026.05.22',
+      lastChecked: '2026.06.02',
       detail: '안동찜닭은 안동을 처음 찾는 방문자에게 가장 설명이 쉬운 음식입니다. 큼직한 닭고기와 당면, 채소를 간장 양념으로 졸여 여러 명이 나눠 먹기 좋고, 구시장 골목의 활기까지 함께 느낄 수 있습니다.',
       storyTitle: '시장 골목에서 시작하는 안동의 맛',
       story: '구시장 찜닭골목은 안동찜닭을 여행 콘텐츠로 체감하기 좋은 장소입니다. 골목에 들어서면 식당마다 큰 냄비에서 끓는 찜닭 냄새가 이어지고, 안동의 대표 음식이 관광 명소와 생활 상권 사이에 놓여 있다는 점이 자연스럽게 보입니다. 처음 방문자에게는 맛보다 먼저 골목의 소리와 냄새가 안동의 첫인상이 됩니다.',
@@ -590,7 +590,7 @@ window.AndongData = {
       bestFor: '가을 여행, 공연 관람, 가족·단체 여행',
       nearby: '탈춤공원, 원도심, 하회마을, 월영교',
       tip: '축제 기간에는 주차와 셔틀 공지를 먼저 확인하세요.',
-      visitNote: '2026년 일정은 공식·준공식 출처에서 확인한 값입니다. 세부 공연표와 교통 안내는 개최 전 다시 확인해야 합니다.',
+      visitNote: '2026년 일정은 한국정신문화재단 공식 주요사업 페이지에서 재확인했습니다. 세부 공연표, 교통, 셔틀, 예매, 먹거리 안내는 개최 전 공식 홈페이지에서 다시 확인해야 합니다.',
       richSections: [
         {
           eyebrow: 'FESTIVAL SCENE',
@@ -648,7 +648,7 @@ window.AndongData = {
       image: 'assets/andong-moonlight-dzrsh.png',
       href: 'events.html#moonlight',
       status: '확인 필요',
-      lastChecked: '2026.05.22',
+      lastChecked: '2026.06.02',
       period: '2026 세부 일정 확인 필요',
       location: '월영교 주변',
       detail: '월영야행은 월영교와 주변 국가유산을 밤에 걷고 즐기는 안동의 대표 야간 문화행사입니다. 달빛, 강변 조명, 공연, 체험, 장터가 결합되어 낮의 서원·고택 여행과 다른 안동의 밤을 보여주며, 도심 저녁 일정과 연결하기 좋습니다.',
@@ -659,7 +659,7 @@ window.AndongData = {
       bestFor: '야경 여행, 커플·가족 산책, 여름 밤 일정',
       nearby: '월영교, 안동시립박물관, 임청각, 안동댐, 원도심 식당가',
       tip: '행사 기간에는 낮보다 저녁 동선이 중요합니다. 주차, 셔틀, 공연 시간표를 먼저 확인하세요.',
-      visitNote: '2026년 세부 일정은 아직 확인 필요 상태입니다. 공식 월영야행 사이트, 투어안동 관광소식, 한국정신문화재단 공지를 기준으로 갱신하세요.',
+      visitNote: '2026년 6월 2일 기준 세부 일정은 아직 확인 필요 상태입니다. 월영야행은 2026년 국가유산 활용사업 선정은 확인되지만, 실제 기간·프로그램·교통 안내는 공식 월영야행 사이트와 안동시·한국정신문화재단 공지로 다시 확인해야 합니다.',
       richImages: ['assets/andong-moonlight-dzrsh.png', 'assets/wolyeonggyo.jpg', 'assets/wolyeonggyo.png', 'assets/hanokmaul.jpg'],
       richSections: [
         {
@@ -707,7 +707,7 @@ window.AndongData = {
         { label: '안동문화재야행', url: 'https://adnighttrip.com/' },
         { label: '투어안동', url: 'https://www.tourandong.com/public/' },
         { label: '세계일보 2025 월영야행', url: 'https://www.segye.com/newsView/20250729504727' },
-        { label: '안동시 2026 국가유산 활용사업 선정', url: 'https://www.fnewstv.com/news/newsview.php?ncode=1065571537685256' },
+        { label: '안동시 2026 국가유산 활용사업 선정', url: 'https://www.adns.kr/news/articleView.html?idxno=22993' },
         { label: '국가유산청 2026 활용사업 선정 결과', url: 'https://www.khs.go.kr/multiBbz/selectMultiBbzView.do?bbzId=newpublic&id=21118&mn=NS_01_01&no=27778' }
       ]
     },
@@ -720,7 +720,7 @@ window.AndongData = {
       image: 'assets/cherry_blossom.png',
       href: 'events.html#cherry',
       status: '종료',
-      lastChecked: '2026.05.22',
+      lastChecked: '2026.06.02',
       period: '2026.04.01 ~ 2026.04.05',
       location: '탈춤공원 벚꽃길 일원',
       detail: '안동벚꽃축제는 탈춤공원과 낙동강변 벚꽃길의 봄 풍경을 중심으로 즐기는 계절 행사입니다. 안동의 고택·서원 이미지와는 다른 화사한 도시 산책을 보여주며, 낮의 벚꽃길과 밤의 조명 연출을 함께 즐기기 좋습니다. 도심권 식사와 월영교 야경까지 자연스럽게 이어집니다.',
@@ -731,7 +731,7 @@ window.AndongData = {
       bestFor: '봄 나들이, 가족 산책, 사진 여행',
       nearby: '탈춤공원, 낙동강변, 안동구시장, 월영교',
       tip: '낮에는 벚꽃길 산책, 해 질 무렵 이후에는 조명과 공연 분위기를 함께 보는 흐름이 좋습니다.',
-      visitNote: '2026년 행사는 2026년 4월 5일 종료되었습니다. 벚꽃 만개 시점과 다음 축제 일정은 해마다 달라지므로 추후 공식 관광소식에서 다시 확인해야 합니다.',
+      visitNote: '2026년 행사는 2026년 4월 5일 종료되었습니다. 한국정신문화재단 공식 주요사업 페이지에서 기간과 장소를 재확인했습니다. 벚꽃 만개 시점과 다음 축제 일정은 해마다 달라지므로 추후 공식 관광소식에서 다시 확인해야 합니다.',
       richImages: ['assets/cherry_blossom.png', 'assets/andong-moonlight-dzrsh.png', 'assets/wolyeonggyo.jpg', 'assets/jjimdak.png'],
       richSections: [
         {
@@ -778,7 +778,7 @@ window.AndongData = {
       sources: [
         { label: '투어안동 관광소식', url: 'https://www.tourandong.com/public/sub5/sub3.cshtml' },
         { label: '안동시청', url: 'https://www.andong.go.kr/main.do' },
-        { label: '한국정신문화재단', url: 'https://www.kfce.or.kr/' },
+        { label: '한국정신문화재단 안동벚꽃축제', url: 'https://www.kfce.or.kr/home/sub2/sub2.asp' },
         { label: '경북매일 2026 안동벚꽃축제', url: 'https://www.kbmaeil.com/article/20260331500450' }
       ]
     },
@@ -786,23 +786,23 @@ window.AndongData = {
       id: 'waterfesta',
       title: '안동수페스타',
       category: 'event',
-      themeTags: ['여름', '물놀이', '확인 필요'],
-      summary: '여름철 물놀이와 공연형 프로그램으로 소개하기 좋은 계절 축제입니다.',
+      themeTags: ['여름', '물놀이', '공식 확인'],
+      summary: '2026년 7월 말부터 8월 초까지 안동낙동강변에서 열리는 여름 물놀이·공연 축제입니다.',
       image: 'assets/wolyeonggyo.png',
       href: 'events.html#waterfesta',
-      status: '확인 필요',
-      lastChecked: '2026.05.22',
-      period: '2026 세부 일정 확인 필요',
-      location: '안동시 공지 확인 필요',
-      detail: '안동수페스타는 낙동강변을 여름 물놀이장과 야간 공연장으로 바꾸는 계절 축제입니다. 낮에는 물놀이와 체험, 밤에는 공연·먹거리·불꽃놀이가 이어지는 체류형 여름 콘텐츠로 소개하기 좋습니다. 다만 2026년 세부 일정은 공식 확인 전까지 단정하지 않아야 합니다.',
+      status: '예정',
+      lastChecked: '2026.06.02',
+      period: '2026.07.25 ~ 2026.08.02',
+      location: '안동낙동강변',
+      detail: '안동수페스타는 낙동강변을 여름 물놀이장과 야간 공연장으로 바꾸는 계절 축제입니다. 2026년에는 7월 25일부터 8월 2일까지 9일간 안동낙동강변에서 열리는 것으로 공식 확인되며, 낮에는 물놀이와 체험, 밤에는 공연·먹거리·불꽃놀이가 이어지는 체류형 여름 콘텐츠로 소개하기 좋습니다.',
       storyTitle: '여름 안동의 체감 온도를 낮추는 축제',
       story: '서원과 고택 중심의 정적인 여행과 달리 수페스타는 몸을 움직이며 즐기는 여름형 콘텐츠입니다. 2025년 행사는 정하동 성희여고 앞 낙동강변에서 9일간 열려 물놀이, 야간 공연, 먹거리, 캠핑형 체류 콘텐츠를 함께 보여줬습니다. 가족 여행자에게는 안동의 여름을 가장 직관적으로 설명할 수 있는 축제입니다.',
       contextTitle: '물놀이와 공연의 결합',
-      context: '세부 장소와 프로그램은 해마다 달라질 수 있으므로 축제 이름만으로 고정 안내하지 않는 것이 좋습니다. 2026년 일정은 아직 확인 필요 상태로 두고, 공식 공지가 나오면 기간·장소·물놀이장 운영·공연표·예약 정보를 갱신합니다. 물놀이형 축제는 안전과 날씨 변수까지 함께 다뤄야 합니다.',
+      context: '2026년 기간과 장소는 공식 확인됐지만, 물놀이장 운영시간, 공연표, 불꽃놀이, 캠핑존과 예약 정보는 세부 공지에 따라 달라질 수 있습니다. 물놀이형 축제는 안전과 날씨 변수까지 함께 다뤄야 하므로 방문 전 공식 안내를 다시 확인하도록 안내하는 것이 좋습니다.',
       bestFor: '여름 가족 여행, 어린이 동반, 체험형 일정',
       nearby: '낙동강변, 안동시 도심권, 월영교, 원도심 식당가',
       tip: '낮 물놀이와 밤 공연을 모두 보려면 여벌 옷, 방수팩, 귀가 교통, 주차 동선을 함께 준비하세요.',
-      visitNote: '2026년 세부 일정과 장소는 확인 필요 상태입니다. 한국정신문화재단, 안동시청, 투어안동 공지를 대조해 갱신하세요.',
+      visitNote: '2026년 기간과 장소는 한국정신문화재단 공식 주요사업 페이지에서 확인했습니다. 세부 프로그램, 물놀이장 운영시간, 예약, 우천·폭염 운영 기준은 방문 전 공식 홈페이지와 안동시 공지를 다시 확인하세요.',
       richImages: ['assets/wolyeonggyo.png', 'assets/andong-moonlight-dzrsh.png', 'assets/wolyeonggyo.jpg', 'assets/cherry_blossom.png'],
       richSections: [
         {
@@ -840,15 +840,15 @@ window.AndongData = {
           title: '2026년 공지가 나오면 먼저 바꿀 것들',
           image: 'assets/wolyeonggyo.jpg',
           paragraphs: [
-            '2026년 수페스타는 아직 세부 일정과 장소를 확정 정보로 쓰기 어렵습니다. 공식 공지가 나오면 기간, 장소, 물놀이장 운영시간, 휴장일, 공연 라인업, 불꽃놀이 일정, 캠핑·프리미엄존 예약 여부를 우선 갱신해야 합니다.',
+            '2026년 수페스타는 7월 25일부터 8월 2일까지 9일간 안동낙동강변에서 열리는 것으로 공식 확인됩니다. 다만 물놀이장 운영시간, 휴장일, 공연 라인업, 불꽃놀이 일정, 캠핑·프리미엄존 예약 여부는 세부 공지 기준으로 계속 갱신해야 합니다.',
             '물놀이형 축제는 날씨와 안전 운영의 영향을 크게 받습니다. 폭우, 강풍, 폭염, 수위 변화, 혼잡도에 따라 현장 운영이 달라질 수 있으므로 방문 직전 공식 안내를 확인하도록 강조하는 편이 좋습니다.',
-            '확인 필요 상태에서는 지난해 프로그램을 참고 예시로만 다루고, 올해 운영을 확정처럼 쓰지 않아야 합니다. 일정과 장소가 발표되면 랜딩 카드의 상태와 확인일을 함께 갱신해야 합니다.'
+            '기간과 장소가 확인됐더라도 지난해 프로그램을 그대로 확정처럼 쓰면 안 됩니다. 랜딩 카드에는 예정 상태와 확인일을 분명히 두고, 세부 운영 정보는 공식 공지 기준으로 갱신해야 합니다.'
           ]
         }
       ],
       sources: [
         { label: '투어안동', url: 'https://www.tourandong.com/public/' },
-        { label: '한국정신문화재단', url: 'https://www.kfce.or.kr/' },
+        { label: '한국정신문화재단 안동수페스타', url: 'https://www.kfce.or.kr/home/sub2/sub2_2.asp' },
         { label: '쿠키뉴스 2025 안동수페스타', url: 'https://www.kukinews.com/article/view/kuk202507230017' },
         { label: '경북매일 2025 안동수페스타', url: 'https://www.kbmaeil.com/article/20250723500088' },
         { label: '안동뉴스 2025 안동수페스타', url: 'https://www.adns.kr/news/articleView.html?idxno=22515' }
@@ -863,8 +863,8 @@ window.AndongData = {
       image: 'assets/andong_ice_festival.png',
       href: 'events.html#ice',
       status: '확인 필요',
-      lastChecked: '2026.05.22',
-      period: '2026/2027 겨울 일정 확인 필요',
+      lastChecked: '2026.06.02',
+      period: '매년 1월 중순(소한에서 대한 사이)',
       location: '암산유원지 일원',
       detail: '암산얼음축제는 암산유원지의 겨울 풍경을 배경으로 얼음썰매, 빙어낚시, 겨울놀이, 먹거리와 공연을 함께 즐기는 안동의 대표 가족형 겨울 축제입니다. 얼음 상태에 따라 운영 여부가 달라질 수 있어 당일 확인이 특히 중요하고, 방한 준비가 체감 만족도를 좌우합니다.',
       storyTitle: '겨울에만 열리는 안동의 놀이장',
@@ -874,7 +874,7 @@ window.AndongData = {
       bestFor: '겨울 가족 여행, 어린이 동반, 계절 체험',
       nearby: '암산유원지, 남후면 광음리, 안동 도심권, 하회마을·봉정사 연계 가능',
       tip: '방한용품, 장갑, 미끄럼 방지 신발, 여벌 양말을 준비하고 빙어낚시·썰매 유료 운영 여부를 확인하세요.',
-      visitNote: '2026/2027 겨울 일정은 확인 필요 상태입니다. 축제 공식 홈페이지, 안동시청, 투어안동, 한국정신문화재단 공지를 기준으로 갱신하세요.',
+      visitNote: '한국정신문화재단 공식 주요사업 페이지는 암산얼음축제를 매년 1월 중순, 소한에서 대한 사이 열리는 행사로 안내합니다. 다음 겨울의 실제 기간, 얼음 상태, 셔틀, 유료 체험은 아직 확인 필요 상태이며 공식 홈페이지와 안동시 공지 기준으로 다시 확인해야 합니다.',
       richImages: ['assets/andong_ice_festival.png', 'assets/wolyeonggyo.jpg', 'assets/hanokmaul.jpg', 'assets/seowon.png'],
       richSections: [
         {
@@ -919,6 +919,7 @@ window.AndongData = {
         }
       ],
       sources: [
+        { label: '한국정신문화재단 암산얼음축제', url: 'https://www.kfce.or.kr/home/sub2/sub2_4.asp' },
         { label: '투어안동', url: 'https://www.tourandong.com/public/' },
         { label: '안동시청', url: 'https://www.andong.go.kr/main.do' },
         { label: '안동 암산얼음축제', url: 'http://www.binggo.org' },
