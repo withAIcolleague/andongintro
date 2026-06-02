@@ -29,6 +29,19 @@ const allowedStatuses = {
   place: ['상시'],
   course: ['추천', '일정 확인', '노선 확인']
 };
+const approvedEventSourceDomains = [
+  'adnighttrip.com',
+  'andong.go.kr',
+  'binggo.org',
+  'heritage.go.kr',
+  'khs.go.kr',
+  'kfce.or.kr',
+  'korean.visitkorea.or.kr',
+  'koreatriptips.com',
+  'maskdance.com',
+  'tourandong.com',
+  'visitkorea.or.kr'
+];
 const expectedNavLinks = '<div class="nav-links"><a href="index.html#taste" aria-label="안동의 맛">맛</a><a href="index.html#meot" aria-label="안동의 멋">멋</a><a href="index.html#heung" aria-label="안동의 흥">흥</a><a href="index.html#night" aria-label="안동의 밤">밤</a><a href="index.html#route" aria-label="안동의 길">길</a></div>';
 
 function fail(message) {
@@ -46,6 +59,15 @@ function allItems() {
 
 function assertFile(path) {
   if (!fs.existsSync(path)) fail(`Missing file: ${path}`);
+}
+
+function isApprovedEventSource(url) {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, '').toLowerCase();
+    return approvedEventSourceDomains.some((domain) => host === domain || host.endsWith(`.${domain}`));
+  } catch {
+    return false;
+  }
 }
 
 function expectedSchemaType(item) {
@@ -257,6 +279,10 @@ function validateSources() {
       fail(`${key} must have at least one source`);
     }
 
+    if (item.category === 'event' && !item.sources.some((source) => isApprovedEventSource(source.url))) {
+      fail(`${key} event must include at least one official or semi-official source URL`);
+    }
+
     for (const source of item.sources) {
       if (!source.label || !source.url) fail(`${key} has incomplete source`);
       if (!/^https?:\/\/[^\s]+$/i.test(source.url)) fail(`${key} has invalid source URL: ${source.url}`);
@@ -363,6 +389,7 @@ function validateAuthoringGuide() {
     '최소 2개 이상 넣는다',
     '문단을 최소 3개 이상',
     '최소 3개 이상의 서로 다른 이미지',
+    '공식/준공식 출처를 최소 1개',
     'YYYY.MM.DD',
     '음식: `상시`, `예약 확인`',
     '축제/행사: `예정`, `진행 중`, `종료`, `확인 필요`',

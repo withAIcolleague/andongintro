@@ -36,6 +36,7 @@ items: ['food:jjimdak', 'place:hahoe', 'event:maskdance', 'course:first-day']
 - `richSections`는 개별 페이지의 사진+글 감성 섹션이다. 현재 사이트 검증 기준은 콘텐츠마다 정확히 4개를 요구한다.
 - 각 `richSections` 항목은 문단을 최소 3개 이상 가져야 하며, 너무 짧은 메모형 문장은 피한다.
 - 실시간성이 있는 정보는 반드시 `status`, `lastChecked`, 가능하면 `sources`를 넣는다.
+- 축제/행사는 실시간성이 큰 항목이므로 `sources`에 공식/준공식 출처를 최소 1개 넣는다.
 - `lastChecked`는 반드시 `YYYY.MM.DD` 형식으로 쓴다. 예: `2026.05.22`
 - 사실 확인이 안 된 일정, 운영시간, 요금은 추정하지 말고 `확인 필요`로 둔다.
 
@@ -204,6 +205,8 @@ HTML 파일명: `place-new-place-id.html`
 - `확인 필요`
 
 `예정`, `진행 중`, `종료`처럼 일정이 확인된 축제는 `period`를 `YYYY.MM.DD ~ YYYY.MM.DD` 형식으로 쓴다. 아직 확정되지 않은 축제는 `status: '확인 필요'`를 쓰고, `period`, `location`, `visitNote` 중 어디를 확인해야 하는지 분명히 남긴다.
+
+행사 일정의 최신성 근거는 뉴스나 블로그만으로 두지 않는다. 한국정신문화재단(`kfce.or.kr`), 안동시(`andong.go.kr`), 투어안동(`tourandong.com`), 공식 축제 홈페이지, Visit Korea, 국가유산청처럼 공식/준공식 출처를 최소 1개 포함해야 한다.
 
 HTML 파일명: `event-new-event-id.html`
 
