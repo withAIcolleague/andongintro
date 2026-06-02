@@ -89,7 +89,7 @@ window.AndongData = {
       nearby: '안동구시장, 월영교, 원도심 숙소권, 안동소주전통음식박물관',
       tip: '도수가 높은 제품이 많으므로 시음 계획이 있다면 운전하지 않는 동선으로 잡으세요.',
       visitNote: '전통주 체험, 박물관 관람, 양조장 방문은 운영일과 예약 방식이 달라질 수 있습니다. 구매와 시음 가능 여부도 방문 전 공식 안내를 확인하세요.',
-      richImages: ['assets/soju.png', 'assets/heotjesabap.png', 'assets/jjimdak.png', 'assets/wolyeonggyo.jpg'],
+      richImages: ['assets/soju.png', 'assets/andong_soju_distillery_table.png', 'assets/heotjesabap.png'],
       richSections: [
         {
           eyebrow: 'DISTILLED SPIRIT',
@@ -104,7 +104,7 @@ window.AndongData = {
         {
           eyebrow: 'HERITAGE',
           title: '무형유산과 식품명인으로 이어진 전통',
-          image: 'assets/hanokmaul.jpg',
+          image: 'assets/heotjesabap.png',
           paragraphs: [
             '한국민족문화대백과사전은 안동소주가 1987년 경상북도 무형문화재로 지정되었고, 조옥화 명인이 전통 안동소주 제조 기능보유자로 지정되었다고 설명합니다. 농림축산식품부 자료는 조옥화 명인의 제조법을 김연박 명인이 이어가고 있음을 소개합니다.',
             '또한 안동소주는 박재서 명인 계열처럼 전통과 현대 생산을 절충한 흐름도 함께 존재합니다. 그래서 안동소주를 하나의 상품명으로만 보기보다 여러 제조 주체가 전통성을 각기 해석하며 이어가는 안동 전통주의 큰 범주로 설명해야 합니다.',
@@ -124,7 +124,7 @@ window.AndongData = {
         {
           eyebrow: 'PAIRING NOTE',
           title: '찜닭, 헛제사밥, 종가음식과 연결되는 술 문화',
-          image: 'assets/wolyeonggyo.jpg',
+          image: 'assets/andong_soju_distillery_table.png',
           paragraphs: [
             '안동소주는 음식과 따로 떼어 설명하기보다 안동의 식탁과 함께 연결하는 편이 자연스럽습니다. 안동구시장 찜닭골목, 헛제사밥, 종가음식, 문어 같은 의례 음식과 함께 보면 술이 손님맞이와 제례, 선물 문화 속에 놓여 있다는 점이 분명해집니다.',
             '다만 도수가 높은 제품이 많으므로 여행 안내에서는 안전을 먼저 말해야 합니다. 운전자는 시음하지 않고 구매나 전시 관람 중심으로 움직이고, 숙소가 도심권이라면 저녁 식사 뒤 천천히 즐기는 방식이 안정적입니다.',
@@ -232,7 +232,7 @@ window.AndongData = {
       nearby: '원도심, 안동구시장, 월영교, 도산서원·종가음식 권역',
       tip: '식당에 따라 수육, 전, 묵 같은 곁들임이 있으니 인원수와 식사량에 맞춰 주문하세요.',
       visitNote: '안동국시와 건진국수 표기는 식당마다 다를 수 있고 조리법도 차이가 있습니다. 당일 동선 가까운 곳과 영업시간을 기준으로 고르는 편이 실용적입니다.',
-      richImages: ['assets/andong_guksi.png', 'assets/hanokmaul.jpg', 'assets/seowon.png', 'assets/jjimdak.png'],
+      richImages: ['assets/andong_guksi.png', 'assets/andong_guksi_table.png', 'assets/heotjesabap.png'],
       richSections: [
         {
           eyebrow: 'NOODLE NOTE',
@@ -247,7 +247,7 @@ window.AndongData = {
         {
           eyebrow: 'BANQUET TABLE',
           title: '귀한 손님에게 내던 양반가의 국수',
-          image: 'assets/hanokmaul.jpg',
+          image: 'assets/andong_guksi_table.png',
           paragraphs: [
             '지역문화 자료는 안동 건진국수를 귀한 손님 접대와 제사상에 올렸던 양반의 음식으로 소개합니다. 밀가루에 생콩가루를 섞어 반죽하고 얇게 썬 면을 삶아낸 뒤 닭 육수, 닭살, 애호박, 석이, 계란지단 같은 고명을 더하는 구성을 설명합니다.',
             '이런 배경을 알고 먹으면 안동국시는 단순한 가벼운 국수가 아니라 손님맞이의 정성과 반가 음식의 질서를 담은 음식으로 보입니다.',
@@ -257,7 +257,7 @@ window.AndongData = {
         {
           eyebrow: 'LIGHT LUNCH',
           title: '강한 대표 음식 사이의 균형점',
-          image: 'assets/seowon.png',
+          image: 'assets/andong_guksi_table.png',
           paragraphs: [
             '안동 여행은 하회마을, 서원, 시장, 월영교처럼 이동이 많고 음식 선택지도 강합니다. 찜닭과 간고등어, 안동소주가 인상이 진한 메뉴라면 안동국시는 중간에 속도를 낮춰주는 점심 역할을 합니다.',
             '부모님이나 어린이와 함께라면 매운 양념이나 무거운 한상보다 부담이 적습니다. 오전에 서원이나 고택을 보고 점심으로 국시를 먹은 뒤 오후에 월영교나 원도심으로 이동하는 흐름이 안정적입니다.',
