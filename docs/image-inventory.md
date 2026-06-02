@@ -4,7 +4,7 @@
 이미지 교체 작업 전후에는 `node scripts/update-image-inventory.mjs`를 실행한다.
 
 - 콘텐츠 수: 31
-- 사용 중인 고유 이미지: 31
+- 사용 중인 고유 이미지: 33
 - 임시 이미지 교체 메모가 있는 콘텐츠: 13
 - 5개 초과 콘텐츠에서 재사용되는 이미지: 9
 
@@ -21,17 +21,15 @@
 | `event:cherry` | 안동벚꽃축제 | `assets/cherry_blossom.png` | 3 |
 | `event:waterfesta` | 안동수페스타 | `assets/wolyeonggyo.png` | 4 |
 | `event:ice` | 암산얼음축제 | `assets/andong_ice_festival.png` | 4 |
-| `place:byeongsan` | 병산서원 | `assets/seowon.png` | 4 |
+| `place:byeongsan` | 병산서원 | `assets/seowon.png` | 3 |
 | `place:bongjeongsa` | 봉정사 | `assets/andong_bongjeongsa.png` | 4 |
 | `place:market-place` | 안동구시장 | `assets/jjimdak.png` | 4 |
-| `place:imcheonggak` | 임청각 | `assets/andong_imcheonggak.png` | 5 |
+| `place:imcheonggak` | 임청각 | `assets/andong_imcheonggak.png` | 3 |
 
 ## 과다 재사용 이미지 대체 후보
 
 | 콘텐츠 | 제목 | 과다 재사용 이미지 | 다음 작업 |
 |---|---|---|---|
-| `place:byeongsan` | 병산서원 | `assets/seowon.png`, `assets/hero_hahoe.png`, `assets/wolyeonggyo.jpg`, `assets/hanokmaul.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
-| `place:imcheonggak` | 임청각 | `assets/seowon.png`, `assets/wolyeonggyo.jpg`, `assets/hanokmaul.jpg`, `assets/wolyeonggyo.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 | `event:ice` | 암산얼음축제 | `assets/wolyeonggyo.jpg`, `assets/hanokmaul.jpg`, `assets/seowon.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 | `event:waterfesta` | 안동수페스타 | `assets/wolyeonggyo.png`, `assets/andong-moonlight-dzrsh.png`, `assets/wolyeonggyo.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 | `food:jongga` | 종가음식 | `assets/heotjesabap.png`, `assets/seowon.png`, `assets/hanokmaul.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
@@ -40,20 +38,22 @@
 | `place:market-place` | 안동구시장 | `assets/jjimdak.png`, `assets/heotjesabap.png`, `assets/wolyeonggyo.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 | `event:moonlight` | 월영야행 | `assets/andong-moonlight-dzrsh.png`, `assets/wolyeonggyo.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 | `place:bongjeongsa` | 봉정사 | `assets/seowon.png`, `assets/wolyeonggyo.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `place:byeongsan` | 병산서원 | `assets/seowon.png`, `assets/wolyeonggyo.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 | `event:cherry` | 안동벚꽃축제 | `assets/wolyeonggyo.jpg` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 | `food:guksi` | 안동국시 | `assets/heotjesabap.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 | `food:soju` | 안동소주 | `assets/heotjesabap.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
+| `place:imcheonggak` | 임청각 | `assets/wolyeonggyo.png` | 전용 사진 확보 후 대표/섹션 이미지 교체 |
 
 ## 과다 재사용 이미지
 
 | 이미지 | 사용 콘텐츠 수 | 우선 판단 |
 |---|---:|---|
-| `assets/wolyeonggyo.jpg` | 17 | 전용 이미지 대체 우선 |
-| `assets/hanokmaul.jpg` | 14 | 전용 이미지 대체 우선 |
+| `assets/wolyeonggyo.jpg` | 16 | 전용 이미지 대체 우선 |
+| `assets/hanokmaul.jpg` | 12 | 전용 이미지 대체 우선 |
 | `assets/jjimdak.png` | 11 | 전용 이미지 대체 우선 |
 | `assets/heotjesabap.png` | 10 | 보조 이미지 분산 검토 |
-| `assets/seowon.png` | 10 | 보조 이미지 분산 검토 |
-| `assets/hero_hahoe.png` | 9 | 보조 이미지 분산 검토 |
+| `assets/seowon.png` | 9 | 보조 이미지 분산 검토 |
+| `assets/hero_hahoe.png` | 8 | 보조 이미지 분산 검토 |
 | `assets/andong-moonlight-dzrsh.png` | 7 | 보조 이미지 분산 검토 |
 | `assets/susanggil.jpg` | 6 | 보조 이미지 분산 검토 |
 | `assets/wolyeonggyo.png` | 6 | 보조 이미지 분산 검토 |
@@ -62,12 +62,12 @@
 
 | 이미지 | 사용 콘텐츠 수 | 사용 콘텐츠 |
 |---|---:|---|
-| `assets/wolyeonggyo.jpg` | 17 | `food:jjimdak`, `food:mackerel`, `event:maskdance`, `event:cherry`, `event:waterfesta`, `event:ice`, `place:wolyeonggyo`, `place:byeongsan`, `place:bongjeongsa`, `place:market-place`, `place:imcheonggak`, `place:andongdam`, `course:first-day`, `course:food-course`, `course:night-course`, `course:transit-course`, `course:car-course` |
-| `assets/hanokmaul.jpg` | 14 | `food:heotjesabap`, `food:mackerel`, `food:octopus`, `food:jongga`, `event:ice`, `place:hahoe`, `place:wolyeonggyo`, `place:dosan`, `place:byeongsan`, `place:yekki`, `place:susanggil`, `place:imcheonggak`, `course:history-course`, `course:family-course` |
+| `assets/wolyeonggyo.jpg` | 16 | `food:jjimdak`, `food:mackerel`, `event:maskdance`, `event:cherry`, `event:waterfesta`, `event:ice`, `place:wolyeonggyo`, `place:byeongsan`, `place:bongjeongsa`, `place:market-place`, `place:andongdam`, `course:first-day`, `course:food-course`, `course:night-course`, `course:transit-course`, `course:car-course` |
+| `assets/hanokmaul.jpg` | 12 | `food:heotjesabap`, `food:mackerel`, `food:octopus`, `food:jongga`, `event:ice`, `place:hahoe`, `place:wolyeonggyo`, `place:dosan`, `place:yekki`, `place:susanggil`, `course:history-course`, `course:family-course` |
 | `assets/jjimdak.png` | 11 | `food:jjimdak`, `food:octopus`, `food:market`, `event:maskdance`, `place:market-place`, `course:first-day`, `course:food-course`, `course:festival-course`, `course:night-course`, `course:family-course`, `course:transit-course` |
 | `assets/heotjesabap.png` | 10 | `food:jjimdak`, `food:soju`, `food:heotjesabap`, `food:guksi`, `food:mackerel`, `food:octopus`, `food:jongga`, `food:market`, `place:market-place`, `course:food-course` |
-| `assets/seowon.png` | 10 | `food:heotjesabap`, `food:jongga`, `event:ice`, `place:hahoe`, `place:dosan`, `place:byeongsan`, `place:bongjeongsa`, `place:imcheonggak`, `course:first-day`, `course:history-course` |
-| `assets/hero_hahoe.png` | 9 | `event:maskdance`, `place:hahoe`, `place:byeongsan`, `course:first-day`, `course:festival-course`, `course:history-course`, `course:family-course`, `course:transit-course`, `course:car-course` |
+| `assets/seowon.png` | 9 | `food:heotjesabap`, `food:jongga`, `event:ice`, `place:hahoe`, `place:dosan`, `place:byeongsan`, `place:bongjeongsa`, `course:first-day`, `course:history-course` |
+| `assets/hero_hahoe.png` | 8 | `event:maskdance`, `place:hahoe`, `course:first-day`, `course:festival-course`, `course:history-course`, `course:family-course`, `course:transit-course`, `course:car-course` |
 | `assets/andong-moonlight-dzrsh.png` | 7 | `food:market`, `event:maskdance`, `event:moonlight`, `event:waterfesta`, `place:wolyeonggyo`, `course:festival-course`, `course:night-course` |
 | `assets/susanggil.jpg` | 6 | `place:dosan`, `place:yekki`, `place:susanggil`, `course:history-course`, `course:transit-course`, `course:car-course` |
 | `assets/wolyeonggyo.png` | 6 | `event:moonlight`, `event:waterfesta`, `place:wolyeonggyo`, `place:imcheonggak`, `course:night-course`, `course:family-course` |
@@ -79,11 +79,13 @@
 | `assets/andong_susanggil.png` | 2 | `place:susanggil`, `place:andongdam` |
 | `assets/cherry_blossom.png` | 2 | `event:cherry`, `event:waterfesta` |
 | `assets/andong_bongjeongsa.png` | 1 | `place:bongjeongsa` |
+| `assets/andong_byeongsan_mandaeru.png` | 1 | `place:byeongsan` |
 | `assets/andong_cherry_festival_riverside.png` | 1 | `event:cherry` |
 | `assets/andong_dam.png` | 1 | `place:andongdam` |
 | `assets/andong_guksi_table.png` | 1 | `food:guksi` |
 | `assets/andong_guksi.png` | 1 | `food:guksi` |
 | `assets/andong_ice_festival.png` | 1 | `event:ice` |
+| `assets/andong_imcheonggak_courtyard.png` | 1 | `place:imcheonggak` |
 | `assets/andong_imcheonggak.png` | 1 | `place:imcheonggak` |
 | `assets/andong_jongga.png` | 1 | `food:jongga` |
 | `assets/andong_mackerel.png` | 1 | `food:mackerel` |

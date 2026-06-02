@@ -1156,7 +1156,7 @@ window.AndongData = {
       nearby: '하회마을, 부용대, 낙동강변, 풍산권',
       tip: '만대루는 풍경을 보는 장소이기도 하지만 문화유산입니다. 마루, 기둥, 난간을 훼손하지 않도록 관람 예절을 지키세요.',
       visitNote: '하회마을과 함께 묶을 때 이동 시간이 생각보다 걸릴 수 있습니다. 차량 이동이 편하지만, 계절·행사·우천 시 접근 도로와 주차 여건을 미리 확인하세요.',
-      richImages: ['assets/seowon.png', 'assets/hero_hahoe.png', 'assets/wolyeonggyo.jpg', 'assets/hanokmaul.jpg'],
+      richImages: ['assets/seowon.png', 'assets/andong_byeongsan_mandaeru.png', 'assets/wolyeonggyo.jpg'],
       richSections: [
         {
           eyebrow: 'ARCHITECTURE',
@@ -1171,7 +1171,7 @@ window.AndongData = {
         {
           eyebrow: 'HISTORY',
           title: '풍악서당에서 병산서원으로 이어진 시간',
-          image: 'assets/hanokmaul.jpg',
+          image: 'assets/andong_byeongsan_mandaeru.png',
           paragraphs: [
             '병산서원은 서애 류성룡이 1575년 풍악서당을 현재의 병산 자리로 옮긴 데서 출발합니다. 이후 류성룡이 세상을 떠난 뒤 제자들이 스승의 학문과 덕행을 기리기 위해 사당을 세우며 서원의 성격이 분명해졌습니다.',
             '한국민족문화대백과사전은 1607년 류성룡 사후 제자들을 중심으로 사우 건립이 본격화되었고, 1633년 서애선생문집, 1647년 징비록 등 관련 책판을 보관해 왔다고 설명합니다. 이 맥락을 알고 보면 병산서원은 예쁜 누각을 넘어 학문과 기록의 장소가 됩니다.',
@@ -1181,7 +1181,7 @@ window.AndongData = {
         {
           eyebrow: 'WORLD HERITAGE',
           title: '하회마을과 한국의 서원을 잇는 세계유산',
-          image: 'assets/hero_hahoe.png',
+          image: 'assets/andong_byeongsan_mandaeru.png',
           paragraphs: [
             '병산서원은 하회권 여행에서 하회마을과 함께 봐야 하는 장소입니다. 하회마을이 삶의 터와 공동체의 풍경을 보여준다면, 병산서원은 서애 류성룡의 학문과 제향, 강변 경관을 통해 하회권의 정신적 배경을 보여줍니다.',
             '한국민족문화대백과사전은 병산서원이 1978년 사적으로 지정되었고, 2010년 세계유산 "한국의 역사마을: 하회와 양동"의 부속 건물로 등재되었다고 설명합니다. 2019년에는 "한국의 서원" 연속유산으로도 알려져 있어 안동의 세계유산 축을 이해하는 데 중요합니다.',
@@ -1512,12 +1512,12 @@ window.AndongData = {
       nearby: '원도심, 법흥사지 칠층전탑, 안동구시장, 월영교',
       tip: '문화관광해설사 안내가 가능한 시간에 맞추면 건축과 독립운동 이야기를 훨씬 깊게 들을 수 있습니다.',
       visitNote: '관람 가능 구역, 복원 공사 영향, 해설 여부는 방문 시점에 따라 달라질 수 있습니다. 단체 방문이나 해설은 투어안동 안내를 먼저 확인하세요.',
-      richImages: ['assets/andong_imcheonggak.png', 'assets/seowon.png', 'assets/wolyeonggyo.jpg', 'assets/hanokmaul.jpg'],
+      richImages: ['assets/andong_imcheonggak.png', 'assets/andong_imcheonggak_courtyard.png', 'assets/wolyeonggyo.png'],
       richSections: [
         {
           eyebrow: 'HERITAGE',
           title: '보물로 지정된 조선 중기 고택',
-          image: 'assets/hanokmaul.jpg',
+          image: 'assets/andong_imcheonggak.png',
           paragraphs: [
             '임청각은 보물로 지정된 안동의 대표 고택입니다. 국가유산청은 임청각을 1515년 이명이 건립한 주택으로 설명하며, 영남산 동쪽 기슭에서 낙동강을 바라보는 배산임수의 터에 자리한다고 소개합니다.',
             '현재 보물로 지정된 군자정은 임청각의 별당으로, 조선 중기에 지은 丁자 평면의 누각형 건물입니다. 건축 설명만으로도 충분히 의미가 있지만, 이곳의 진짜 힘은 고택의 품격과 근대사의 긴장이 함께 보인다는 데 있습니다.',
@@ -1527,7 +1527,7 @@ window.AndongData = {
         {
           eyebrow: 'INDEPENDENCE',
           title: '석주 이상룡과 독립운동 명가의 기억',
-          image: 'assets/seowon.png',
+          image: 'assets/andong_imcheonggak_courtyard.png',
           paragraphs: [
             '임청각은 대한민국 임시정부 초대 국무령을 지낸 석주 이상룡의 생가로 알려져 있습니다. 안동 여행에서 서원과 종가가 조선의 학문과 예법을 보여준다면, 임청각은 그 유교적 책임감이 나라가 무너진 시대에 어떤 결단으로 이어졌는지 보여줍니다.',
             '이 장소를 설명할 때는 "독립운동가의 집"이라는 한 문장보다, 가문과 삶터, 재산과 일상의 기반을 뒤로하고 독립운동에 나선 결단을 함께 전해야 방문자가 장소의 무게를 이해하기 쉽습니다.',
@@ -1537,7 +1537,7 @@ window.AndongData = {
         {
           eyebrow: 'RESTORATION',
           title: '철길이 지나간 자리와 복원의 의미',
-          image: 'assets/wolyeonggyo.jpg',
+          image: 'assets/andong_imcheonggak_courtyard.png',
           paragraphs: [
             '국가유산청은 중앙선 철도 부설 때 50여 간의 행랑채와 부속채가 철거되어 현재의 규모로 줄었다고 설명합니다. 2015년 보도자료에서도 임청각을 일제강점기 당시 의도적으로 훼손된 문화유산의 복원 대상 중 하나로 언급했습니다.',
             '따라서 임청각의 복원은 단순한 건물 수리가 아니라 훼손된 역사 기억을 어떻게 다시 세울 것인지에 관한 문제입니다. 여행자는 남은 고택의 아름다움과 사라졌던 공간의 빈자리를 함께 보는 것이 좋습니다.',
