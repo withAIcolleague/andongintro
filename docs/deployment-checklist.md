@@ -36,10 +36,18 @@ $env:SITE_URL="https://example.com"; node scripts/update-sitemap.mjs; Remove-Ite
 ## 로컬 확인
 
 ```bash
-python -m http.server 8010
+node scripts/check-local-pages.mjs
 ```
 
-필수 확인 페이지:
+이 스크립트는 내부 임시 HTTP 서버를 띄워 랜딩, 분야별 목록, 모든 개별 콘텐츠 페이지, `sitemap.xml`, `robots.txt`의 `200` 응답과 빈 본문 여부를 확인한다.
+
+이미 별도 서버를 띄운 경우에는 주소를 지정한다.
+
+```bash
+node scripts/check-local-pages.mjs --base-url=http://127.0.0.1:8010
+```
+
+수동 브라우저 확인이 필요할 때 우선 확인할 페이지:
 
 - `http://127.0.0.1:8010/index.html`
 - `http://127.0.0.1:8010/food.html`

@@ -309,6 +309,7 @@ function validateDeploymentDocs() {
   ];
   const requiredSnippets = [
     'node scripts/check-pages-status.mjs',
+    'node scripts/check-local-pages.mjs',
     'node scripts/update-image-inventory.mjs'
   ];
 

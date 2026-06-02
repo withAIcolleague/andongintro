@@ -16,10 +16,14 @@
 ## 로컬 확인
 
 ```bash
-python -m http.server 8010
+node scripts/check-local-pages.mjs
 ```
 
-브라우저에서 `http://127.0.0.1:8010/index.html`을 연다.
+필요하면 별도 서버를 띄운 뒤 해당 주소를 지정해 확인한다.
+
+```bash
+node scripts/check-local-pages.mjs --base-url=http://127.0.0.1:8010
+```
 
 ## 콘텐츠 갱신 절차
 
@@ -54,8 +58,10 @@ node --check scripts/update-seo.mjs
 node --check scripts/update-sitemap.mjs
 node --check scripts/update-image-inventory.mjs
 node --check scripts/check-pages-status.mjs
+node --check scripts/check-local-pages.mjs
 node --check scripts/validate-site.mjs
 node scripts/validate-site.mjs
+node scripts/check-local-pages.mjs
 ```
 
 확인할 항목:

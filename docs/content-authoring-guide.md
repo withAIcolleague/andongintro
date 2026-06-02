@@ -276,7 +276,7 @@ node scripts/update-image-inventory.mjs
 변경 후 로컬 서버에서 확인한다.
 
 ```bash
-python -m http.server 8010
+node scripts/check-local-pages.mjs
 ```
 
 브라우저에서 확인할 것:
