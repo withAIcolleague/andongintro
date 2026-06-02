@@ -374,7 +374,7 @@ window.AndongData = {
       nearby: '안동구시장, 헛제사밥 식당, 종가음식 체험, 원도심 전통시장',
       tip: '식당 메뉴로 찾기보다 전통시장과 제수 음식, 종가음식 설명의 보조 콘텐츠로 접근하면 이해가 쉽습니다.',
       visitNote: '일반 식당 메뉴로 항상 있는 음식은 아닐 수 있습니다. 구입 목적이라면 시장 수산물 취급점, 제수 음식 취급점, 손질·포장 가능 여부를 확인하세요.',
-      richImages: ['assets/andong_octopus.png', 'assets/heotjesabap.png', 'assets/hanokmaul.jpg', 'assets/jjimdak.png'],
+      richImages: ['assets/andong_octopus.png', 'assets/andong_octopus_ritual_table.png', 'assets/andong_market.png'],
       richSections: [
         {
           eyebrow: 'RITUAL FOOD',
@@ -399,7 +399,7 @@ window.AndongData = {
         {
           eyebrow: 'WITH TABLE',
           title: '헛제사밥과 종가음식을 보완하는 소재',
-          image: 'assets/hanokmaul.jpg',
+          image: 'assets/andong_octopus_ritual_table.png',
           paragraphs: [
             '헛제사밥은 제례 음식을 여행자가 쉽게 접할 수 있는 한상이고, 종가음식은 집안의 손님맞이와 제례 문화를 더 깊게 보여주는 예약형 경험입니다. 문어는 이 두 콘텐츠 사이에서 상차림의 상징성을 보완합니다.',
             '안동소주와 함께 설명해도 좋습니다. 술과 음식, 제례와 손님맞이가 함께 움직였던 문화 속에서 문어는 단순한 해산물이 아니라 중요한 날의 격식을 채우는 음식으로 이해됩니다.',
@@ -446,7 +446,7 @@ window.AndongData = {
       nearby: '도산서원, 병산서원, 하회마을, 한옥 체험지',
       tip: '상시 식당처럼 방문하기보다 운영일, 예약 가능 인원, 체험 구성을 먼저 확인하세요.',
       visitNote: '정확한 운영일, 인원, 가격, 제공 음식은 프로그램별로 달라집니다. 공식 안내 또는 운영처 확인 후 소개하세요.',
-      richImages: ['assets/andong_jongga.png', 'assets/heotjesabap.png', 'assets/seowon.png', 'assets/hanokmaul.jpg'],
+      richImages: ['assets/andong_jongga.png', 'assets/andong_jongga_table.png', 'assets/heotjesabap.png'],
       richSections: [
         {
           eyebrow: 'JONGGA TABLE',
@@ -471,7 +471,7 @@ window.AndongData = {
         {
           eyebrow: 'OLD COOKBOOK',
           title: '옛 조리서와 안동 식문화의 기록성',
-          image: 'assets/seowon.png',
+          image: 'assets/andong_jongga_table.png',
           paragraphs: [
             '안동권 식문화는 말로만 전해진 풍습에 머물지 않고 조리서와 종가의 기록, 종택의 생활 방식 속에서 함께 남아 있습니다. 그래서 종가음식은 맛집 추천보다 역사와 생활사를 함께 다루는 편이 좋습니다.',
             '콘텐츠를 확장할 때는 특정 메뉴의 맛 표현만 늘리기보다 누가 만들었는지, 어떤 날에 차렸는지, 어떤 그릇과 술이 함께 놓였는지를 적어야 안동다운 깊이가 살아납니다.',
@@ -517,7 +517,7 @@ window.AndongData = {
       nearby: '안동구시장 찜닭골목, 원도심, 문화의거리, 웅부공원, 월영교',
       tip: '시장 안에서는 한 끼 식사와 포장 먹거리를 나눠 생각하면 선택이 쉬워집니다.',
       visitNote: '시장 영업시간, 점포 휴무, 주차 가능 여부는 개별 점포와 시장 상황에 따라 달라집니다. 늦은 시간 방문은 피하고, 원도심 주차장 위치를 먼저 확인하세요.',
-      richImages: ['assets/andong_market.png', 'assets/jjimdak.png', 'assets/heotjesabap.png', 'assets/andong-moonlight-dzrsh.png'],
+      richImages: ['assets/andong_market.png', 'assets/andong_market_food_alley.png', 'assets/jjimdak.png'],
       richSections: [
         {
           eyebrow: 'OLD MARKET',
@@ -532,7 +532,7 @@ window.AndongData = {
         {
           eyebrow: 'WALKING ROUTE',
           title: '식사와 산책을 한 동선으로 묶기',
-          image: 'assets/andong-moonlight-dzrsh.png',
+          image: 'assets/andong_market_food_alley.png',
           paragraphs: [
             '시장 일정은 원도심 산책과 잘 맞습니다. 안동구시장, 문화의거리, 웅부공원, 월영교를 느슨하게 이어 보면 식사 이후에도 도시의 밤과 오래된 중심가의 분위기를 이어서 볼 수 있습니다.',
             '짧은 당일치기라면 점심 또는 이른 저녁에 시장을 넣고, 시간이 더 있다면 월영교 야경 전후로 배치하세요. 이동을 줄이면서도 안동의 맛, 거리, 야경을 한 번에 엮을 수 있습니다.',
@@ -542,7 +542,7 @@ window.AndongData = {
         {
           eyebrow: 'MARKET CHOICE',
           title: '한 끼, 간식, 포장을 나눠 고르기',
-          image: 'assets/andong_market.png',
+          image: 'assets/andong_market_food_alley.png',
           paragraphs: [
             '처음 시장에 가면 선택지가 많아 오히려 고르기 어렵습니다. 한 끼 식사로는 찜닭골목을 기준점으로 삼고, 이후 간식이나 전통 먹거리, 선물용 포장품을 별도로 보는 방식이 가장 쉽습니다.',
             '시장 먹거리는 정확한 “대표 한 곳”을 정하기보다 동행 인원, 대기 시간, 포장 가능 여부, 이동 시간을 기준으로 고르는 편이 현실적입니다. 특히 기차나 버스를 앞둔 일정이라면 포장 상태와 냄새, 보관 시간을 먼저 확인하세요.',
