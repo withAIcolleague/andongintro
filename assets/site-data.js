@@ -660,7 +660,7 @@ window.AndongData = {
       nearby: '월영교, 안동시립박물관, 임청각, 안동댐, 원도심 식당가',
       tip: '행사 기간에는 낮보다 저녁 동선이 중요합니다. 주차, 셔틀, 공연 시간표를 먼저 확인하세요.',
       visitNote: '2026년 6월 2일 기준 세부 일정은 아직 확인 필요 상태입니다. 월영야행은 2026년 국가유산 활용사업 선정은 확인되지만, 실제 기간·프로그램·교통 안내는 공식 월영야행 사이트와 안동시·한국정신문화재단 공지로 다시 확인해야 합니다.',
-      richImages: ['assets/andong-moonlight-dzrsh.png', 'assets/wolyeonggyo.jpg', 'assets/wolyeonggyo.png', 'assets/hanokmaul.jpg'],
+      richImages: ['assets/andong-moonlight-dzrsh.png', 'assets/andong_moonlight_nightwalk.png', 'assets/wolyeonggyo.png'],
       richSections: [
         {
           eyebrow: 'MOONLIGHT WALK',
@@ -675,7 +675,7 @@ window.AndongData = {
         {
           eyebrow: 'HERITAGE NIGHT',
           title: '국가유산을 밤에 만나는 방식',
-          image: 'assets/wolyeonggyo.jpg',
+          image: 'assets/andong_moonlight_nightwalk.png',
           paragraphs: [
             '2025년 월영야행은 안동 국가유산 이야기를 담은 여러 프로그램을 월영교 일대에 펼친 행사로 보도되었습니다. 전통 등간, LED 선유줄불놀이인 선유야화, 바람개비의 거리, 달빛정원 같은 야경 콘텐츠가 대표 장면으로 소개되었습니다.',
             '이 행사의 강점은 문화유산을 낮의 관람 대상으로만 두지 않는 데 있습니다. 밤에는 조명과 공연, 거리 체험이 더해져 같은 장소도 훨씬 부드럽고 감각적으로 읽힙니다.',
@@ -695,7 +695,7 @@ window.AndongData = {
         {
           eyebrow: 'CHECK POINT',
           title: '2026년 일정은 확정 전까지 확인 필요',
-          image: 'assets/hanokmaul.jpg',
+          image: 'assets/andong_moonlight_nightwalk.png',
           paragraphs: [
             '2026년 월영야행은 국가유산 활용사업 선정 소식이 확인되지만, 실제 개최 기간과 세부 프로그램은 방문 안내에 쓰기 전 공식 채널에서 다시 확인해야 합니다. 따라서 사이트에서는 상태를 “확인 필요”로 유지하는 것이 안전합니다.',
             '일정이 확정되면 기간, 장소, 대표 프로그램, 공연 시간표, 주차와 셔틀, 우천 운영 기준을 먼저 갱신하세요. 야간 행사 특성상 비나 강풍, 현장 혼잡에 따라 체감 경험이 크게 달라질 수 있습니다.',
@@ -732,7 +732,7 @@ window.AndongData = {
       nearby: '탈춤공원, 낙동강변, 안동구시장, 월영교',
       tip: '낮에는 벚꽃길 산책, 해 질 무렵 이후에는 조명과 공연 분위기를 함께 보는 흐름이 좋습니다.',
       visitNote: '2026년 행사는 2026년 4월 5일 종료되었습니다. 한국정신문화재단 공식 주요사업 페이지에서 기간과 장소를 재확인했습니다. 벚꽃 만개 시점과 다음 축제 일정은 해마다 달라지므로 추후 공식 관광소식에서 다시 확인해야 합니다.',
-      richImages: ['assets/cherry_blossom.png', 'assets/andong-moonlight-dzrsh.png', 'assets/wolyeonggyo.jpg', 'assets/jjimdak.png'],
+      richImages: ['assets/cherry_blossom.png', 'assets/andong_cherry_festival_riverside.png', 'assets/wolyeonggyo.jpg'],
       richSections: [
         {
           eyebrow: 'SPRING WALK',
@@ -747,7 +747,7 @@ window.AndongData = {
         {
           eyebrow: 'DAY AND NIGHT',
           title: '낮의 벚꽃길과 밤의 조명',
-          image: 'assets/andong-moonlight-dzrsh.png',
+          image: 'assets/andong_cherry_festival_riverside.png',
           paragraphs: [
             '2026년 축제 보도와 행사 안내는 낙동강변 벚꽃길과 탈춤공원 일원의 공연, 체험, 야간 조명 연출을 주요 장면으로 소개했습니다. 낮에는 꽃의 색과 강변 산책이 중심이고, 밤에는 조명과 무대 분위기가 더해집니다.',
             '방문 시간이 하루뿐이라면 오후 늦게 도착해 해가 지기 전 벚꽃길을 걷고, 어두워진 뒤 조명 구간을 한 번 더 보는 흐름이 좋습니다. 같은 길이라도 시간대가 바뀌면 사진과 체감 분위기가 달라집니다.',
@@ -767,7 +767,7 @@ window.AndongData = {
         {
           eyebrow: 'SEASON CHECK',
           title: '축제는 끝났지만 봄 정보는 해마다 갱신',
-          image: 'assets/hero_hahoe.png',
+          image: 'assets/andong_cherry_festival_riverside.png',
           paragraphs: [
             '2026년 안동벚꽃축제는 4월 1일부터 4월 5일까지 진행되어 현재는 종료 상태입니다. 사이트에서는 종료 정보를 명확히 표시하고, 다음 봄 시즌에는 공식 관광소식과 안동시·한국정신문화재단 안내를 기준으로 일정과 장소를 갱신해야 합니다.',
             '벚꽃 여행은 축제 날짜만큼 개화 상황이 중요합니다. 기온과 비, 바람에 따라 만개와 낙화 시점이 크게 달라지므로 방문 직전에는 공식 공지, 지역 관광소식, 현장 사진을 함께 확인하도록 안내하는 편이 정확합니다.',
