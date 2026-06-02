@@ -803,7 +803,7 @@ window.AndongData = {
       nearby: '낙동강변, 안동시 도심권, 월영교, 원도심 식당가',
       tip: '낮 물놀이와 밤 공연을 모두 보려면 여벌 옷, 방수팩, 귀가 교통, 주차 동선을 함께 준비하세요.',
       visitNote: '2026년 기간과 장소는 한국정신문화재단 공식 주요사업 페이지에서 확인했습니다. 세부 프로그램, 물놀이장 운영시간, 예약, 우천·폭염 운영 기준은 방문 전 공식 홈페이지와 안동시 공지를 다시 확인하세요.',
-      richImages: ['assets/wolyeonggyo.png', 'assets/andong-moonlight-dzrsh.png', 'assets/wolyeonggyo.jpg', 'assets/cherry_blossom.png'],
+      richImages: ['assets/wolyeonggyo.png', 'assets/andong_waterfesta_splash.png', 'assets/cherry_blossom.png'],
       richSections: [
         {
           eyebrow: 'SUMMER WATER',
@@ -828,7 +828,7 @@ window.AndongData = {
         {
           eyebrow: 'NIGHT FESTA',
           title: '공연과 먹거리로 이어지는 강변의 밤',
-          image: 'assets/andong-moonlight-dzrsh.png',
+          image: 'assets/andong_waterfesta_splash.png',
           paragraphs: [
             '2025년 보도자료들은 수페스타를 물놀이에만 머물지 않는 체류형 여름 축제로 소개했습니다. 야간 공연, 불꽃놀이, 포장마차형 먹거리 부스, 캠핑존 같은 요소가 더해져 저녁까지 머무는 흐름을 만들었습니다.',
             '이 성격은 안동의 다른 축제와 구분됩니다. 월영야행이 문화유산과 달빛 산책의 밤이라면, 수페스타는 물과 음악, 강변의 열기가 중심인 여름밤 콘텐츠입니다.',
@@ -838,7 +838,7 @@ window.AndongData = {
         {
           eyebrow: 'CHECK POINT',
           title: '2026년 공지가 나오면 먼저 바꿀 것들',
-          image: 'assets/wolyeonggyo.jpg',
+          image: 'assets/andong_waterfesta_splash.png',
           paragraphs: [
             '2026년 수페스타는 7월 25일부터 8월 2일까지 9일간 안동낙동강변에서 열리는 것으로 공식 확인됩니다. 다만 물놀이장 운영시간, 휴장일, 공연 라인업, 불꽃놀이 일정, 캠핑·프리미엄존 예약 여부는 세부 공지 기준으로 계속 갱신해야 합니다.',
             '물놀이형 축제는 날씨와 안전 운영의 영향을 크게 받습니다. 폭우, 강풍, 폭염, 수위 변화, 혼잡도에 따라 현장 운영이 달라질 수 있으므로 방문 직전 공식 안내를 확인하도록 강조하는 편이 좋습니다.',
@@ -875,7 +875,7 @@ window.AndongData = {
       nearby: '암산유원지, 남후면 광음리, 안동 도심권, 하회마을·봉정사 연계 가능',
       tip: '방한용품, 장갑, 미끄럼 방지 신발, 여벌 양말을 준비하고 빙어낚시·썰매 유료 운영 여부를 확인하세요.',
       visitNote: '한국정신문화재단 공식 주요사업 페이지는 암산얼음축제를 매년 1월 중순, 소한에서 대한 사이 열리는 행사로 안내합니다. 다음 겨울의 실제 기간, 얼음 상태, 셔틀, 유료 체험은 아직 확인 필요 상태이며 공식 홈페이지와 안동시 공지 기준으로 다시 확인해야 합니다.',
-      richImages: ['assets/andong_ice_festival.png', 'assets/wolyeonggyo.jpg', 'assets/hanokmaul.jpg', 'assets/seowon.png'],
+      richImages: ['assets/andong_ice_festival.png', 'assets/andong_amsan_ice_sledding.png', 'assets/seowon.png'],
       richSections: [
         {
           eyebrow: 'WINTER PLAY',
@@ -890,7 +890,7 @@ window.AndongData = {
         {
           eyebrow: 'PROGRAM',
           title: '빙어낚시, 얼음썰매, 겨울 민속놀이',
-          image: 'assets/hanokmaul.jpg',
+          image: 'assets/seowon.png',
           paragraphs: [
             '2025년 축제 안내와 보도에서는 빙어낚시, 얼음썰매, 얼음미끄럼틀, 창작썰매 공모전, 겨울 민속놀이 체험, 아이스컬링 대회, 공연과 이벤트, 얼음조각과 얼음빙벽 전시가 주요 프로그램으로 소개되었습니다.',
             '처음 방문자는 모든 프로그램을 다 하려 하기보다 핵심을 정하는 편이 좋습니다. 어린이는 썰매와 놀이 체험, 어른은 빙어낚시와 겨울 먹거리, 사진 여행자는 얼음조형물과 포토존을 중심으로 잡으면 일정이 덜 복잡합니다.',
@@ -900,7 +900,7 @@ window.AndongData = {
         {
           eyebrow: 'ACCESS',
           title: '셔틀과 주차를 먼저 보는 겨울 축제',
-          image: 'assets/wolyeonggyo.jpg',
+          image: 'assets/andong_amsan_ice_sledding.png',
           paragraphs: [
             '암산유원지는 축제 기간에 차량이 몰릴 수 있어 주차와 셔틀 정보가 체감 만족도를 크게 좌우합니다. 2025년에는 안동터미널·안동역과 축제장, 중앙선1942안동역과 축제장을 잇는 무료 셔틀 운영이 보도되었습니다.',
             '다음 시즌 콘텐츠를 갱신할 때도 기간과 프로그램만 확인하면 부족합니다. 셔틀 운행 구간, 배차 간격, 주차장 위치, 주차장과 행사장 사이 이동 방식, 유료 체험의 결제 방식까지 함께 갱신해야 실제 방문 계획에 도움이 됩니다.',
