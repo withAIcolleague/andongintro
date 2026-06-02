@@ -7,7 +7,7 @@ window.AndongData = {
       themeTags: ['처음 방문', '시장', '대표 음식'],
       summary: '간장 양념, 당면, 닭고기가 어우러진 안동 대표 음식. 구시장 찜닭골목이 가장 익숙한 출발점입니다.',
       image: 'assets/jjimdak.png',
-      richImages: ['assets/jjimdak.png', 'assets/heotjesabap.png', 'assets/hanokmaul.jpg', 'assets/wolyeonggyo.jpg'],
+      richImages: ['assets/jjimdak.png', 'assets/andong_market.png', 'assets/wolyeonggyo.jpg', 'assets/heotjesabap.png'],
       href: 'food.html#jjimdak',
       status: '상시',
       lastChecked: '2026.05.22',
@@ -25,7 +25,7 @@ window.AndongData = {
         {
           eyebrow: 'LOCAL TABLE',
           title: '구시장 골목에서 완성된 대표 음식',
-          image: 'assets/jjimdak.png',
+          image: 'assets/andong_market.png',
           paragraphs: [
             '안동찜닭은 집에서 먹는 닭찜의 기억과 안동구시장 닭 골목의 활기가 함께 담긴 음식입니다. 공식 설명에서도 안동의 안동네 닭찜에서 비롯되었다는 이야기, 구시장 닭 골목에서 손님의 요구에 맞춰 재료를 더하다 생겼다는 이야기 등 여러 유래가 전해집니다.',
             '그래서 안동찜닭은 특정 조리법 하나만의 음식이라기보다 시장 골목에서 손님과 상인이 함께 만들어낸 대중적인 향토 음식으로 보는 편이 자연스럽습니다.',
@@ -35,7 +35,7 @@ window.AndongData = {
         {
           eyebrow: 'TASTE',
           title: '달콤하고 매콤하고 짭짤한 한 냄비',
-          image: 'assets/jjimdak.png',
+          image: 'assets/wolyeonggyo.jpg',
           paragraphs: [
             '안동찜닭의 맛은 간장소스의 짭짤함, 건고추의 매콤함, 양념의 달콤함, 닭고기의 담백함이 한 냄비 안에서 섞이는 데 있습니다. 여기에 당면과 감자, 채소가 양념을 머금으면서 식사의 리듬을 만듭니다.',
             '처음 먹는 사람에게는 당면을 너무 늦게 먹지 말라고 안내해도 좋습니다. 양념을 흡수한 당면은 안동찜닭의 인상을 가장 빠르게 전달하는 요소입니다.',
@@ -257,7 +257,7 @@ window.AndongData = {
         {
           eyebrow: 'LIGHT LUNCH',
           title: '강한 대표 음식 사이의 균형점',
-          image: 'assets/andong_guksi.png',
+          image: 'assets/seowon.png',
           paragraphs: [
             '안동 여행은 하회마을, 서원, 시장, 월영교처럼 이동이 많고 음식 선택지도 강합니다. 찜닭과 간고등어, 안동소주가 인상이 진한 메뉴라면 안동국시는 중간에 속도를 낮춰주는 점심 역할을 합니다.',
             '부모님이나 어린이와 함께라면 매운 양념이나 무거운 한상보다 부담이 적습니다. 오전에 서원이나 고택을 보고 점심으로 국시를 먹은 뒤 오후에 월영교나 원도심으로 이동하는 흐름이 안정적입니다.',
@@ -267,7 +267,7 @@ window.AndongData = {
         {
           eyebrow: 'ORDER TIP',
           title: '식당마다 다른 곁들임과 표기 확인하기',
-          image: 'assets/andong_guksi.png',
+          image: 'assets/heotjesabap.png',
           paragraphs: [
             '안동국시, 안동국수, 건진국수라는 표기는 식당마다 다르게 쓰일 수 있습니다. 조리법과 국물, 고명, 곁들임도 가게마다 차이가 있어 특정 형식 하나만 정답으로 안내하기보다 메뉴 설명을 확인하는 편이 좋습니다.',
             '수육, 전, 묵 같은 곁들임이 있는 곳도 있으니 인원수에 맞춰 주문하면 식사가 더 풍성해집니다. 다만 짧은 일정에서는 명소형 맛집보다 동선 가까운 곳과 영업시간이 더 중요할 수 있습니다.',
@@ -461,7 +461,7 @@ window.AndongData = {
         {
           eyebrow: 'RITUAL CULTURE',
           title: '불천위 제사와 제수 음식의 질서',
-          image: 'assets/andong_jongga.png',
+          image: 'assets/heotjesabap.png',
           paragraphs: [
             '안동 음식문화에서 제례 음식은 별도의 층위를 갖습니다. 안동시 농업기술센터는 불천위 제사 제수음식, 종가 내림음식, 가양주가 안동을 다른 지역과 구별 짓는 특징이라고 설명합니다.',
             '이 맥락을 알면 헛제사밥, 문어, 안동소주도 따로 떨어진 메뉴가 아니라 제례와 손님맞이, 귀한 재료를 정갈하게 차리는 문화 안에서 함께 읽힙니다.',
@@ -890,7 +890,7 @@ window.AndongData = {
         {
           eyebrow: 'PROGRAM',
           title: '빙어낚시, 얼음썰매, 겨울 민속놀이',
-          image: 'assets/andong_ice_festival.png',
+          image: 'assets/hanokmaul.jpg',
           paragraphs: [
             '2025년 축제 안내와 보도에서는 빙어낚시, 얼음썰매, 얼음미끄럼틀, 창작썰매 공모전, 겨울 민속놀이 체험, 아이스컬링 대회, 공연과 이벤트, 얼음조각과 얼음빙벽 전시가 주요 프로그램으로 소개되었습니다.',
             '처음 방문자는 모든 프로그램을 다 하려 하기보다 핵심을 정하는 편이 좋습니다. 어린이는 썰매와 놀이 체험, 어른은 빙어낚시와 겨울 먹거리, 사진 여행자는 얼음조형물과 포토존을 중심으로 잡으면 일정이 덜 복잡합니다.',
@@ -900,7 +900,7 @@ window.AndongData = {
         {
           eyebrow: 'ACCESS',
           title: '셔틀과 주차를 먼저 보는 겨울 축제',
-          image: 'assets/andong_ice_festival.png',
+          image: 'assets/wolyeonggyo.jpg',
           paragraphs: [
             '암산유원지는 축제 기간에 차량이 몰릴 수 있어 주차와 셔틀 정보가 체감 만족도를 크게 좌우합니다. 2025년에는 안동터미널·안동역과 축제장, 중앙선1942안동역과 축제장을 잇는 무료 셔틀 운영이 보도되었습니다.',
             '다음 시즌 콘텐츠를 갱신할 때도 기간과 프로그램만 확인하면 부족합니다. 셔틀 운행 구간, 배차 간격, 주차장 위치, 주차장과 행사장 사이 이동 방식, 유료 체험의 결제 방식까지 함께 갱신해야 실제 방문 계획에 도움이 됩니다.',
