@@ -35,7 +35,7 @@ const pageMeta = new Map([
   ['index.html', {
     title: '안동 안내 | 처음 와도 고를 수 있는 안동 여행',
     description: '하회마을만 알고 와도 고를 수 있도록 안동의 맛, 멋, 흥, 밤, 길을 분야별 선택지로 정리한 안내 사이트입니다.',
-    image: 'assets/hero_hahoe.png',
+    image: 'assets/andong_birdview.jpg',
     path: 'index.html'
   }],
   ['food.html', {
@@ -121,7 +121,8 @@ function jsonLd(meta, file) {
     publisher: {
       '@type': 'Organization',
       name: siteName,
-      url: siteUrl
+      url: siteUrl,
+      logo: absoluteUrl('assets/andong_hahoetal_icon.png')
     }
   };
 
@@ -137,6 +138,13 @@ function jsonLd(meta, file) {
   return `<script type="application/ld+json">${JSON.stringify(base).replace(/</g, '\\u003c')}</script>`;
 }
 
+function iconBlock() {
+  return [
+    `<link rel="icon" href="assets/andong_hahoetal_icon.png" type="image/png">`,
+    `<link rel="apple-touch-icon" href="assets/andong_hahoetal_icon.png">`
+  ].join('');
+}
+
 function renderSeoHtml(html, meta, file) {
   let next = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(meta.title)}</title>`);
   next = next
@@ -144,14 +152,24 @@ function renderSeoHtml(html, meta, file) {
     .replace(/<meta\s+name="description"[\s\S]*?>/gi, '')
     .replace(/<meta\s+property="og:[^"]+"[\s\S]*?>/gi, '')
     .replace(/<meta\s+name="twitter:[^"]+"[\s\S]*?>/gi, '')
+    .replace(/<link\s+rel="icon"[\s\S]*?>/gi, '')
+    .replace(/<link\s+rel="apple-touch-icon"[\s\S]*?>/gi, '')
     .replace(/<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
 
-  const block = seoBlock(meta);
+  const block = `${seoBlock(meta)}${iconBlock()}`;
   if (/<meta\s+name="viewport"[\s\S]*?>/i.test(next)) {
     next = next.replace(/(<meta\s+name="viewport"[\s\S]*?>)/i, `$1${block}`);
   } else {
     next = next.replace(/<head>/i, `<head>${block}`);
   }
+
+  next = next.replace(
+    /<span class="logo-stamp">[\s\S]*?<\/span>/gi,
+    '<span class="logo-stamp" aria-hidden="true">안동</span>'
+  );
+
+  next = next.replace(/site\.css\?v=[^"]+/g, 'site.css?v=20260721-hero-up');
+  next = next.replace(/app\.js\?v=[^"]+/g, 'app.js?v=20260721-motion');
 
   return next.replace(/<\/head>/i, `${jsonLd(meta, file)}</head>`);
 }

@@ -535,6 +535,50 @@
     targets.forEach((target) => observer.observe(target));
   }
 
+  function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function initLandingMotion() {
+    if (prefersReducedMotion()) return;
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    const hero = document.querySelector('.hero-board');
+    if (hero) {
+      const media = hero.querySelector('.hero-media');
+      const copy = hero.querySelector('.hero-copy');
+      const resetHero = () => {
+        hero.style.setProperty('--hero-pan-x', '0px');
+        hero.style.setProperty('--hero-pan-y', '0px');
+        if (copy) copy.style.transform = 'translate3d(0, 0, 0)';
+      };
+
+      hero.addEventListener('pointermove', (event) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        if (media) {
+          hero.style.setProperty('--hero-pan-x', `${(x * 18).toFixed(1)}px`);
+          hero.style.setProperty('--hero-pan-y', `${(y * 14).toFixed(1)}px`);
+        }
+        if (copy) {
+          copy.style.transform = `translate3d(${(x * -8).toFixed(1)}px, ${(y * -6).toFixed(1)}px, 0)`;
+        }
+      });
+      hero.addEventListener('pointerleave', resetHero);
+    }
+
+    document.querySelectorAll('.choice-card, .summary-card').forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--spot-x', `${x.toFixed(1)}%`);
+        card.style.setProperty('--spot-y', `${y.toFixed(1)}%`);
+      });
+    });
+  }
+
   function init() {
     document.querySelectorAll('[data-render="field-board"]').forEach(renderFieldBoard);
     document.querySelectorAll('[data-render="event-summary"]').forEach(renderEventSummary);
@@ -542,6 +586,7 @@
     document.querySelectorAll('[data-item]').forEach(renderItemPage);
     document.querySelectorAll('[data-render="event-sources"]').forEach(renderSources);
     initLazyBackgrounds();
+    initLandingMotion();
   }
 
   document.addEventListener('DOMContentLoaded', init);
