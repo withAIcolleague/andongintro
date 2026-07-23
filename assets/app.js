@@ -539,6 +539,90 @@
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
+  const themePortals = [
+    { id: 'taste', label: '맛', href: 'food.html', image: 'assets/jjimdak.png' },
+    { id: 'meot', label: '멋', href: 'places.html', image: 'assets/hero_hahoe.png' },
+    { id: 'heung', label: '흥', href: 'events.html', image: 'assets/mask_dance.png' },
+    { id: 'night', label: '밤', href: 'place-wolyeonggyo.html', image: 'assets/wolyeonggyo.jpg' },
+    { id: 'route', label: '길', href: 'courses.html', image: 'assets/yekki_village.jpg' }
+  ];
+
+  function renderThemePortal(root) {
+    if (!root) return;
+    root.innerHTML = themePortals.map((theme) => `
+      <a
+        class="theme-portal-card"
+        id="${theme.id}"
+        href="${theme.href}"
+        style="--portal-image: url('${theme.image}')"
+        aria-label="안동의 ${theme.label} 콘텐츠로 이동"
+      >
+        <span class="theme-portal-label">${theme.label}</span>
+      </a>
+    `).join('');
+  }
+
+  function setExploring(isExploring, options = {}) {
+    const syncHash = options.syncHash !== false;
+    const portal = document.querySelector('[data-theme-portal]');
+    const back = document.querySelector('[data-portal-back]');
+    document.body.classList.toggle('is-exploring', isExploring);
+    if (portal) portal.hidden = !isExploring;
+    if (back) back.hidden = !isExploring;
+
+    if (!syncHash) return;
+
+    if (isExploring) {
+      if (location.hash !== '#explore') {
+        history.pushState({ exploring: true }, '', '#explore');
+      }
+      return;
+    }
+
+    if (location.hash === '#explore' || themePortals.some((theme) => location.hash === `#${theme.id}`)) {
+      history.pushState({ exploring: false }, '', 'index.html');
+    }
+  }
+
+  function initTourGate() {
+    const startButton = document.querySelector('[data-start-tour]');
+    const backButton = document.querySelector('[data-portal-back]');
+    const portal = document.querySelector('[data-theme-portal]');
+    renderThemePortal(portal);
+
+    startButton?.addEventListener('click', () => setExploring(true));
+    backButton?.addEventListener('click', () => setExploring(false));
+
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const hash = link.getAttribute('href')?.split('#')[1];
+        if (!hash || !themePortals.some((theme) => theme.id === hash)) return;
+        event.preventDefault();
+        setExploring(true);
+        requestAnimationFrame(() => {
+          document.getElementById(hash)?.focus?.();
+        });
+      });
+    });
+
+    const openFromHash = () => {
+      const hash = location.hash.replace('#', '');
+      if (hash === 'explore' || themePortals.some((theme) => theme.id === hash)) {
+        setExploring(true, { syncHash: false });
+      }
+    };
+
+    window.addEventListener('popstate', () => {
+      const hash = location.hash.replace('#', '');
+      setExploring(
+        hash === 'explore' || themePortals.some((theme) => theme.id === hash),
+        { syncHash: false }
+      );
+    });
+
+    openFromHash();
+  }
+
   function initLandingMotion() {
     if (prefersReducedMotion()) return;
     if (!window.matchMedia('(pointer: fine)').matches) return;
@@ -550,10 +634,14 @@
       const resetHero = () => {
         hero.style.setProperty('--hero-pan-x', '0px');
         hero.style.setProperty('--hero-pan-y', '0px');
-        if (copy) copy.style.transform = 'translate3d(0, 0, 0)';
+        if (copy) {
+          copy.style.setProperty('--copy-pan-x', '0px');
+          copy.style.setProperty('--copy-pan-y', '0px');
+        }
       };
 
       hero.addEventListener('pointermove', (event) => {
+        if (document.body.classList.contains('is-exploring')) return;
         const rect = hero.getBoundingClientRect();
         const x = (event.clientX - rect.left) / rect.width - 0.5;
         const y = (event.clientY - rect.top) / rect.height - 0.5;
@@ -562,7 +650,8 @@
           hero.style.setProperty('--hero-pan-y', `${(y * 14).toFixed(1)}px`);
         }
         if (copy) {
-          copy.style.transform = `translate3d(${(x * -8).toFixed(1)}px, ${(y * -6).toFixed(1)}px, 0)`;
+          copy.style.setProperty('--copy-pan-x', `${(x * -8).toFixed(1)}px`);
+          copy.style.setProperty('--copy-pan-y', `${(y * -6).toFixed(1)}px`);
         }
       });
       hero.addEventListener('pointerleave', resetHero);
@@ -587,6 +676,7 @@
     document.querySelectorAll('[data-render="event-sources"]').forEach(renderSources);
     initLazyBackgrounds();
     initLandingMotion();
+    initTourGate();
   }
 
   document.addEventListener('DOMContentLoaded', init);

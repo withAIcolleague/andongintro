@@ -168,8 +168,8 @@ function renderSeoHtml(html, meta, file) {
     '<span class="logo-stamp" aria-hidden="true">안동</span>'
   );
 
-  next = next.replace(/site\.css\?v=[^"]+/g, 'site.css?v=20260721-hero-up');
-  next = next.replace(/app\.js\?v=[^"]+/g, 'app.js?v=20260721-motion');
+  next = next.replace(/site\.css\?v=[^"]+/g, 'site.css?v=20260723-portal');
+  next = next.replace(/app\.js\?v=[^"]+/g, 'app.js?v=20260723-portal');
 
   return next.replace(/<\/head>/i, `${jsonLd(meta, file)}</head>`);
 }

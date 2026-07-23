@@ -10,10 +10,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=20260721-hero-up">
+  <link rel="stylesheet" href="assets/site.css?v=20260723-portal">
 
-  
-  
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"안동 안내 | 처음 와도 고를 수 있는 안동 여행","headline":"안동 안내 | 처음 와도 고를 수 있는 안동 여행","description":"하회마을만 알고 와도 고를 수 있도록 안동의 맛, 멋, 흥, 밤, 길을 분야별 선택지로 정리한 안내 사이트입니다.","image":"https://withaicolleague.github.io/andongintro/assets/andong_birdview.jpg","url":"https://withaicolleague.github.io/andongintro/index.html","inLanguage":"ko-KR","publisher":{"@type":"Organization","name":"안동 안내","url":"https://withaicolleague.github.io/andongintro","logo":"https://withaicolleague.github.io/andongintro/assets/andong_hahoetal_icon.png"}}</script></head>
 
 <body><a class="skip-link" href="#content">본문으로 건너뛰기</a>
@@ -28,22 +26,23 @@
   </header>
 
   <main id="content" tabindex="-1">
-    <section class="hero-board">
+    <section class="hero-board" data-landing-door>
       <div class="hero-media" aria-label="안동 시내와 산세가 보이는 조감도"></div>
       <div class="hero-copy">
         <span class="eyebrow">ALL ABOUT ANDONG</span>
         <div class="hero-title-cut">
-          <h1>안동으로 어서 오이소</h1>
+          <h1>안동으로 어서<br>오이소</h1>
         </div>
         <p>안동은 처음이니껴? 제가 잘 안내해 드리겠니더</p>
         <div class="hero-actions">
-          <a class="btn btn-dark" href="#fields">선택지 보기</a>
-          <a class="btn btn-light" href="events.html">최신 축제 확인</a>
+          <button type="button" class="btn btn-dark" id="start-tour" data-start-tour>
+            관광 시작
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="intro-strip" aria-label="안동 핵심 안내">
+    <section class="intro-strip" aria-label="안동 핵심 안내" data-landing-door>
       <article>
         <strong>처음 방문</strong>
         <span>대표 명소와 이동 부담이 적은 코스부터</span>
@@ -58,18 +57,24 @@
       </article>
     </section>
 
-    <section class="section" id="fields">
-      <div class="section-head">
-        <span class="eyebrow">CHOOSE YOUR ANDONG</span>
-        <h2>분야별로 고르는 안동</h2>
-        <p>아이템이 여러 번 반복되지 않도록 맛, 멋, 흥, 밤, 길로 나눴습니다. 각 이미지는 개별 콘텐츠 페이지로 이어집니다.</p>
-      </div>
+    <section class="section" id="fields" data-landing-door hidden>
       <div id="field-board" class="theme-board" data-render="field-board"></div>
     </section>
-
   </main>
 
-  <footer class="site-footer">
+  <section
+    id="theme-portal"
+    class="theme-portal"
+    data-theme-portal
+    aria-label="안동 주제 선택"
+    hidden
+  ></section>
+
+  <button type="button" class="portal-back" data-portal-back hidden>
+    대문으로
+  </button>
+
+  <footer class="site-footer" data-landing-door>
     <div>
       <strong>안동 안내</strong>
       <p>공식 관광·축제 자료를 우선해 안동의 선택지를 정리합니다.</p>
@@ -83,7 +88,7 @@
   </footer>
 
   <script src="assets/site-data.js"></script>
-  <script src="assets/app.js?v=20260721-motion"></script>
+  <script src="assets/app.js?v=20260723-portal"></script>
 </body>
 
 </html>
